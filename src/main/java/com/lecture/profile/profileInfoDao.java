@@ -1,5 +1,6 @@
 package com.lecture.profile;
 
-public class profileInfoDao {
+public class profileInfoDao
+{
 
 }
