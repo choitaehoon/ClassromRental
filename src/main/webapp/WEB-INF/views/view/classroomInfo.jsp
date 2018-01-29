@@ -8,5 +8,6 @@
 </head>
 <body>
 <!-- 강의실 정보.jsp -->
+classroomInfo창
 </body>
 </html>
