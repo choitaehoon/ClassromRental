@@ -2,6 +2,7 @@
 <beansProjectDescription>
 	<version>1</version>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<pluginVersion><![CDATA[2.5.0.201010141000-RC1]]></pluginVersion>
 =======
 	<pluginVersion><![CDATA[3.9.2.201712210913-RELEASE]]></pluginVersion>
@@ -17,6 +18,17 @@
 	<autoconfigs>
 	</autoconfigs>
 >>>>>>> master
+=======
+	<pluginVersion><![CDATA[3.9.2.201712210913-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+	</configs>
+	<autoconfigs>
+	</autoconfigs>
+>>>>>>> JiEun
 	<configSets>
 	</configSets>
 </beansProjectDescription>

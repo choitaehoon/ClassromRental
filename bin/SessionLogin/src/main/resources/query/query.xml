@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="query">
+
+<resultMap type="com.classroomrental.login.LoginInfo" id="LoginInfoResult">
+	<result column="ID" property="id"/>
+	<result column="Password" property="password"/>
+</resultMap>
+
+<!-- 로그인 체크 쿼리 -->>
+	<select id="loginCheck" resultType="integer" parameterType="com.classroomrental.login.LoginInfo">
+		select count(*) from tb_student
+		<where>
+		id = #{id]
+			 and
+		password = #{password}
+		</where>
+	</select>
+	
+<!--  Select -->
+	<select id="totalAccount" resultType="integer">
+		select count(*) from tb_student
+	</select>
+</mapper>
