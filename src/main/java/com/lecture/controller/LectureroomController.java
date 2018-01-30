@@ -38,4 +38,16 @@ public class LectureroomController {
 	{
 		return "questionnaireInfo";
 	}
+	
+	@RequestMapping("/classroomInfo")
+	public String test1()
+	{
+		return "classroomInfo";
+	}
+	
+	@RequestMapping("/seungyeon")
+	public String test2()
+	{
+		return "seungyeon";
+	}
 }
