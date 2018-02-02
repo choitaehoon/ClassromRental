@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Handles requests for the application home page.
  */
 @Controller
+@RequestMapping("view")
 public class LectureroomController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(LectureroomController.class);
@@ -33,10 +34,10 @@ public class LectureroomController {
 		return "signUp";
 	}
 	
-	@RequestMapping("/questionnaireInfo")
+	@RequestMapping("questionnaireInfo")
 	public String test()
 	{
-		return "questionnaireInfo";
+		return "view/questionnaireInfo";
 	}
 	
 	@RequestMapping("/classroomInfo")
