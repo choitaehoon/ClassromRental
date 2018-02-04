@@ -1,5 +1,6 @@
 package com.lecture.survey;
 
-public class SurveyInfo {
-
+public interface SurveyInfo
+{
+	void insert(SurveyDto survey);
 }
