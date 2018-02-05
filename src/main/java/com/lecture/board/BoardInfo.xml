@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.lecture.board.BoardInfo">
+	<!--일련 번호 number 필드 값을 파라미터 객체에 채워 달라는  설정-->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="number">
+		insert into board (number,id, context)
+		values (null, #{id}, #{context})
+	</insert>
+</mapper>
