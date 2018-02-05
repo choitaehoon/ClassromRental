@@ -132,7 +132,7 @@ form {
 					href="http://unikys.tistory.com/media">강의실 교환 해요</a></li>
 				<li>|</li>
 				<li class="topMenuLi"><a class="menuLink"
-					href="http://unikys.tistory.com/location">자유 게시판</a></li>
+					href="list">자유 게시판</a></li>
 			</ul>
 		</nav>
 	</div>

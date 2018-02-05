@@ -18,16 +18,15 @@ public class LectureroomController {
 	@Autowired
 	SurveyInfo surveyInfo;
 	
-	@RequestMapping(value="/questionnaireInfo")
+	@RequestMapping("/questionnaireInfo")
 	public String test()
 	{
 		return "view/questionnaireInfo";
 	}
 	
 	@RequestMapping("classroomInfo")
-	public String test1(SurveyDto survey,Model model)
+	public String test1()
 	{
-		surveyInfo.insert(survey);
 		return "view/classroomInfo";
 	}
 	
@@ -35,5 +34,31 @@ public class LectureroomController {
 	public String test2()
 	{
 		return "view/signUpAfter";
+	}
+	
+	
+	@RequestMapping("list")
+	public String test3()
+	{
+		return "view/list";
+	}
+	
+	@RequestMapping("writeForm")
+	public String test4()
+	{
+		return "view/writeForm";
+	}
+	
+	@RequestMapping("write")
+	public String test5()
+	{
+		return "redirect:list";
+	}
+	
+	@RequestMapping("transmit")
+	public String test6(SurveyDto survey,Model model)
+	{
+		surveyInfo.insert(survey);
+		return "redirect:signUpAfter";
 	}
 }
