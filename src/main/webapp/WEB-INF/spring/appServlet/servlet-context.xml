@@ -26,23 +26,23 @@
 
 	<context:component-scan base-package="com.lecture.controller" />
 
-	<beans:bean name="dataSource"
+	<beans:bean name="dataSource1"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<beans:property name="url"
-			value="jdbc:mysql://localhost:3306/classroomrental?autoReconnect=true&amp;useSSL=false" />
+		<beans:property name="url" value="jdbc:mysql://localhost:3306/classroomrental?autoReconnect=true&amp;useSSL=false" />
 		<beans:property name="username" value="root" />
 		<beans:property name="password" value="chlxogns12" />
 	</beans:bean>
 
 	<beans:bean id="sqlSessionFactory1" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="dataSource" ref="dataSource1" />
 	</beans:bean>
 
 	<beans:bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<beans:property name="basePackage" value="com.lecture.survey" />
 		<beans:property name="sqlSessionFactoryBeanName" value="sqlSessionFactory1" />
 	</beans:bean>
+	
 	<!-- <beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> 
 		<beans:property name="dataSource" ref="dataSource" /> <beans:property name="mapperLocations" 
 		value="classpath:com/lecture/survey/*.xml" ></beans:property> </beans:bean> 

@@ -16,7 +16,7 @@ import com.lecture.survey.SurveyInfo;
 public class LectureroomController {
 	
 	@Autowired
-	SurveyInfo surveyInfo;
+	private SurveyInfo surveyInfo;
 	
 	@RequestMapping("/questionnaireInfo")
 	public String test()

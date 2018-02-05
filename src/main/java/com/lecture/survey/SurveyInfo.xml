@@ -6,6 +6,7 @@
 <mapper namespace="com.lecture.survey.SurveyInfo">
 	<insert id="insert">
 		INSERT INTO SURVEY(QUESTION1,QUESTION2,QUESTION3,QUESTION4,QUESTION5)
-		VALUES(#{QUESTION1},#{QUESTION2},#{QUESTION3},#{QUESTION4},#{QUESTION5})
-	</insert> 
+		VALUES(#{question1},#{question2},#{question3},#{question4},#{question5})
+	</insert>
+	 
 </mapper> 
