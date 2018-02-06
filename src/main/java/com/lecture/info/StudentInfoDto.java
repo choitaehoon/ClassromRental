@@ -1,6 +1,6 @@
-package com.lecture.student;
+package com.lecture.info;
 
-public class studentInfoDto
+public class StudentInfoDto
 {
 	int stuId; //회원아이디
 	String stuPw; //비밀번호

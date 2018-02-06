@@ -1,4 +1,4 @@
-package com.lecture.survey;
+package com.lecture.info;
 
 public class SurveyInfoService {
 

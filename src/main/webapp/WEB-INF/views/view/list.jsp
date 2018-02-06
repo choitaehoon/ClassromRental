@@ -15,16 +15,14 @@
 		<td>내용</td>
 		<td>삭제</td>
 	<tr>
-	<!-- 
-	<c:forEach items="${list}" var="dto">
+	<c:forEach items="${board}" var="dto">
 	<tr>
-		<td>${dto.mId}</td>
-		<td>${dto.mWriter}</td>
-		<td>${dto.mContent}</td>
-		<td><a href="delete?mId=${dto.mId}">X</a></td>
+		<td>${dto.number}</td>
+		<td>${dto.id}</td>
+		<td>${dto.context}</td>
+		<td><a href="delete?id=${dto.id}">X</a></td>
 	<tr>
 	</c:forEach>
-	 -->
 </table>
 <p><a href="writeForm">글작성</a></p>
 

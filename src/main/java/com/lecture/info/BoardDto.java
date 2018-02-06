@@ -1,4 +1,4 @@
-package com.lecture.board;
+package com.lecture.info;
 
 public class BoardDto 
 {

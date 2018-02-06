@@ -14,11 +14,11 @@
 		<form action="write" method="post">
 			<tr>
 				<td > 작성자 </td>
-				<td> <input type="text" name="mWriter" size = "50"> </td>
+				<td> <input type="text" name="id" size = "50"> </td>
 			</tr>
 			<tr>
 				<td> 내용 </td>
-				<td> <input type="text" name="mContent" size = "150" > </td>
+				<td> <input type="text" name="context" size = "150" > </td>
 			</tr>
 			<tr >
 				<td colspan="2"> <input type="submit" value="입력"> &nbsp;&nbsp; <a href="list">목록보기</a></td>

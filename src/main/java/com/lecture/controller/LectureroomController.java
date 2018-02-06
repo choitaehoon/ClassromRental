@@ -7,9 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.lecture.board.BoardInfo;
-import com.lecture.survey.SurveyDto;
-import com.lecture.survey.SurveyInfo;
+import com.lecture.info.BoardDto;
+import com.lecture.info.BoardInfo;
+import com.lecture.info.SurveyDto;
+import com.lecture.info.SurveyInfo;
 
 /**
  * Handles requests for the application home page.
@@ -33,7 +34,7 @@ public class LectureroomController {
 		return "view/classroomInfo";
 	}
 	
-	@RequestMapping("signUpAfter")
+	@RequestMapping(value="signUpAfter")
 	public String test2()
 	{
 		return "view/signUpAfter";
@@ -41,8 +42,9 @@ public class LectureroomController {
 	
 	
 	@RequestMapping("list")
-	public String test3()
+	public String test3(Model model)
 	{
+		model.addAttribute("board",boardInfo.selectAll());
 		return "view/list";
 	}
 	
@@ -53,15 +55,22 @@ public class LectureroomController {
 	}
 	
 	@RequestMapping("write")
-	public String test5(HttpServletRequest request,Model model)
+	public String test5(BoardDto board)
 	{
 		//쓰고 목록으로 넘어가기
-		boardInfo.insert(request.getParameter("id"), request.getParameter("context"));
+		boardInfo.insert(board);
+		return "redirect:list";
+	}
+	
+	@RequestMapping("delete")
+	public String delete(HttpServletRequest request)
+	{
+		boardInfo.delete(request.getParameter("id"));
 		return "redirect:list";
 	}
 	
 	@RequestMapping("transmit")
-	public String test6(SurveyDto survey,Model model)
+	public String test6(SurveyDto survey)
 	{
 		//설문지작성하고 맨 처음화면으로 가기
 		surveyInfo.insert(survey);

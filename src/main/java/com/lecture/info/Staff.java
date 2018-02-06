@@ -1,4 +1,4 @@
-package com.lecture.staff;
+package com.lecture.info;
 
 public class Staff 
 {

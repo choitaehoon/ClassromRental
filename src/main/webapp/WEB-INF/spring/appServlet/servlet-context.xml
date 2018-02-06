@@ -39,14 +39,14 @@
 	</beans:bean>
 
 	<beans:bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<beans:property name="basePackage" value="com.lecture.survey" />
+		<beans:property name="basePackage" value="com.lecture.info" />
 		<beans:property name="sqlSessionFactoryBeanName" value="sqlSessionFactory1" />
 	</beans:bean>
-	<!-- 테스트용 -->
+	<!-- 테스트용 
 	<beans:bean id="mapperScanner1" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<beans:property name="basePackage" value="com.lecture.board" />
 		<beans:property name="sqlSessionFactoryBeanName" value="sqlSessionFactory1" />
-	</beans:bean>
+	</beans:bean>-->
 	
 	<!-- <beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> 
 		<beans:property name="dataSource" ref="dataSource" /> <beans:property name="mapperLocations" 

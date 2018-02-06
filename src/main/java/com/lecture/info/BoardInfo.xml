@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lecture.info.BoardInfo">
+	<select id="selectAll" resultType="com.lecture.info.BoardDto">
+		select * from board;
+	</select>
+
+	<insert id="insert" useGeneratedKeys="true" keyProperty="number">
+		insert into board (number,id, context)
+		values (null, #{id}, #{context})
+	</insert>
+	
+	<delete id="delete">
+		delete from board where id = #{id}
+	</delete>
+</mapper>
