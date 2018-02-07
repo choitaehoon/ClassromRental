@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="classroomRental.mapper.BoardInfo">
+	<select id="selectAll" resultType="classroomRental.dto.BoardDto">
+		select * from board;
+	</select>
+	
+	<select id="select" resultType="classroomRental.dto.BoardDto">
+		select * from board where id=#{id};
+	</select>
+
+	<insert id="insert" useGeneratedKeys="true" keyProperty="number">
+		insert into board (number,id, context)
+		values (null, #{id}, #{context})
+	</insert>
+	
+	<delete id="delete">
+		delete from board where id = #{id}
+	</delete>
+	
+	<update id="update" useGeneratedKeys="true" keyProperty="number">
+	 update board set  id = #{id}, context = #{context} where number = #{number} 
+	</update>
+</mapper>
