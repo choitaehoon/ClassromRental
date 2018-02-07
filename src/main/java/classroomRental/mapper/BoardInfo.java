@@ -9,4 +9,5 @@ public interface BoardInfo {
 	List<BoardDto> selectAll();
 	public void delete(String number);
 	public void update(BoardDto boardDto);
+	BoardDto select(BoardDto boardDto);
 }

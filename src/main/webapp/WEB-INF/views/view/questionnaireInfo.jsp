@@ -4,11 +4,12 @@
 <html>
 <head>
 <style type="text/css">
-form
+form 
 {
 	text-align:center;
 }
-</style>
+ </style>
+
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js">
 </script>
@@ -38,11 +39,11 @@ form
 			 아니오<input type="radio" name="q2" onClick="question2.disabled=false"><br />
 					<input type="text" name="question2" style="width: 500px; height: 20px;"><br />
 					
-		3.물건을 제자리에 놓았습니까? &nbsp; 예
+		3.물건을 제자리에 놓았습니까?
+		&nbsp; 예
 			<input type="radio" name="q3" onClick="question3.disabled=true"> 
 			아니오<input type="radio" name="q3" onClick="question3.disabled=false"><br />
 					 <input type="text" name="question3" style="width: 500px; height: 20px;"><br />
-					 
 					 
 		4.의자,책상 등 잘 정리하고 갔습니까? &nbsp; 예
 			<input type="radio" name="q4" onClick="question4.disabled=true"> 

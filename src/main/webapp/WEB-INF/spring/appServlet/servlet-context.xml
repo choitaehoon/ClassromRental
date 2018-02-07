@@ -23,7 +23,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
-	<context:component-scan base-package="classroomRental.controller" />
+	<context:component-scan base-package="classroomRental" />
 
 	<beans:bean name="dataSource1" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -46,6 +46,5 @@
 		value="classpath:com/lecture/survey/*.xml" ></beans:property> </beans:bean> 
 		<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"> 
 		<beans:constructor-arg index="0" ref="sqlSessionFactory" /> </beans:bean> -->
-
 
 </beans:beans>

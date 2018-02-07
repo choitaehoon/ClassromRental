@@ -8,6 +8,7 @@
 
 </head>
 <body>
+<h1>목록 보기</h1>
 <table width="500" cellpadding="0" cellspacing="0" border="1">
 	<tr>
 		<td>번호</td>
@@ -22,7 +23,7 @@
 		<td>${dto.id}</td>
 		<td>${dto.context}</td>
 		<td><a href="delete?id=${dto.id}">X</a></td>
-		<td><a href="update">누르기</a></td>
+		<td><a href="update?id=${dto.id}">누르기</a></td>
 	<tr>
 	</c:forEach>
 </table>

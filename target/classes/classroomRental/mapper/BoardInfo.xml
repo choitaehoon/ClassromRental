@@ -6,6 +6,10 @@
 	<select id="selectAll" resultType="classroomRental.dto.BoardDto">
 		select * from board;
 	</select>
+	
+	<select id="select" resultType="classroomRental.dto.BoardDto">
+		select * from board where id=#{id};
+	</select>
 
 	<insert id="insert" useGeneratedKeys="true" keyProperty="number">
 		insert into board (number,id, context)
@@ -17,6 +21,6 @@
 	</delete>
 	
 	<update id="update" useGeneratedKeys="true" keyProperty="number">
-	 update board set number = #{number} id = #{id}, context = #{context} 
+	 update board set  id = #{id}, context = #{context} where number = #{number} 
 	</update>
 </mapper>

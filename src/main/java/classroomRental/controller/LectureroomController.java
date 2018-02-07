@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import classroomRental.dto.BoardDto;
 import classroomRental.dto.SurveyDto;
@@ -41,11 +42,18 @@ public class LectureroomController {
 	}
 	
 	
-	@RequestMapping("list")
+	@RequestMapping(value="list", method=RequestMethod.GET)
 	public String test3(Model model)
 	{
 		model.addAttribute("board",boardInfo.selectAll());
 		return "view/list";
+	}
+	
+	@RequestMapping(value="list", method=RequestMethod.POST)
+	public String test3(BoardDto board,Model model)
+	{
+		boardInfo.update(board);
+		return "redirect:list";
 	}
 	
 	@RequestMapping("writeForm")
@@ -63,10 +71,10 @@ public class LectureroomController {
 	}
 	
 	@RequestMapping("update")
-	public String update(BoardDto board)
+	public String update(BoardDto board,Model model)
 	{
-		boardInfo.update(board);
-	    return "view/writeForm";
+		model.addAttribute("board", boardInfo.select(board));
+	    return "view/edit";
 	}
 	
 	@RequestMapping("delete")

@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+	<h1>작성하기</h1>
 <table width="500" cellpadding="0" cellspacing="0" border="1">
 		<form action="write" method="post">
 			<tr>
