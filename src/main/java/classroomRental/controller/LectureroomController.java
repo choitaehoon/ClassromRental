@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import classroomRental.dto.BoardDto;
 import classroomRental.dto.SurveyDto;
 import classroomRental.mapper.BoardInfo;
+import classroomRental.mapper.IlmangwanInfo;
+import classroomRental.mapper.LectureInfo;
 import classroomRental.mapper.SurveyInfo;
 
 /**
@@ -22,6 +24,8 @@ public class LectureroomController {
 	
 	@Autowired private SurveyInfo surveyInfo;
 	@Autowired private BoardInfo boardInfo;
+	@Autowired private LectureInfo lectureInfo;
+	@Autowired private IlmangwanInfo ilmangwanInfo; 
 	
 	@RequestMapping("/questionnaireInfo")
 	public String test()
@@ -90,5 +94,18 @@ public class LectureroomController {
 		//설문지작성하고 맨 처음화면으로 가기
 		surveyInfo.insert(survey);
 		return "redirect:signUpAfter";
+	}
+	
+	@RequestMapping(value="/seungyeon" , method=RequestMethod.GET)
+	public String classroomSeungyeon(Model model)
+	{
+		model.addAttribute("seungyeon",lectureInfo.selectAll());
+		return "view/classroomInfo";
+	}
+	@RequestMapping(value="ilmangwan", method=RequestMethod.GET)
+	public String classroomIlmangwan(Model model)
+	{
+		model.addAttribute("ilmangwan", ilmangwanInfo.selectAll());
+		return "view/classroomInfo";
 	}
 }

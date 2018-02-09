@@ -4,6 +4,7 @@
 <html>
 <head>
 <style>
+
 td {
 	border: 1px solid gray;
 }
@@ -99,7 +100,7 @@ form {
 	width: 20%;
 	height: 100px;
 	text-align: center;
-	padding-top: 200px;
+	padding-top: 70px;
 	position: absolute;
 }
 

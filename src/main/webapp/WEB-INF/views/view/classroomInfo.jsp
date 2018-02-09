@@ -1,13 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="/WEB-INF/views/view/signUpAfter.jsp" %>
+<%@ include file="/WEB-INF/views/view/signUpAfter.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 
+<style>
+#center {
+	position: absolute;
+	top: 37.9%;
+	left: 30%;
+	width: 300px;
+	height: 200px;
+	margin-top: -150px;
+	margin-left: -100px;
+}
+</style>
 </head>
-					<!-- subMenu 
+<!-- subMenu 
 			<ul class="submenu">
 				<li><a
 					href="http://unikys.tistory.com/category/Programming%20Lecture/%EC%86%8D%EA%B9%8A%EC%9D%80%20%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20%EA%B0%95%EC%A2%8C"
@@ -19,7 +30,8 @@
 					href="http://unikys.tistory.com/category/Programming%20Lecture/Android%28%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%29%20%EC%95%B1%20%EA%B0%9C%EB%B0%9C"
 					class="submenuLink longLink">안드로이드 앱 개발</a></li>
 					
-			</ul></li>--> <!--  subMenu
+			</ul></li>-->
+<!--  subMenu
 			<ul class="submenu">
 				<li><a
 					href="http://unikys.tistory.com/tag/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8"
@@ -31,54 +43,97 @@
 			</ul></li>
 			 -->
 
-	<div id="dvd">
-		<!-- 강의실 정보.jsp -->
-		<table>
+<div id="dvd">
+	<!-- 강의실 정보.jsp -->
+	<table>
+		<tr>
+			<td>건물</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>1.승연관</td>
+			<td><a href="seungyeon">선택</a></td>
+		</tr>
+		<tr>
+			<td>2.일만관</td>
+			<td><a href="ilmangwan">선택</a></td>
+		</tr>
+		<tr>
+			<td>3.월당관</td>
+			<td><a href="woldanggwan">선택</a></td>
+		</tr>
+		<tr>
+			<td>4.열람관</td>
+			<td><a href="yeollamgwan">선택</a></td>
+		</tr>
+		<tr>
+			<td>6.이천환관</td>
+			<td><a href="icheoneunuch">선택</a></td>
+		</tr>
+		<tr>
+			<td>7.새천년관</td>
+			<td><a href="millenniumcenter">선택</a></td>
+		</tr>
+		<tr>
+			<td>9.성미가엘성당</td>
+			<td><a href="saintMichael">선택</a></td>
+		</tr>
+		<tr>
+			<td>11.미가엘관</td>
+			<td><a href="surname">선택</a></td>
+		</tr>
+		<tr>
+			<td>20.운동장</td>
+			<td><a href="schoolyard">선택</a></td>
+		</tr>
+	</table>
+</div>
+
+
+<div id="center">
+	<!-- 강의실 정보.jsp -->
+	<table>
+		<tr>
+			<td>시설코드</td>
+			<td>시설명</td>
+			<td>인원</td>
+			<td>방식</td>
+			<td></td>
+		</tr>
+		<c:forEach items="${seungyeon}" var="seung">
 			<tr>
-				<td>건물</td>
-				<td></td>
+				<td>${seung.facilityCode}</td>
+				<td>${seung.facilityName}</td>
+				<td>${seung.person}</td>
+				<td>${seung.way}</td>
+				<td><a href="">선택</a></td>
 			</tr>
+			</c:forEach>
+	</table>
+</div>
+<div id="center">
+	<!-- 강의실 정보.jsp -->
+	<table>
+		<tr>
+			<td>시설코드</td>
+			<td>시설명</td>
+			<td>인원</td>
+			<td>방식</td>
+			<td></td>
+		</tr>
+		<c:forEach items="${ilmangwan}" var="ilmang">
 			<tr>
-				<td>1.승연관</td>
-				<td><a href="seungyeon">선택</a></td>
+				<td>${ilmang.facilityCode2}</td>
+				<td>${ilmang.facilityName2}</td>
+				<td>${ilmang.person2}</td>
+				<td>${ilmang.way2}</td>
+				<td><a href="">선택</a></td>
 			</tr>
-			<tr>
-				<td>2.일만관</td>
-				<td>선택</td>
-			</tr>
-			<tr>
-				<td>3.월당관</td>
-				<td>선택</td>
-			</tr>
-			<tr>
-				<td>4.열람관</td>
-				<td>선택</td>
-			</tr>
-			<tr>
-				<td>5.나눔관</td>
-				<td>선택</td>
-			</tr>
-			<tr>
-				<td>6.이천환관</td>
-				<td>선택</td>
-			</tr>
-			<tr>
-				<td>7.새천년관</td>
-				<td>선택</td>
-			</tr>
-			<tr>
-				<td>9.성미가엘성당</td>
-				<td>선택</td>
-			</tr>
-			<tr>
-				<td>11.미가엘관</td>
-				<td>선택</td>
-			</tr>
-			<tr>
-				<td>20.운동장</td>
-				<td>선택</td>
-			</tr>
-		</table>
-	</div>
+			</c:forEach>
+	</table>
+</div>
+
+
+
 </body>
 </html>

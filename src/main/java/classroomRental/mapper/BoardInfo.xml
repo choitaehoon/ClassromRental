@@ -4,7 +4,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="classroomRental.mapper.BoardInfo">
 	<select id="selectAll" resultType="classroomRental.dto.BoardDto">
-		select * from board;
+		select * from board
 	</select>
 	
 	<select id="select" resultType="classroomRental.dto.BoardDto">
@@ -20,7 +20,7 @@
 		delete from board where id = #{id}
 	</delete>
 	
-	<update id="update" useGeneratedKeys="true" keyProperty="number">
-	 update board set  id = #{id}, context = #{context} where number = #{number} 
+	<update id="update">
+	 update board set  context = #{context} where id = #{id}                
 	</update>
 </mapper>
