@@ -92,6 +92,7 @@
 
 <div id="center">
 	<!-- 강의실 정보.jsp -->
+	<!-- 객체가 넘어온걸 확인하면 코드를 줄일 수  있을거같은데 그건 다 구현하고 생각하기 -->
 	<table>
 		<tr>
 			<td>시설코드</td>
@@ -109,18 +110,6 @@
 				<td><a href="">선택</a></td>
 			</tr>
 			</c:forEach>
-	</table>
-</div>
-<div id="center">
-	<!-- 강의실 정보.jsp -->
-	<table>
-		<tr>
-			<td>시설코드</td>
-			<td>시설명</td>
-			<td>인원</td>
-			<td>방식</td>
-			<td></td>
-		</tr>
 		<c:forEach items="${ilmangwan}" var="ilmang">
 			<tr>
 				<td>${ilmang.facilityCode2}</td>
@@ -130,10 +119,31 @@
 				<td><a href="">선택</a></td>
 			</tr>
 			</c:forEach>
+		<c:forEach items="${woldang}" var="woldang">
+			<tr>
+				<td>${woldang.facilityCode3}</td>
+				<td>${woldang.facilityName3}</td>
+				<td>${woldang.person3}</td>
+				<td>${woldang.way3}</td>
+				<td><a href="">선택</a></td>
+			</tr>
+			</c:forEach>
+		<c:forEach items="${message}" var="mes">
+			<tr>
+				<td>${mes}</td>
+			</tr>
+			</c:forEach>
+		<c:forEach items="${icheon}" var="in">
+			<tr>
+				<td>${in.facilityCode4}</td>
+				<td>${in.facilityName4}</td>
+				<td>${in.person4}</td>
+				<td>${in.way4}</td>
+				<td><a href="">선택</a></td>
+			</tr>
+			</c:forEach>
 	</table>
 </div>
-
-
 
 </body>
 </html>

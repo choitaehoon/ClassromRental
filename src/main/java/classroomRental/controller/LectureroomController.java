@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import classroomRental.dto.BoardDto;
 import classroomRental.dto.SurveyDto;
 import classroomRental.mapper.BoardInfo;
+import classroomRental.mapper.IcheoneunuchInfo;
 import classroomRental.mapper.IlmangwanInfo;
 import classroomRental.mapper.LectureInfo;
 import classroomRental.mapper.SurveyInfo;
+import classroomRental.mapper.WoldanggwanInfo;
 
 /**
  * Handles requests for the application home page.
@@ -26,6 +28,8 @@ public class LectureroomController {
 	@Autowired private BoardInfo boardInfo;
 	@Autowired private LectureInfo lectureInfo;
 	@Autowired private IlmangwanInfo ilmangwanInfo; 
+	@Autowired private WoldanggwanInfo woldanggwanInfo;
+	@Autowired private IcheoneunuchInfo icheoneunuchInfo;
 	
 	@RequestMapping("/questionnaireInfo")
 	public String test()
@@ -106,6 +110,27 @@ public class LectureroomController {
 	public String classroomIlmangwan(Model model)
 	{
 		model.addAttribute("ilmangwan", ilmangwanInfo.selectAll());
+		return "view/classroomInfo";
+	}
+	
+	@RequestMapping("woldanggwan")
+	public String classroomWoldanggwan(Model model)
+	{
+		model.addAttribute("woldang", woldanggwanInfo.selectAll());
+		return "view/classroomInfo";
+	}
+	
+	@RequestMapping("yeollamgwan")
+	public String classroomYeollamgwan(Model model)
+	{
+		model.addAttribute("message","정보가없습니다.");
+		return "view/classroomInfo";
+	}
+	
+	@RequestMapping("icheoneunuch")
+	public String classroomIcheoneunuch(Model model)
+	{
+		model.addAttribute("icheon",icheoneunuchInfo.selectAll());
 		return "view/classroomInfo";
 	}
 }
