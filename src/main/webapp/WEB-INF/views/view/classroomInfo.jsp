@@ -80,7 +80,7 @@
 		</tr>
 		<tr>
 			<td>11.미가엘관</td>
-			<td><a href="surname">선택</a></td>
+			<td><a href="Migaelgwan">선택</a></td>
 		</tr>
 		<tr>
 			<td>20.운동장</td>
@@ -140,6 +140,38 @@
 				<td>${in.person4}</td>
 				<td>${in.way4}</td>
 				<td><a href="">선택</a></td>
+			</tr>
+			</c:forEach>
+		<c:forEach items="${mill}" var="mil">
+			<tr>
+				<td>${mil.facilityCode5}</td>
+				<td>${mil.facilityName5}</td>
+				<td>${mil.person5}</td>
+				<td>${mil.way5}</td>
+				<td><a href="">선택</a></td>
+			</tr>
+			</c:forEach>
+		<c:forEach items="${saint}" var="sain">
+			<tr>
+				<td>${sain.facilityCode6}</td>
+				<td>${sain.facilityName6}</td>
+				<td>${sain.person6}</td>
+				<td>${sain.way6}</td>
+				<td><a href="">선택</a></td>
+			</tr>
+			</c:forEach>
+		<c:forEach items="${migael}" var="mig">
+			<tr>
+				<td>${mig.facilityCode7}</td>
+				<td>${mig.facilityName7}</td>
+				<td>${mig.person7}</td>
+				<td>${mig.way7}</td>
+				<td><a href="">선택</a></td>
+			</tr>
+			</c:forEach>
+		<c:forEach items="${mes}" var="mes">
+			<tr>
+				<td>${mes}</td>
 			</tr>
 			</c:forEach>
 	</table>

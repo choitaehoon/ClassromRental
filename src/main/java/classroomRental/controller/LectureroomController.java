@@ -14,6 +14,9 @@ import classroomRental.mapper.BoardInfo;
 import classroomRental.mapper.IcheoneunuchInfo;
 import classroomRental.mapper.IlmangwanInfo;
 import classroomRental.mapper.LectureInfo;
+import classroomRental.mapper.MigaelgwanInfo;
+import classroomRental.mapper.MillenniumcenterInfo;
+import classroomRental.mapper.SaintMichaelInfo;
 import classroomRental.mapper.SurveyInfo;
 import classroomRental.mapper.WoldanggwanInfo;
 
@@ -30,6 +33,9 @@ public class LectureroomController {
 	@Autowired private IlmangwanInfo ilmangwanInfo; 
 	@Autowired private WoldanggwanInfo woldanggwanInfo;
 	@Autowired private IcheoneunuchInfo icheoneunuchInfo;
+	@Autowired private MillenniumcenterInfo millenniumcenterInfo;
+	@Autowired private SaintMichaelInfo saintMichaelInfo;
+	@Autowired private MigaelgwanInfo migaelgwanInfo;
 	
 	@RequestMapping("/questionnaireInfo")
 	public String test()
@@ -131,6 +137,34 @@ public class LectureroomController {
 	public String classroomIcheoneunuch(Model model)
 	{
 		model.addAttribute("icheon",icheoneunuchInfo.selectAll());
+		return "view/classroomInfo";
+	}
+	
+	@RequestMapping("millenniumcenter")
+	public String classroomMillenniumcenter(Model model)
+	{
+		model.addAttribute("mill", millenniumcenterInfo.selectAll());
+		return "view/classroomInfo";
+	}
+	
+	@RequestMapping("saintMichael")
+	public String classroomSaintMichael(Model model)
+	{
+		model.addAttribute("saint", saintMichaelInfo.selectAll());
+		return "view/classroomInfo";
+	}
+	
+	@RequestMapping("Migaelgwan")
+	public String classroomMigaelgwan(Model model)
+	{
+		model.addAttribute("migael", migaelgwanInfo.selectAll());
+		return "view/classroomInfo";
+	}
+	
+	@RequestMapping("schoolyard")
+	public String classroomSchoolyard(Model model)
+	{
+		model.addAttribute("mes", "정보가 없습니다");
 		return "view/classroomInfo";
 	}
 }
