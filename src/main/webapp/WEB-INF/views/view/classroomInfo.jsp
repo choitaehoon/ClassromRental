@@ -107,7 +107,7 @@
 				<td>${seung.facilityName}</td>
 				<td>${seung.person}</td>
 				<td>${seung.way}</td>
-				<td><a href="">선택</a></td>
+				<td><a href="seung?facilityCode=${seung.facilityCode}">선택</a></td>
 			</tr>
 			</c:forEach>
 		<c:forEach items="${ilmangwan}" var="ilmang">
@@ -172,6 +172,12 @@
 		<c:forEach items="${mes}" var="mes">
 			<tr>
 				<td>${mes}</td>
+			</tr>
+			</c:forEach>
+		<c:forEach items="${mmm}" var="me">
+			<tr>
+				<td>들어오나 확인</td>
+				<td>${me.dataInfo}</td>
 			</tr>
 			</c:forEach>
 	</table>

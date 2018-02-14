@@ -5,7 +5,8 @@ import java.util.List;
 import classroomRental.dto.SeungyeonDto;
 
 //강의실 정보
-public interface LectureInfo {
+public interface SeungyeonInfo 
+{
 	List<SeungyeonDto> selectAll();
-//	SeungyeonDto select(int facilityCode);
+	SeungyeonDto selectByFacilityCode(int facilityCode);
 }

@@ -9,34 +9,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import classroomRental.dto.BoardDto;
+import classroomRental.dto.SeungyeonDto;
 import classroomRental.dto.SurveyDto;
 import classroomRental.mapper.BoardInfo;
 import classroomRental.mapper.IcheoneunuchInfo;
 import classroomRental.mapper.IlmangwanInfo;
-import classroomRental.mapper.LectureInfo;
 import classroomRental.mapper.MigaelgwanInfo;
 import classroomRental.mapper.MillenniumcenterInfo;
 import classroomRental.mapper.SaintMichaelInfo;
+import classroomRental.mapper.SeungyeonInfo;
 import classroomRental.mapper.SurveyInfo;
 import classroomRental.mapper.WoldanggwanInfo;
+import classroomRental.service.SeungyeonInfoService;
 
-/**
- * Handles requests for the application home page.
- */
 @Controller
 @RequestMapping("view")
 public class LectureroomController {
 	
 	@Autowired private SurveyInfo surveyInfo;
 	@Autowired private BoardInfo boardInfo;
-	@Autowired private LectureInfo lectureInfo;
+	@Autowired private SeungyeonInfo lectureInfo;
 	@Autowired private IlmangwanInfo ilmangwanInfo; 
 	@Autowired private WoldanggwanInfo woldanggwanInfo;
 	@Autowired private IcheoneunuchInfo icheoneunuchInfo;
 	@Autowired private MillenniumcenterInfo millenniumcenterInfo;
 	@Autowired private SaintMichaelInfo saintMichaelInfo;
 	@Autowired private MigaelgwanInfo migaelgwanInfo;
+	@Autowired private SeungyeonInfoService seungyeonInfoService;
 	
+	@RequestMapping("signUpBefore")
+	public String loginGo()
+	{
+		return "view/signUpBefore";
+	}
 	@RequestMapping("/questionnaireInfo")
 	public String test()
 	{
@@ -106,12 +111,18 @@ public class LectureroomController {
 		return "redirect:signUpAfter";
 	}
 	
-	@RequestMapping(value="/seungyeon" , method=RequestMethod.GET)
-	public String classroomSeungyeon(Model model)
+	@RequestMapping(value= {"seungyeon","seung"} , method=RequestMethod.GET)
+	public String classroomSeungyeon(SeungyeonDto seungyeonDto,Model model)
 	{
+		if(seungyeonInfoService.dataSeungyeon(seungyeonDto) == null)
+		{
+			model.addAttribute("mmm" , seungyeonInfoService.dataSeungyeon(seungyeonDto));
+			System.out.println("들어오나 확인2");
+		}
 		model.addAttribute("seungyeon",lectureInfo.selectAll());
 		return "view/classroomInfo";
 	}
+	
 	@RequestMapping(value="ilmangwan", method=RequestMethod.GET)
 	public String classroomIlmangwan(Model model)
 	{
