@@ -14,8 +14,8 @@
 	</select>
 		
 	<insert id="insert" useGeneratedKeys="true" keyProperty="id"> 
-	INSERT User (loginId, passwd, name, email, userType, departmentId) 
-	VALUES (#{loginId}, #{passwd}, #{name}, #{email#}, #{userType},#{departmentId}) 
+	INSERT User (loginId, password, name, email, userType, departmentId) 
+	VALUES (#{loginId}, #{password}, #{name}, #{email}, #{userType},#{departmentId}) 
 	</insert>
 	
 	<update id="update"> UPDATE User SET loginId = #{loginId},
@@ -27,4 +27,5 @@
 	<delete id="delete">
 	 DELETE FROM [User] WHERE id = #{id}
 	</delete>
+	
 </mapper>

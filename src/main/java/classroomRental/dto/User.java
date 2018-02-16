@@ -3,12 +3,13 @@ package classroomRental.dto;
 public class User 
 {
 	int id;
-	String loginId;
+	String loginId; 
 	String password;
 	String name;
 	String email;
 	String userType;
-	int departmentId;
+	Integer departmentId;
+	String departmentName;
 	
 	public int getId() {
 		return id;
@@ -46,12 +47,17 @@ public class User
 	public void setUserType(String userType) {
 		this.userType = userType;
 	}
-	public int getDepartmentId() {
+	public Integer getDepartmentId() {
 		return departmentId;
 	}
-	public void setDepartmentId(int departmentId) {
+	public void setDepartmentId(Integer departmentId) {
 		this.departmentId = departmentId;
 	}
-	
+	public String getDepartmentName() {
+		return departmentName;
+	}
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
+	}
 	
 }

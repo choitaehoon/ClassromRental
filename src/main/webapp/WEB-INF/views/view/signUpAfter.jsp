@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
 <style>
-
 td {
 	border: 1px solid gray;
 }
@@ -113,11 +113,21 @@ form {
 	padding: 5px;
 	list-style: none;
 }
+#abcd
+{
+	text-align:center;
+}
 </style>
 
 </head>
 <body>
-		<div id="dva">
+<div id="abcd">${user.loginId}님환영합니다.
+	<input type="button" class="btn btn-primary" value="로그아웃"
+	onclick="location.href='http://localhost:8080/controller/view/login'">
+	<input type="button" class="btn btn-primary" value="수정하기"
+	onclick="location.href='http://localhost:8080/controller/view/edit?${user.loginId}'">
+</div>
+	<div id="dva">
 		<nav id="topMenu">
 			<ul>
 				<li class="topMenuLi"><a class="menuLink"
