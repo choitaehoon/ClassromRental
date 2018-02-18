@@ -66,19 +66,33 @@ public class LectureroomController {
 	@RequestMapping(value="loginAfter", method=RequestMethod.POST)
 	public String loginAfter(User user,Model model)
 	{
-		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
-		return "view/signUpAfter";
+		String message = userService.loginBefore(user);
+		if(message != null)
+		{
+			model.addAttribute("error",message);
+			return "view/login";
+		}
+		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));	
+		return "view/signUpAfter";	
 	}
-		
+	
 	@RequestMapping("signUpBefore")
-	public String loginGo() {
+	public String loginGo(Model model) 
+	{
 		return "view/signUpBefore";
 	}
 
 	@RequestMapping(value="signUpAfter", method=RequestMethod.POST)
 	public String membership(User user,Model model)
 	{
-		userInfo.insert(user);
+		String message = userService.validateBeforeInsert(user);
+		if(message == null)
+			userInfo.insert(user);
+		else 
+		{
+			model.addAttribute("error",message);
+			return "redirect:signUpBefore";
+		}
 		return "view/signUpAfter";
 	}
 
@@ -87,18 +101,25 @@ public class LectureroomController {
 		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		return "view/edit";
 	}
-
-//	@RequestMapping(value = "edit", method = RequestMethod.POST)
-//	public String loginModification(User user, Model model) {
-//		String message = userService.validateBeforeUpdate(user);
-//		if (message == null) {
-//			userInfo.update(user);
-//			model.addAttribute("success", "저장했습니다.");
-//		} else
-//			model.addAttribute("error", message);
-//		model.addAttribute("departments", departmentInfo.selectAll());
-//		return "view/edit";
-//	}
+	
+	@RequestMapping(value = "membershipModification", method = RequestMethod.GET)
+	public String membershipModification(User user, Model model) 
+	{
+		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
+		return "view/membershipModification";
+	}
+	
+	@RequestMapping(value = "membershipModification", method = RequestMethod.POST)
+	public String membershipModification1(User user, Model model) {
+		String message = userService.validateBeforeUpdate(user);
+		if (message == null) {
+			userInfo.update(user);
+			return "view/signUpAfter";
+		} 
+		else
+			model.addAttribute("error", message);
+		return "view/membershipModification";
+	}
 
 	@RequestMapping("/questionnaireInfo")
 	public String test() {

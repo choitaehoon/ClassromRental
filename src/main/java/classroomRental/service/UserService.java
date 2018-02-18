@@ -25,6 +25,9 @@ public class UserService {
 		s = user.getLoginId();
 		if (StringUtils.isBlank(s))
 			return "로그인ID를 입력하세요.";
+		s = user.getPassword();
+		if(StringUtils.isBlank(s))
+			return "비밀번호 입력하세요";
 		User user2 = userInfo.selectByLoginId(s);
 		if (user2 != null)
 			return "로그인ID가 중복됩니다.";
@@ -50,4 +53,13 @@ public class UserService {
 		return null;
 	}
 	
+	//로그인 하기전에
+	public String loginBefore(User user)
+	{
+		if(StringUtils.isBlank(user.getLoginId()))
+			return "아이디를 입력하세요";
+		if(StringUtils.isBlank(user.getPassword()))
+			return "비밀번호를 입력하세요";
+		return null;
+	}
 }

@@ -125,7 +125,7 @@ form {
 	<input type="button" class="btn btn-primary" value="로그아웃"
 	onclick="location.href='http://localhost:8080/controller/view/login'">
 	<input type="button" class="btn btn-primary" value="수정하기"
-	onclick="location.href='http://localhost:8080/controller/view/edit?${user.loginId}'">
+	onclick="location.href='http://localhost:8080/controller/view/membershipModification?${user}'">
 </div>
 	<div id="dva">
 		<nav id="topMenu">
