@@ -3,25 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link
+	href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css"
+	rel="stylesheet">
 <style type="text/css">
 form 
 {
 	text-align:center;
 }
  </style>
-
-
-<script src="https://code.jquery.com/jquery-1.12.4.min.js">
-</script>
-<script type="text/javascript">
-<!--
-	function sub()
-	{
-		$("input[name=q1]").attr("readonly",true);
-		$("input[name=t1]").attr("disabled",true);
-	}
--->
-</script>
 </head>
 <body>
 	<!--설문지 정보.jsp -->
@@ -54,7 +44,7 @@ form
 		<input type="radio" name="q5" onClick="question5.disabled=true"> 
 			아니오<input type="radio" name="q5" onClick="question5.disabled=false"><br /> 
 			<input type="text" name="question5" style="width: 500px; height: 20px;"><br />
-		<br /> <input type="submit" value="전송">
+		<br /> <input type="submit" class="btn btn-primary" value="전송">
 	</form>
 </body>
 </html>

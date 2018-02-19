@@ -10,7 +10,16 @@
 	<select id="select" resultType="classroomRental.dto.BoardDto">
 		select * from board where id = #{id};
 	</select>
-
+	
+	<select id="selectPage" resultType="classroomRental.dto.BoardDto">
+	select * from board where number <![CDATA[>]]> (#{currentPage}-1)*#{pageSize}
+	and number <![CDATA[<=]]> #{currentPage}*#{pageSize} order by number
+	</select>
+	
+	<select id="selectCount" resultType="int">
+	
+	</select>
+	
 	<insert id="insert" useGeneratedKeys="true" keyProperty="number">
 		insert into board (number,id, context)
 		values (null, #{id}, #{context})

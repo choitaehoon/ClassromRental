@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import classroomRental.dto.BoardDto;
+import classroomRental.dto.Pagination;
 import classroomRental.dto.SeungyeonDto;
 import classroomRental.dto.SurveyDto;
 import classroomRental.dto.User;
@@ -112,7 +113,6 @@ public class LectureroomController {
 	
 	@RequestMapping(value = "membershipModification", method = RequestMethod.POST)
 	public String membershipModification1(User user, Model model) {
-		System.out.println(1);
 		String message = userService.validateBeforeUpdate(user);
 		if (message == null) {
 			userInfo.update(user);
@@ -138,8 +138,11 @@ public class LectureroomController {
 		return "view/signUpAfter";
 	}
 
+	//자유게시판 보이게 하기
 	@RequestMapping(value = "list", method = RequestMethod.GET)
-	public String test3(Model model) {
+	public String test3(Model model, Pagination pagination) {
+		pagination.setRecordCount(boardInfo.selectCount());
+		model.addAttribute("list",boardInfo.selectPage(pagination));
 		model.addAttribute("board", boardInfo.selectAll());
 		return "view/list";
 	}

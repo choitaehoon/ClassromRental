@@ -18,6 +18,7 @@
 	VALUES (#{loginId}, #{password}, #{name}, #{email}, #{userType},#{departmentId}) 
 	</insert>
 	
+	
 	<update id="update"> UPDATE User SET loginId = #{loginId},
 	 name =#{name}, email = #{email}, userType = #{userType}, 
 	 departmentId = #{departmentId} 
