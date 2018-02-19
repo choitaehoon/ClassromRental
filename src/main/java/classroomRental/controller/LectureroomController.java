@@ -63,6 +63,7 @@ public class LectureroomController {
 		return "view/login";
 	}
 	
+	//로그인하고 들어오기
 	@RequestMapping(value="loginAfter", method=RequestMethod.POST)
 	public String loginAfter(User user,Model model)
 	{
@@ -111,6 +112,7 @@ public class LectureroomController {
 	
 	@RequestMapping(value = "membershipModification", method = RequestMethod.POST)
 	public String membershipModification1(User user, Model model) {
+		System.out.println(1);
 		String message = userService.validateBeforeUpdate(user);
 		if (message == null) {
 			userInfo.update(user);
@@ -235,5 +237,13 @@ public class LectureroomController {
 	public String classroomSchoolyard(Model model) {
 		model.addAttribute("mes", "정보가 없습니다");
 		return "view/classroomInfo";
+	}
+	
+	//등급 확인하기
+	@RequestMapping(value="grade", method=RequestMethod.GET)
+	public String gradeCheck(User user,Model model)
+	{
+		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
+		return "view/grade";
 	}
 }

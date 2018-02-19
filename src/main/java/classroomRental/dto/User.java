@@ -10,6 +10,7 @@ public class User
 	String userType;
 	Integer departmentId;
 	String departmentName;
+	String grade; //등급
 	
 	public int getId() {
 		return id;
@@ -58,6 +59,12 @@ public class User
 	}
 	public void setDepartmentName(String departmentName) {
 		this.departmentName = departmentName;
+	}
+	public String getGrade() {
+		return grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
 	}
 	
 }

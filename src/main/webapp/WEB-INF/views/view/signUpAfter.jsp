@@ -125,13 +125,13 @@ form {
 	<input type="button" class="btn btn-primary" value="로그아웃"
 	onclick="location.href='http://localhost:8080/controller/view/login'">
 	<input type="button" class="btn btn-primary" value="수정하기"
-	onclick="location.href='http://localhost:8080/controller/view/membershipModification?${user}'">
+	onclick="location.href='http://localhost:8080/controller/view/membershipModification?loginId=${user.loginId}'">
 </div>
 	<div id="dva">
 		<nav id="topMenu">
 			<ul>
 				<li class="topMenuLi"><a class="menuLink"
-					href="http://unikys.tistory.com/category/Programming%20Lecture">내 등급 확인</a>
+					href="grade?loginId=${user.loginId}">내 등급 확인</a>
 									<li>|</li>
 				<li class="topMenuLi"><a class="menuLink"
 					href="questionnaireInfo">설문지 작성하기</a></li>
@@ -140,7 +140,7 @@ form {
 					href="classroomInfo">강의실 대여 하기</a>
 									<li>|</li>
 				<li class="topMenuLi"><a class="menuLink"
-					href="http://unikys.tistory.com/media">강의실 교환 해요</a></li>
+					href="">강의실 교환 해요</a></li>
 				<li>|</li>
 				<li class="topMenuLi"><a class="menuLink"
 					href="list">자유 게시판</a></li>

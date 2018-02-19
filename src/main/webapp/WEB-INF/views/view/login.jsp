@@ -15,9 +15,9 @@
 </head>
 
 <body>
-<h1>로그인</h1>
 
 <div>
+	<h1>로그인</h1>
 	<form action="loginAfter" method="post">
 	<label>아이디</label>
 	<input type="text" name="loginId"><br/>
