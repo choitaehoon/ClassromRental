@@ -7,11 +7,11 @@
 <mapper namespace="classroomRental.mapper.SeungyeonInfo">
 	
 	<select id="selectAll" resultType="classroomRental.dto.SeungyeonDto">
-		SELECT * FROM  SEUNGYEON
+	SELECT * FROM  SEUNGYEON
 	</select>
 	
 	<select id="selectByFacilityCode" resultType="classroomRental.dto.SeungyeonDto">
-	select dataInfo from SEUNGYEON where facilityCode = #{facilityCode}
+	select * from SEUNGYEON where facilityCode = #{facilityCode}
 	</select>
 	
 </mapper>

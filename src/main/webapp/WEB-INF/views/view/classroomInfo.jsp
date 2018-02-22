@@ -21,6 +21,7 @@
 <!-- subMenu 
 			<ul class="submenu">
 				<li><a
+				
 					href="http://unikys.tistory.com/category/Programming%20Lecture/%EC%86%8D%EA%B9%8A%EC%9D%80%20%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20%EA%B0%95%EC%A2%8C"
 					class="submenuLink longLink">안녕하세요</a></li>
 				<li><a
@@ -52,7 +53,7 @@
 		</tr>
 		<tr>
 			<td>1.승연관</td>
-			<td><a href="seungyeon">선택</a></td>
+			<td><a href="seungyeon?loginId=${user.loginId}">선택</a></td>
 		</tr>
 		<tr>
 			<td>2.일만관</td>
@@ -107,9 +108,15 @@
 				<td>${seung.facilityName}</td>
 				<td>${seung.person}</td>
 				<td>${seung.way}</td>
-				<td><a href="seung?facilityCode=${seung.facilityCode}">선택</a></td>
+				<td><a href="seung?facilityCode=${seung.facilityCode}&loginId=${user.loginId}">선택</a></td>
 			</tr>
 			</c:forEach>
+		
+<%-- 		<c:if test="${mmm}" var="aaa"> --%>
+<!-- 		<tr> -->
+<%-- 			<td>${aaa}</td> --%>
+<!-- 		</tr> -->
+<%-- 		</c:if> --%>
 		<c:forEach items="${ilmangwan}" var="ilmang">
 			<tr>
 				<td>${ilmang.facilityCode2}</td>
@@ -172,12 +179,6 @@
 		<c:forEach items="${mes}" var="mes">
 			<tr>
 				<td>${mes}</td>
-			</tr>
-			</c:forEach>
-		<c:forEach items="${mmm}" var="me">
-			<tr>
-				<td>들어오나 확인</td>
-				<td>${me.dataInfo}</td>
 			</tr>
 			</c:forEach>
 	</table>

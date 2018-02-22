@@ -14,10 +14,7 @@ public class SeungyeonInfoService
 	public String dataSeungyeon(SeungyeonDto seungyeonDto)
 	{
 		if(seungyeonInfo.selectByFacilityCode(seungyeonDto.getFacilityCode()) == null)
-		{
-			System.out.println("들어오나 확인 0");
-			return "정보가 없습니다.";	
-		}
-		return "";
+			return "빌릴수 있습니다.";
+		return "빌릴수 없습니다";
 	}
 }

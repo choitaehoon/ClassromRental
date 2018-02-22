@@ -123,13 +123,15 @@ public class LectureroomController {
 		return "view/membershipModification";
 	}
 
-	@RequestMapping("/questionnaireInfo")
-	public String test() {
+	@RequestMapping(value="questionnaireInfo", method=RequestMethod.GET)
+	public String test(User user, Model model) {
+		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
 		return "view/questionnaireInfo";
 	}
 
-	@RequestMapping("classroomInfo")
-	public String test1() {
+	@RequestMapping(value="classroomInfo", method=RequestMethod.GET)
+	public String test1(User user,Model model) {
+		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
 		return "view/classroomInfo";
 	}
 
@@ -139,8 +141,10 @@ public class LectureroomController {
 	}
 
 	//자유게시판 보이게 하기
+	//페이지네이션 일단 keep
 	@RequestMapping(value = "list", method = RequestMethod.GET)
-	public String test3(Model model, Pagination pagination) {
+	public String test3(User user,Model model, Pagination pagination) {
+		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
 		pagination.setRecordCount(boardInfo.selectCount());
 		model.addAttribute("list",boardInfo.selectPage(pagination));
 		model.addAttribute("board", boardInfo.selectAll());
@@ -186,10 +190,12 @@ public class LectureroomController {
 	}
 
 	@RequestMapping(value = { "seungyeon", "seung" }, method = RequestMethod.GET)
-	public String classroomSeungyeon(SeungyeonDto seungyeonDto, Model model) {
-		if (seungyeonInfoService.dataSeungyeon(seungyeonDto) == null) {
-			model.addAttribute("mmm", seungyeonInfoService.dataSeungyeon(seungyeonDto));
-		}
+	public String classroomSeungyeon(User user,SeungyeonDto seungyeonDto, Model model)
+	{
+		String message = seungyeonInfoService.dataSeungyeon(seungyeonDto);
+		if(message != null)
+			model.addAttribute("mmm", message);
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		model.addAttribute("seungyeon", seungyeonInfo.selectAll());
 		return "view/classroomInfo";
 	}

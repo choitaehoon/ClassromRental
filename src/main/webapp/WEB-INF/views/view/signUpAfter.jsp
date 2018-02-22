@@ -127,6 +127,7 @@ form {
 	<input type="button" class="btn btn-primary" value="수정하기"
 	onclick="location.href='http://localhost:8080/controller/view/membershipModification?loginId=${user.loginId}'">
 </div>
+<form method="post">
 	<div id="dva">
 		<nav id="topMenu">
 			<ul>
@@ -134,18 +135,19 @@ form {
 					href="grade?loginId=${user.loginId}">내 등급 확인</a>
 									<li>|</li>
 				<li class="topMenuLi"><a class="menuLink"
-					href="questionnaireInfo">설문지 작성하기</a></li>
+					href="questionnaireInfo?loginId=${user.loginId}">설문지 작성하기</a></li>
 				<li>|</li>
-				<li class="topMenuLi"><a class="menuLink"
-					href="classroomInfo">강의실 대여 하기</a>
+				<li class="topMenuLi"><a class="menuLink" 
+					href="classroomInfo?loginId=${user.loginId}">강의실 대여 하기</a>
 									<li>|</li>
 				<li class="topMenuLi"><a class="menuLink"
 					href="">강의실 교환 해요</a></li>
 				<li>|</li>
 				<li class="topMenuLi"><a class="menuLink"
-					href="list">자유 게시판</a></li>
+					href="list?loginId=${user.loginId}">자유 게시판</a></li>
 			</ul>
 		</nav>
 	</div>
+</form>
 </body>
 </html>

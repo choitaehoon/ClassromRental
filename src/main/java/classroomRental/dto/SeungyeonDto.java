@@ -1,14 +1,12 @@
 package classroomRental.dto;
 
-import java.util.Date;
-
 public class SeungyeonDto
 {
 	int facilityCode; //시설코드
 	String facilityName; //시설명
 	int person; //인원
 	String way; //방식
-	Date dataInfo;
+	int dataInfo; //누가 빌렸는지 안빌렸는지확인   안빌렸다면 0  빌렸다면 1 
 	
 	public int getFacilityCode() {
 		return facilityCode;
@@ -34,10 +32,10 @@ public class SeungyeonDto
 	public void setWay(String way) {
 		this.way = way;
 	}
-	public Date getDataInfo() {
+	public int getDataInfo() {
 		return dataInfo;
 	}
-	public void setDataInfo(Date dataInfo) {
+	public void setDataInfo(int dataInfo) {
 		this.dataInfo = dataInfo;
 	}
 }

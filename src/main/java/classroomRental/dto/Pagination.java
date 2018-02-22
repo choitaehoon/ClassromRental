@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Pagination {
 	int currentPage = 1;
-	int pageSize = 15;
+	int pageSize = 3;
 	int recordCount;
 	
 	public int getCurrentPage() {
@@ -48,7 +48,7 @@ public class Pagination {
     public String getQueryString() {
         return String.format("pg=%d&sz=%d", currentPage, pageSize);
     }
-
+//
     /* 화면 하단에 페이지 번호 링크들을 출력하기 위한 메소드와 클래스 */
     public List<Page> getPageList() {
         ArrayList<Page> list = new ArrayList<Page>();

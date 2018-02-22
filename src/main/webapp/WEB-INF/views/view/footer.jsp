@@ -8,6 +8,5 @@
 </head>
 <body>
 <!-- 밑에 이용약관.jsp -->
-
 </body>
 </html>
