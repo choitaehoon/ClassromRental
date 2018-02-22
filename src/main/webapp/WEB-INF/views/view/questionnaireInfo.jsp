@@ -46,5 +46,6 @@ form
 			<input type="text" name="question5" style="width: 500px; height: 20px;"><br />
 		<br /> <input type="submit" class="btn btn-primary" value="전송">
 	</form>
+<%@ include file="/WEB-INF/views/view/footer.jsp"%>
 </body>
 </html>

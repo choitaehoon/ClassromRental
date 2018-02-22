@@ -193,8 +193,12 @@ public class LectureroomController {
 	public String classroomSeungyeon(User user,SeungyeonDto seungyeonDto, Model model)
 	{
 		String message = seungyeonInfoService.dataSeungyeon(seungyeonDto);
+		System.out.println(message == null ? "null이면여기" :message);
 		if(message != null)
-			model.addAttribute("mmm", message);
+		{
+			model.addAttribute("mmm",message);
+		}
+//		model.addAttribute("seung" ,seungyeonInfo.selectByFacilityCode(seungyeonDto.getFacilityCode()));
 		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		model.addAttribute("seungyeon", seungyeonInfo.selectAll());
 		return "view/classroomInfo";

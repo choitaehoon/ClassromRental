@@ -55,5 +55,6 @@ label {
 			<div class="alert alert-success">${ success }</div>
 		</c:if>
 	</div>
+<%@ include file="/WEB-INF/views/view/footer.jsp"%>
 </body>
 </html>

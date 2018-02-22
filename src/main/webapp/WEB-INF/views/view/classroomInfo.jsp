@@ -108,15 +108,10 @@
 				<td>${seung.facilityName}</td>
 				<td>${seung.person}</td>
 				<td>${seung.way}</td>
-				<td><a href="seung?facilityCode=${seung.facilityCode}&loginId=${user.loginId}">선택</a></td>
+ 				<td><a href="seung?dataInfo=${seung.dataInfo}&loginId=${user.loginId}">선택</a></td>
+<%-- 				<td><a href="seung?facilityCode=${seung.facilityCode}&loginId=${user.loginId}">선택</a></td>			 --%>
 			</tr>
-			</c:forEach>
-		
-<%-- 		<c:if test="${mmm}" var="aaa"> --%>
-<!-- 		<tr> -->
-<%-- 			<td>${aaa}</td> --%>
-<!-- 		</tr> -->
-<%-- 		</c:if> --%>
+		</c:forEach>
 		<c:forEach items="${ilmangwan}" var="ilmang">
 			<tr>
 				<td>${ilmang.facilityCode2}</td>
@@ -183,6 +178,7 @@
 			</c:forEach>
 	</table>
 </div>
+<%@ include file="/WEB-INF/views/view/footer.jsp"%>
 
 </body>
 </html>

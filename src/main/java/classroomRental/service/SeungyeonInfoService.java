@@ -13,8 +13,9 @@ public class SeungyeonInfoService
 	
 	public String dataSeungyeon(SeungyeonDto seungyeonDto)
 	{
-		if(seungyeonInfo.selectByFacilityCode(seungyeonDto.getFacilityCode()) == null)
-			return "빌릴수 있습니다.";
-		return "빌릴수 없습니다";
+		if(seungyeonDto.getDataInfo() == 0) //안빌린상태
+			return "빌릴 수 있습니다.";
+		return null;	
 	}
+
 }

@@ -57,5 +57,6 @@ tbody tr:hover {
 			</tbody>
 		</table>
 	</div>
+<%@ include file="/WEB-INF/views/view/footer.jsp"%>
 </body>
 </html>

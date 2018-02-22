@@ -44,6 +44,6 @@ div {
 		<img
 			src="https://cdn.pixabay.com/photo/2015/11/19/21/14/phone-1052023_1280.jpg">
 	</div>
-
+<%@ include file="/WEB-INF/views/view/footer.jsp"%>
 </body>
 </html>

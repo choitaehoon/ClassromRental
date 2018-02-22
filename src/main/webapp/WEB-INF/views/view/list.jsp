@@ -58,6 +58,7 @@
 	<p>
 		<a href="writeForm">글작성</a>
 	</p>
+<%@ include file="/WEB-INF/views/view/footer.jsp"%>
 </body>
 
 </html>
