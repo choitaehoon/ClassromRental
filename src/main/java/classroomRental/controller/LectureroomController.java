@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import classroomRental.dto.BoardDto;
 import classroomRental.dto.Pagination;
@@ -76,6 +77,14 @@ public class LectureroomController {
 		}
 		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));	
 		return "view/signUpAfter";	
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="checkSignup", method=RequestMethod.POST)
+	public String checkSignup(User user,Model model)
+	{
+		int rowCount = userInfo.selectByLoginIdCheck(user.getLoginId());
+		return String.valueOf(rowCount);
 	}
 	
 	@RequestMapping("signUpBefore")
@@ -193,11 +202,8 @@ public class LectureroomController {
 	public String classroomSeungyeon(User user,SeungyeonDto seungyeonDto, Model model)
 	{
 		String message = seungyeonInfoService.dataSeungyeon(seungyeonDto);
-		System.out.println(message == null ? "null이면여기" :message);
 		if(message != null)
-		{
 			model.addAttribute("mmm",message);
-		}
 //		model.addAttribute("seung" ,seungyeonInfo.selectByFacilityCode(seungyeonDto.getFacilityCode()));
 		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		model.addAttribute("seungyeon", seungyeonInfo.selectAll());

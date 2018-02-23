@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -17,14 +17,56 @@ div {
 	margin: 0 auto;
 }
 </style>
+<!-- ajax 사용 -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#checkbtn').on('click', function(){
+        $.ajax({
+            type: 'POST',
+            url: './checkSignup',
+            data: {
+                "loginId" : $('#loginId').val()
+            },
+            success: function(data){
+            	if($.trim(data) == 0){
+                    $('#checkMsg').html('<p style="color:blue">사용가능</p>');
+                }
+                else{
+                	alert("여기들어온다");
+                    $('#checkMsg').html('<p style="color:red">사용불가능</p>');
+                }
+            }
+        });    //end ajax    
+    });    //end on    
+});
+
+// $(function(){
+// 	$("#btnCheckId").click(function(){
+// 		var lgnId = $("#lgnId").val();
+// 		if(lgnId == "" || lgnId == " ")
+// 		{
+// 			alert("로그인을 입력해주세요");
+// 		}
+// 		else
+// 		{
+			
+// 		}
+// 	})
+// }); 
+</script>
+
 </head>
 <body>
 	<!-- 회원가입하는 창 -->
 	<h1>회원가입</h1>
 	<div>
 		<form action="signUpAfter" method=post>
-			<label>아이디 : </label> <input type="text" name="loginId"><br />
-
+			<label>아이디 : </label> <input type="text" name="loginId" id="loginId">
+			<div id="checkMsg"></div>
+			<button type="submit"  id="checkbtn">ID체크</button>
+			<br />
+			
 			<label>비밀번호 :</label> <input type="password" name="password"><br />
 
 			<label>이름: </label> <input type="text" name="name"><br /> <label>이메일:

@@ -12,6 +12,11 @@
 	<select id="selectByLoginId" resultType="classroomRental.dto.User"> 
 	SELECT * FROM User WHERE loginId = #{loginId} 
 	</select>
+	
+	<!-- 로그인 중복 체크 -->
+	<select id="selectByLoginIdCheck" resultType="int">
+	select count(*) from User where loginId = #{loginId}
+	</select>
 		
 	<insert id="insert" useGeneratedKeys="true" keyProperty="id"> 
 	INSERT User (loginId, password, name, email, userType, departmentId) 

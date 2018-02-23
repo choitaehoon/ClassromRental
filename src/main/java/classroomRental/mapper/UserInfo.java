@@ -8,4 +8,5 @@ public interface UserInfo {
 	void insert(User user);
 	void update(User user);
 	void delete(int id);
+	int selectByLoginIdCheck(String loginId);
 }

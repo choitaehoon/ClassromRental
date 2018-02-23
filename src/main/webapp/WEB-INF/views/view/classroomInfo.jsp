@@ -16,6 +16,13 @@
 	margin-top: -150px;
 	margin-left: -100px;
 }
+
+#wapper 
+{
+	position: absolute;
+	top:180px;
+	right:500px;
+}
 </style>
 </head>
 <!-- subMenu 
@@ -108,8 +115,9 @@
 				<td>${seung.facilityName}</td>
 				<td>${seung.person}</td>
 				<td>${seung.way}</td>
- 				<td><a href="seung?dataInfo=${seung.dataInfo}&loginId=${user.loginId}">선택</a></td>
-<%-- 				<td><a href="seung?facilityCode=${seung.facilityCode}&loginId=${user.loginId}">선택</a></td>			 --%>
+				<td><a
+					href="seung?dataInfo=${seung.dataInfo}&loginId=${user.loginId}">선택</a></td>
+				<%-- 				<td><a href="seung?facilityCode=${seung.facilityCode}&loginId=${user.loginId}">선택</a></td>			 --%>
 			</tr>
 		</c:forEach>
 		<c:forEach items="${ilmangwan}" var="ilmang">
@@ -120,7 +128,7 @@
 				<td>${ilmang.way2}</td>
 				<td><a href="">선택</a></td>
 			</tr>
-			</c:forEach>
+		</c:forEach>
 		<c:forEach items="${woldang}" var="woldang">
 			<tr>
 				<td>${woldang.facilityCode3}</td>
@@ -129,12 +137,12 @@
 				<td>${woldang.way3}</td>
 				<td><a href="">선택</a></td>
 			</tr>
-			</c:forEach>
+		</c:forEach>
 		<c:forEach items="${message}" var="mes">
 			<tr>
 				<td>${mes}</td>
 			</tr>
-			</c:forEach>
+		</c:forEach>
 		<c:forEach items="${icheon}" var="in">
 			<tr>
 				<td>${in.facilityCode4}</td>
@@ -143,7 +151,7 @@
 				<td>${in.way4}</td>
 				<td><a href="">선택</a></td>
 			</tr>
-			</c:forEach>
+		</c:forEach>
 		<c:forEach items="${mill}" var="mil">
 			<tr>
 				<td>${mil.facilityCode5}</td>
@@ -152,7 +160,7 @@
 				<td>${mil.way5}</td>
 				<td><a href="">선택</a></td>
 			</tr>
-			</c:forEach>
+		</c:forEach>
 		<c:forEach items="${saint}" var="sain">
 			<tr>
 				<td>${sain.facilityCode6}</td>
@@ -161,7 +169,7 @@
 				<td>${sain.way6}</td>
 				<td><a href="">선택</a></td>
 			</tr>
-			</c:forEach>
+		</c:forEach>
 		<c:forEach items="${migael}" var="mig">
 			<tr>
 				<td>${mig.facilityCode7}</td>
@@ -170,13 +178,21 @@
 				<td>${mig.way7}</td>
 				<td><a href="">선택</a></td>
 			</tr>
-			</c:forEach>
+		</c:forEach>
 		<c:forEach items="${mes}" var="mes">
 			<tr>
 				<td>${mes}</td>
 			</tr>
-			</c:forEach>
+		</c:forEach>
 	</table>
+</div>
+<div id="wapper">
+	<c:if test="${mmm eq null}">
+		빌릴 수 없습니다.
+	</c:if>
+	<c:if test="${mmm != null}">
+		${mmm}
+	</c:if>
 </div>
 <%@ include file="/WEB-INF/views/view/footer.jsp"%>
 
