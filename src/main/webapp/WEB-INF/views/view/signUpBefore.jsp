@@ -29,31 +29,14 @@ $(document).ready(function(){
                 "loginId" : $('#loginId').val()
             },
             success: function(data){
-            	if($.trim(data) == 0){
-                    $('#checkMsg').html('<p style="color:blue">사용가능</p>');
-                }
-                else{
-                	alert("여기들어온다");
-                    $('#checkMsg').html('<p style="color:red">사용불가능</p>');
-                }
+            	if($.trim(data) == 0)
+            		alert("사용 할 수 있습니다.");
+                else
+                	alert("사용 할 수 없습니다");
             }
         });    //end ajax    
     });    //end on    
 });
-
-// $(function(){
-// 	$("#btnCheckId").click(function(){
-// 		var lgnId = $("#lgnId").val();
-// 		if(lgnId == "" || lgnId == " ")
-// 		{
-// 			alert("로그인을 입력해주세요");
-// 		}
-// 		else
-// 		{
-			
-// 		}
-// 	})
-// }); 
 </script>
 
 </head>
@@ -64,7 +47,7 @@ $(document).ready(function(){
 		<form action="signUpAfter" method=post>
 			<label>아이디 : </label> <input type="text" name="loginId" id="loginId">
 			<div id="checkMsg"></div>
-			<button type="submit"  id="checkbtn">ID체크</button>
+			<button type="button"  id="checkbtn">ID 중복 체크</button>
 			<br />
 			
 			<label>비밀번호 :</label> <input type="password" name="password"><br />

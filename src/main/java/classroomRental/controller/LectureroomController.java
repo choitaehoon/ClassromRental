@@ -81,7 +81,7 @@ public class LectureroomController {
 	
 	@ResponseBody
 	@RequestMapping(value="checkSignup", method=RequestMethod.POST)
-	public String checkSignup(User user,Model model)
+	public   String checkSignup(User user,Model model)
 	{
 		int rowCount = userInfo.selectByLoginIdCheck(user.getLoginId());
 		return String.valueOf(rowCount);
