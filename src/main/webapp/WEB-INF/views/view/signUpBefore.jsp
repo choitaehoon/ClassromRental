@@ -26,7 +26,7 @@ $(document).ready(function(){
             type: 'POST',
             url: './checkSignup',
             data: {
-                "loginId" : $('#loginId').val()
+                "loginId" : $('#ggg').val()
             },
             success: function(data){
             	if($.trim(data) == 0)
@@ -36,7 +36,7 @@ $(document).ready(function(){
             }
         });    //end ajax    
     });    //end on    
-});
+}); //end ready
 </script>
 
 </head>
@@ -45,8 +45,7 @@ $(document).ready(function(){
 	<h1>회원가입</h1>
 	<div>
 		<form action="signUpAfter" method=post>
-			<label>아이디 : </label> <input type="text" name="loginId" id="loginId">
-			<div id="checkMsg"></div>
+			<label>아이디 : </label> <input type="text" name="loginId" id="ggg">
 			<button type="button"  id="checkbtn">ID 중복 체크</button>
 			<br />
 			

@@ -5,7 +5,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.1/jquery.timepicker.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.1/jquery.timepicker.min.css"></script> -->
 
+
+<script>
+	$(function(){
+		$("#datepicker").datepicker({
+	        monthNames : ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+	        monthNamesShort : ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+	        dayNames : ['일', '월', '화', '수', '목', '금', '토'],
+	        dayNamesShort : ['일', '월', '화', '수', '목', '금', '토'],
+	        dayNamesMin : ['일', '월', '화', '수', '목', '금', '토'],
+	    
+	        format:'d.m.Y H:i',
+	        inline:true,
+	        lang:'ru',
+	        
+			changeMonth : true,
+			changeYear : true,
+			nextText: 'next',
+			prevText: 'prev', 
+			minDate: 0
+		}); //end datepicker
+	}); //end
+	
+	$(function(){
+		$('#onselectExample1').timepicker();
+		$('#onselectExample2').timepicker();
+		
+		$('#onselectExample1').on('changeTime', function() {
+		    $('#onselectTarget1').text($(this).val());
+		});
+		$('#onselectExample1').on('changeTime', function() {
+		    $('#onselectTarget1').text($(this).val());
+		});
+	});
+	
+</script>
 <style>
 #center {
 	position: absolute;
@@ -21,10 +63,11 @@
 {
 	position: absolute;
 	top:180px;
-	right:500px;
+	right:250px;
 }
 </style>
 </head>
+<body>
 <!-- subMenu 
 			<ul class="submenu">
 				<li><a
@@ -186,13 +229,12 @@
 		</c:forEach>
 	</table>
 </div>
+
 <div id="wapper">
-	<c:if test="${mmm eq null}">
-		빌릴 수 없습니다.
-	</c:if>
-	<c:if test="${mmm != null}">
-		${mmm}
-	</c:if>
+날짜선택 <br/>
+<input type="text" id="datepicker" placeholder="날짜 선택">
+<input type="text" id="onselectExample1" placeholder="시간 선택">
+<input type="text" id="onselectExample2" placeholder="시간 선택">
 </div>
 <%@ include file="/WEB-INF/views/view/footer.jsp"%>
 
