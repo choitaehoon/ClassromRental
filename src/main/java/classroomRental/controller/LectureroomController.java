@@ -10,11 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import classroomRental.dto.BoardDto;
+import classroomRental.dto.DateDto;
 import classroomRental.dto.Pagination;
 import classroomRental.dto.SeungyeonDto;
 import classroomRental.dto.SurveyDto;
 import classroomRental.dto.User;
 import classroomRental.mapper.BoardInfo;
+import classroomRental.mapper.DateInfo;
 import classroomRental.mapper.DepartmentInfo;
 import classroomRental.mapper.IcheoneunuchInfo;
 import classroomRental.mapper.IlmangwanInfo;
@@ -58,6 +60,8 @@ public class LectureroomController {
 	private DepartmentInfo departmentInfo;
 	@Autowired 
 	UserService userService;
+	@Autowired
+	DateInfo dateInfo;
 	
 	@RequestMapping("login")
 	public String login()
@@ -268,8 +272,10 @@ public class LectureroomController {
 	
 	//그날 강의실비었나 조회하기
 	@RequestMapping("dateInfo")
-	public String classroomCheck()
+	public String classroomCheck(DateDto dateDto,Model model)
 	{
-		return "";
+		int rC = dateInfo.selectByCurrentTime(dateDto.getCurrentTime());
+		System.out.println(rC);
+		return String.valueOf(rC);
 	}
 }

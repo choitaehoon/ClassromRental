@@ -22,8 +22,8 @@
 	        dayNames : ['일', '월', '화', '수', '목', '금', '토'],
 	        dayNamesShort : ['일', '월', '화', '수', '목', '금', '토'],
 	        dayNamesMin : ['일', '월', '화', '수', '목', '금', '토'],
-	    
-	        format:'d.m.Y H:i',
+	        
+	        dateFormat: 'yy-mm-dd',
 	        inline:true,
 	        lang:'ru',
 	        
@@ -36,8 +36,8 @@
 	}); //end
 	
 	$(function(){
-		$('#onselectExample1').timepicker();
-		$('#onselectExample2').timepicker();
+		$('#onselectExample1').timepicker({'timeFormat':'H:i:s'});
+		$('#onselectExample2').timepicker({'timeFormat':'H:i:s'});
 		
 		$('#onselectExample1').on('changeTime', function() {
 // 		    $('#onselectTarget1').text($(this).val());
@@ -48,6 +48,30 @@
 		});
 		
 	});
+	
+	
+	$(document).ready(function(){
+		$('#check').on('click',function(){
+			$.ajax({
+				type: 'POST',
+				url: './dateInfo',
+				data: {
+					"iddate": $('#datepicker').val(),
+					"currentTime" : $('#onselectExample1').val(),
+					"endTime": $('#onselectExample2').val() 
+				},
+				success:function(data)
+				{
+					if(date == 0)
+						alert("강의실 빌릴 수 있습니다");
+					else
+						alert("강의실 빌릴 수 없습니다");
+				}
+			})//end ajax
+		}); //end on
+	});//end ready
+	
+	
 	
 // 	$(document).ready(function(){
 // 		$('#zzz').on('click',function(){
@@ -250,8 +274,10 @@
 <input type="text" id="onselectExample1" placeholder="시간 선택">
 to
 <input type="text" id="onselectExample2" placeholder="시간 선택"><br/>
+<button type="button" id="check" class="btn btn-primary">조회하기</button>
 <button type="submit" id="zzz" class="btn btn-primary">신청하기</button>
 </form>
+
 <!--  일단 날짜 선택이 데이터 보낸거 확인 후 작업 하기
 <!-- 대여사유<br/> -->
 <!-- <textarea name="textarea" rows="5" cols="10" ></textarea><br/> -->
