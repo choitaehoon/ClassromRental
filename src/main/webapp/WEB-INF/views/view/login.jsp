@@ -38,11 +38,11 @@ div {
 	</div>
 	<div class="cycle-slideshow">
 		<img
-			src="https://cdn.pixabay.com/photo/2015/01/08/18/25/startup-593327_1280.jpg">
+			src="https://cdn.pixabay.com/photo/2018/02/27/18/06/tidy-desk-3186167_1280.jpg">
 		<img
-			src="https://cdn.pixabay.com/photo/2015/06/08/15/11/typewriter-801921_1280.jpg">
+			src="https://cdn.pixabay.com/photo/2018/02/16/10/52/wood-3157395_1280.jpg">
 		<img
-			src="https://cdn.pixabay.com/photo/2015/11/19/21/14/phone-1052023_1280.jpg">
+			src="https://cdn.pixabay.com/photo/2018/02/08/10/22/paper-3139127_1280.jpg">
 	</div>
 <%@ include file="/WEB-INF/views/view/footer.jsp"%>
 </body>

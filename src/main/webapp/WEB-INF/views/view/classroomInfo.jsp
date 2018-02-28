@@ -40,12 +40,25 @@
 		$('#onselectExample2').timepicker();
 		
 		$('#onselectExample1').on('changeTime', function() {
-		    $('#onselectTarget1').text($(this).val());
+// 		    $('#onselectTarget1').text($(this).val());
 		});
-		$('#onselectExample1').on('changeTime', function() {
-		    $('#onselectTarget1').text($(this).val());
+		
+		$('#onselectExample2').on('changeTime', function() {
+// 		    $('#onselectTarget1').text($(this).val());
 		});
+		
 	});
+	
+// 	$(document).ready(function(){
+// 		$('#zzz').on('click',function(){
+// 			var d = $('#datepicker').val();
+// 			var time1 = $('#onselectExample1').val();
+// 			var time2 = $('#onselectExample2').val();
+			
+// 			alert(d+" "+time1+" "+time2);
+			
+// 		});
+// 	});
 	
 </script>
 <style>
@@ -159,7 +172,7 @@
 				<td>${seung.person}</td>
 				<td>${seung.way}</td>
 				<td><a
-					href="seung?dataInfo=${seung.dataInfo}&loginId=${user.loginId}">선택</a></td>
+					href="seung?facilityCode=${seung.facilityCode}&loginId=${user.loginId}">선택</a></td>
 				<%-- 				<td><a href="seung?facilityCode=${seung.facilityCode}&loginId=${user.loginId}">선택</a></td>			 --%>
 			</tr>
 		</c:forEach>
@@ -232,9 +245,21 @@
 
 <div id="wapper">
 날짜선택 <br/>
+<form action="dateInfo">
 <input type="text" id="datepicker" placeholder="날짜 선택">
 <input type="text" id="onselectExample1" placeholder="시간 선택">
-<input type="text" id="onselectExample2" placeholder="시간 선택">
+to
+<input type="text" id="onselectExample2" placeholder="시간 선택"><br/>
+<button type="submit" id="zzz" class="btn btn-primary">신청하기</button>
+</form>
+<!--  일단 날짜 선택이 데이터 보낸거 확인 후 작업 하기
+<!-- 대여사유<br/> -->
+<!-- <textarea name="textarea" rows="5" cols="10" ></textarea><br/> -->
+<!-- 인원을적어주세요<br/> -->
+<!-- <textarea name="textarea" rows="2" cols="10" ></textarea> -->
+<!-- 신청자전화번호 -->
+<!-- <input type="text"> -->
+
 </div>
 <%@ include file="/WEB-INF/views/view/footer.jsp"%>
 

@@ -265,4 +265,11 @@ public class LectureroomController {
 		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
 		return "view/grade";
 	}
+	
+	//그날 강의실비었나 조회하기
+	@RequestMapping("dateInfo")
+	public String classroomCheck()
+	{
+		return "";
+	}
 }
