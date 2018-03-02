@@ -1,5 +1,7 @@
 package classroomRental.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -271,11 +273,20 @@ public class LectureroomController {
 	}
 	
 	//그날 강의실비었나 조회하기
-	@RequestMapping("dateInfo")
+	@ResponseBody
+	@RequestMapping(value="dateInfo", method=RequestMethod.POST)
 	public String classroomCheck(DateDto dateDto,Model model)
 	{
-		int rC = dateInfo.selectByCurrentTime(dateDto.getCurrentTime());
-		System.out.println(rC);
+		int rC = dateInfo.selectByCurrentTime(dateDto);
 		return String.valueOf(rC);
 	}
+	
+	//강의실 어디가 비어있는지 확인 시켜주기
+	@ResponseBody
+	@RequestMapping(value="roomInfo", method=RequestMethod.POST)
+	public List<String> checkRoom(DateDto dateDto)
+	{ 
+		return dateInfo.selectByIdDate(dateDto);
+	}
+	
 }

@@ -1,30 +1,33 @@
 package classroomRental.dto;
 
-import java.util.Date;
-
 public class DateDto 
 {
-	Date iddate;
-	Date currentTime; 
-	Date endTime;
+	String idDate;
+	String currentTime; 
+	String endTime;
 	
-	public Date getIddate() {
-		return iddate;
+	public String getIdDate() {
+		return idDate;
 	}
-	public void setIddate(Date iddate) {
-		this.iddate = iddate;
+	public void setIdDate(String idDate) {
+		this.idDate = idDate;
 	}
-	public Date getCurrentTime() {
+	public String getCurrentTime() {
 		return currentTime;
 	}
-	public void setCurrentTime(Date currentTime) {
+	public void setCurrentTime(String currentTime) {
 		this.currentTime = currentTime;
 	}
-	public Date getEndTime() {
+	public String getEndTime() {
 		return endTime;
 	}
-	public void setEndTime(Date endTime) {
+	public void setEndTime(String endTime) {
 		this.endTime = endTime;
 	}
 	
+	@Override
+	public String toString()
+	{
+		return idDate+" "+currentTime+" "+endTime;
+	}
 }

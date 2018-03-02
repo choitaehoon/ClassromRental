@@ -1,8 +1,11 @@
 package classroomRental.mapper;
 
-import java.text.SimpleDateFormat;
+import java.util.List;
+
+import classroomRental.dto.DateDto;
 
 public interface DateInfo 
 {
-	int selectByCurrentTime(SimpleDateFormat currentTime);
+	int selectByCurrentTime(DateDto dateDto);
+	List<String> selectByIdDate(DateDto dateDto);
 }

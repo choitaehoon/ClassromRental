@@ -2,8 +2,13 @@
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="classroomRental.mapper.DateInfo">
+	<!-- 날짜에 대한 정보를 추출 -->
 	<select id="selectByCurrentTime" resultType="int">
-	select count(*) from date where currentTime = #{currentTime}
+	select count(*) from date where idDate = #{idDate} and currentTime &gt;= #{currentTime} and endTime &lt;= #{endTime}
+	</select>
+	
+	<select id="selectByIdDate" resultType="classroomRental.dto.DateDto">
+	select * from date where idDate = #{idDate}
 	</select>
 
 </mapper>

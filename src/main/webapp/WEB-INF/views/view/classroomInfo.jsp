@@ -5,11 +5,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.1/jquery.timepicker.min.js"></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.1/jquery.timepicker.min.css"></script> -->
 
@@ -50,29 +51,6 @@
 	});
 	
 	
-	$(document).ready(function(){
-		$('#check').on('click',function(){
-			$.ajax({
-				type: 'POST',
-				url: './dateInfo',
-				data: {
-					"iddate": $('#datepicker').val(),
-					"currentTime" : $('#onselectExample1').val(),
-					"endTime": $('#onselectExample2').val() 
-				},
-				success:function(data)
-				{
-					if(date == 0)
-						alert("강의실 빌릴 수 있습니다");
-					else
-						alert("강의실 빌릴 수 없습니다");
-				}
-			})//end ajax
-		}); //end on
-	});//end ready
-	
-	
-	
 // 	$(document).ready(function(){
 // 		$('#zzz').on('click',function(){
 // 			var d = $('#datepicker').val();
@@ -85,6 +63,7 @@
 // 	});
 	
 </script>
+
 <style>
 #center {
 	position: absolute;
@@ -103,6 +82,50 @@
 	right:250px;
 }
 </style>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#check').on('click',function(){
+		$.ajax({
+			type: 'POST',
+			url: './dateInfo',
+			data: {
+					"idDate": $('#datepicker').val(),
+				"currentTime" : $('#onselectExample1').val(),
+					"endTime": $('#onselectExample2').val()
+			},
+			success:function(data){
+				if(data == 0)
+					alert("강의실 빌릴 수 있습니다");
+				else
+					alert("강의실 빌릴 수 없습니다");
+			}
+		}) //end ajax
+		
+		.then(function(){
+			$.ajax({
+				type: 'POST',
+				url: './roomInfo',
+				dataType : 'json',
+				data: {
+						"idDate": $('#datepicker').val(),
+					"currentTime" : $('#onselectExample1').val(),
+						"endTime": $('#onselectExample2').val() 
+				},
+				success:function(data){
+					var text = JSON.stringify(data);
+					console.log(text.length);
+					if(text.length == 2)
+						alert("이날 강의실이 비어있습니다");
+					else
+						alert(text+"이 날 빌려져 있습니다");
+				}
+			}) //end ajax
+		}); //end then
+	}); //end on
+}); //end ready
+
+</script>
 </head>
 <body>
 <!-- subMenu 
@@ -269,9 +292,9 @@
 
 <div id="wapper">
 날짜선택 <br/>
-<form action="dateInfo">
+<form action="dateInfo" method=post>
 <input type="text" id="datepicker" placeholder="날짜 선택">
-<input type="text" id="onselectExample1" placeholder="시간 선택">
+<input type="text" name="currentTime" id="onselectExample1" placeholder="시간 선택">
 to
 <input type="text" id="onselectExample2" placeholder="시간 선택"><br/>
 <button type="button" id="check" class="btn btn-primary">조회하기</button>
