@@ -51,17 +51,6 @@
 	});
 	
 	
-// 	$(document).ready(function(){
-// 		$('#zzz').on('click',function(){
-// 			var d = $('#datepicker').val();
-// 			var time1 = $('#onselectExample1').val();
-// 			var time2 = $('#onselectExample2').val();
-			
-// 			alert(d+" "+time1+" "+time2);
-			
-// 		});
-// 	});
-	
 </script>
 
 <style>
@@ -90,9 +79,10 @@ $(document).ready(function(){
 			type: 'POST',
 			url: './dateInfo',
 			data: {
-					"idDate": $('#datepicker').val(),
+				"idDate": $('#datepicker').val(),
 				"currentTime" : $('#onselectExample1').val(),
-					"endTime": $('#onselectExample2').val()
+				"endTime": $('#onselectExample2').val(),
+				"facilityCode": $('#selectByclassroom').val()
 			},
 			success:function(data){
 				if(data == 0)
@@ -110,15 +100,15 @@ $(document).ready(function(){
 				data: {
 						"idDate": $('#datepicker').val(),
 					"currentTime" : $('#onselectExample1').val(),
-						"endTime": $('#onselectExample2').val() 
+						"endTime": $('#onselectExample2').val(),
+						"facilityCode": $('#selectByclassroom').val()
 				},
 				success:function(data){
 					var text = JSON.stringify(data);
-					console.log(text.length);
-					if(text.length == 2)
+					if(text.length == 2) //비어있다면
 						alert("이날 강의실이 비어있습니다");
 					else
-						alert(text+"이 날 빌려져 있습니다");
+						alert(text+"빌려져 있습니다");
 				}
 			}) //end ajax
 		}); //end then
@@ -218,8 +208,8 @@ $(document).ready(function(){
 				<td>${seung.facilityName}</td>
 				<td>${seung.person}</td>
 				<td>${seung.way}</td>
-				<td><a
-					href="seung?facilityCode=${seung.facilityCode}&loginId=${user.loginId}">선택</a></td>
+<!-- 				<td><a -->
+<%-- 					href="seung?facilityCode=${seung.facilityCode}&loginId=${user.loginId}">선택</a></td> --%>
 				<%-- 				<td><a href="seung?facilityCode=${seung.facilityCode}&loginId=${user.loginId}">선택</a></td>			 --%>
 			</tr>
 		</c:forEach>
@@ -229,7 +219,7 @@ $(document).ready(function(){
 				<td>${ilmang.facilityName2}</td>
 				<td>${ilmang.person2}</td>
 				<td>${ilmang.way2}</td>
-				<td><a href="">선택</a></td>
+<!-- 				<td><a href="">선택</a></td> -->
 			</tr>
 		</c:forEach>
 		<c:forEach items="${woldang}" var="woldang">
@@ -238,7 +228,7 @@ $(document).ready(function(){
 				<td>${woldang.facilityName3}</td>
 				<td>${woldang.person3}</td>
 				<td>${woldang.way3}</td>
-				<td><a href="">선택</a></td>
+<!-- 				<td><a href="">선택</a></td> -->
 			</tr>
 		</c:forEach>
 		<c:forEach items="${message}" var="mes">
@@ -252,7 +242,7 @@ $(document).ready(function(){
 				<td>${in.facilityName4}</td>
 				<td>${in.person4}</td>
 				<td>${in.way4}</td>
-				<td><a href="">선택</a></td>
+<!-- 				<td><a href="">선택</a></td> -->
 			</tr>
 		</c:forEach>
 		<c:forEach items="${mill}" var="mil">
@@ -261,7 +251,7 @@ $(document).ready(function(){
 				<td>${mil.facilityName5}</td>
 				<td>${mil.person5}</td>
 				<td>${mil.way5}</td>
-				<td><a href="">선택</a></td>
+<!-- 				<td><a href="">선택</a></td> -->
 			</tr>
 		</c:forEach>
 		<c:forEach items="${saint}" var="sain">
@@ -270,7 +260,7 @@ $(document).ready(function(){
 				<td>${sain.facilityName6}</td>
 				<td>${sain.person6}</td>
 				<td>${sain.way6}</td>
-				<td><a href="">선택</a></td>
+<!-- 				<td><a href="">선택</a></td> -->
 			</tr>
 		</c:forEach>
 		<c:forEach items="${migael}" var="mig">
@@ -279,7 +269,7 @@ $(document).ready(function(){
 				<td>${mig.facilityName7}</td>
 				<td>${mig.person7}</td>
 				<td>${mig.way7}</td>
-				<td><a href="">선택</a></td>
+<!-- 				<td><a href="">선택</a></td> -->
 			</tr>
 		</c:forEach>
 		<c:forEach items="${mes}" var="mes">
@@ -292,14 +282,16 @@ $(document).ready(function(){
 
 <div id="wapper">
 날짜선택 <br/>
-<form action="dateInfo" method=post>
+<!-- <form action="dateInfo" method=post> -->
 <input type="text" id="datepicker" placeholder="날짜 선택">
 <input type="text" name="currentTime" id="onselectExample1" placeholder="시간 선택">
 to
 <input type="text" id="onselectExample2" placeholder="시간 선택"><br/>
+강의실 선택<br/>
+<input type="text" id="selectByclassroom" placeholder="강의실 선택"><br/>
 <button type="button" id="check" class="btn btn-primary">조회하기</button>
 <button type="submit" id="zzz" class="btn btn-primary">신청하기</button>
-</form>
+<!-- </form> -->
 
 <!--  일단 날짜 선택이 데이터 보낸거 확인 후 작업 하기
 <!-- 대여사유<br/> -->

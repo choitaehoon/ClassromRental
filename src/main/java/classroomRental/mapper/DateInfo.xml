@@ -2,13 +2,16 @@
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="classroomRental.mapper.DateInfo">
-	<!-- 날짜에 대한 정보를 추출 -->
+	<!-- 그날짜에 대한 시간에 빌렸는지 수 세기 0이라면 없고 1이라면 빌려있는것이다 -->
 	<select id="selectByCurrentTime" resultType="int">
-	select count(*) from date where idDate = #{idDate} and currentTime &gt;= #{currentTime} and endTime &lt;= #{endTime}
+	select count(*) from date where idDate = #{idDate} and currentTime &gt;= #{currentTime} and endTime &lt;= #{endTime} and
+	facilityCode = #{facilityCode}
 	</select>
-	
+	<!-- 날짜에 대한 정보를 추출  -->
 	<select id="selectByIdDate" resultType="classroomRental.dto.DateDto">
-	select * from date where idDate = #{idDate}
+	select s.facilityCode, d.idDate, d.currentTime, d.endTime from seungyeon s inner join date d 
+	on s.facilityCode = d.facilityCode where s.facilityCode = #{facilityCode}
+<!-- 	select * from date where idDate = #{idDate} -->
 	</select>
 
 </mapper>

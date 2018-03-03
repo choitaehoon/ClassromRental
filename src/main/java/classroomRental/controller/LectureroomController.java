@@ -61,9 +61,9 @@ public class LectureroomController {
 	@Autowired
 	private DepartmentInfo departmentInfo;
 	@Autowired 
-	UserService userService;
+	private	UserService userService;
 	@Autowired
-	DateInfo dateInfo;
+	private DateInfo dateInfo;
 	
 	@RequestMapping("login")
 	public String login()

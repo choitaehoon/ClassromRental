@@ -6,7 +6,7 @@ public class SeungyeonDto
 	String facilityName; //시설명
 	int person; //인원
 	String way; //방식
-	int dataInfo; //누가 빌렸는지 안빌렸는지확인   안빌렸다면 0  빌렸다면 1 
+	int dataInfo; //primary key
 	
 	public int getFacilityCode() {
 		return facilityCode;
