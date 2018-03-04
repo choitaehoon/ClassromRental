@@ -10,7 +10,7 @@
 	<!-- 날짜에 대한 정보를 추출  -->
 	<select id="selectByIdDate" resultType="classroomRental.dto.DateDto">
 	select s.facilityCode, d.idDate, d.currentTime, d.endTime from seungyeon s inner join date d 
-	on s.facilityCode = d.facilityCode where s.facilityCode = #{facilityCode}
+	on s.facilityCode = d.facilityCode where s.facilityCode = #{facilityCode} and d.idDate = #{idDate}
 <!-- 	select * from date where idDate = #{idDate} -->
 	</select>
 

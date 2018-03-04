@@ -2,7 +2,7 @@ package classroomRental.dto;
 
 public class DateDto 
 {
-	int facilityCode;
+	String facilityCode;
 	String idDate;
 	String currentTime; 
 	String endTime;
@@ -25,10 +25,10 @@ public class DateDto
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
 	}
-	public int getFacilityCode() {
+	public String getFacilityCode() {
 		return facilityCode;
 	}
-	public void setFacilityCode(int facilityCode) {
+	public void setFacilityCode(String facilityCode) {
 		this.facilityCode = facilityCode;
 	}
 	

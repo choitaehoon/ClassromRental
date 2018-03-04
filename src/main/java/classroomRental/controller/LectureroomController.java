@@ -217,49 +217,57 @@ public class LectureroomController {
 	}
 
 	@RequestMapping(value = "ilmangwan", method = RequestMethod.GET)
-	public String classroomIlmangwan(Model model) {
+	public String classroomIlmangwan(User user, Model model) {
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		model.addAttribute("ilmangwan", ilmangwanInfo.selectAll());
 		return "view/classroomInfo";
 	}
 
 	@RequestMapping("woldanggwan")
-	public String classroomWoldanggwan(Model model) {
+	public String classroomWoldanggwan(User user, Model model) {
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		model.addAttribute("woldang", woldanggwanInfo.selectAll());
 		return "view/classroomInfo";
 	}
 
 	@RequestMapping("yeollamgwan")
-	public String classroomYeollamgwan(Model model) {
+	public String classroomYeollamgwan(User user, Model model) {
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		model.addAttribute("message", "정보가없습니다.");
 		return "view/classroomInfo";
 	}
 
 	@RequestMapping("icheoneunuch")
-	public String classroomIcheoneunuch(Model model) {
+	public String classroomIcheoneunuch(User user, Model model) {
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		model.addAttribute("icheon", icheoneunuchInfo.selectAll());
 		return "view/classroomInfo";
 	}
 
 	@RequestMapping("millenniumcenter")
-	public String classroomMillenniumcenter(Model model) {
+	public String classroomMillenniumcenter(User user, Model model) {
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		model.addAttribute("mill", millenniumcenterInfo.selectAll());
 		return "view/classroomInfo";
 	}
 
 	@RequestMapping("saintMichael")
-	public String classroomSaintMichael(Model model) {
+	public String classroomSaintMichael(User user, Model model) {
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		model.addAttribute("saint", saintMichaelInfo.selectAll());
 		return "view/classroomInfo";
 	}
 
 	@RequestMapping("Migaelgwan")
-	public String classroomMigaelgwan(Model model) {
+	public String classroomMigaelgwan(User user, Model model) {
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		model.addAttribute("migael", migaelgwanInfo.selectAll());
 		return "view/classroomInfo";
 	}
 
 	@RequestMapping("schoolyard")
-	public String classroomSchoolyard(Model model) {
+	public String classroomSchoolyard(User user, Model model) {
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		model.addAttribute("mes", "정보가 없습니다");
 		return "view/classroomInfo";
 	}

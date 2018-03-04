@@ -157,35 +157,35 @@ $(document).ready(function(){
 		</tr>
 		<tr>
 			<td>2.일만관</td>
-			<td><a href="ilmangwan">선택</a></td>
+			<td><a href="ilmangwan?loginId=${user.loginId}">선택</a></td>
 		</tr>
 		<tr>
 			<td>3.월당관</td>
-			<td><a href="woldanggwan">선택</a></td>
+			<td><a href="woldanggwan?loginId=${user.loginId}">선택</a></td>
 		</tr>
 		<tr>
 			<td>4.열람관</td>
-			<td><a href="yeollamgwan">선택</a></td>
+			<td><a href="yeollamgwan?loginId=${user.loginId}">선택</a></td>
 		</tr>
 		<tr>
 			<td>6.이천환관</td>
-			<td><a href="icheoneunuch">선택</a></td>
+			<td><a href="icheoneunuch?loginId=${user.loginId}">선택</a></td>
 		</tr>
 		<tr>
 			<td>7.새천년관</td>
-			<td><a href="millenniumcenter">선택</a></td>
+			<td><a href="millenniumcenter?loginId=${user.loginId}">선택</a></td>
 		</tr>
 		<tr>
 			<td>9.성미가엘성당</td>
-			<td><a href="saintMichael">선택</a></td>
+			<td><a href="saintMichael?loginId=${user.loginId}">선택</a></td>
 		</tr>
 		<tr>
 			<td>11.미가엘관</td>
-			<td><a href="Migaelgwan">선택</a></td>
+			<td><a href="Migaelgwan?loginId=${user.loginId}">선택</a></td>
 		</tr>
 		<tr>
 			<td>20.운동장</td>
-			<td><a href="schoolyard">선택</a></td>
+			<td><a href="schoolyard?loginId=${user.loginId}">선택</a></td>
 		</tr>
 	</table>
 </div>
