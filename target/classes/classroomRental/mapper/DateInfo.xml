@@ -13,5 +13,10 @@
 	on s.facilityCode = d.facilityCode where s.facilityCode = #{facilityCode} and d.idDate = #{idDate}
 <!-- 	select * from date where idDate = #{idDate} -->
 	</select>
+	
+	<insert id="selectByInsert">
+	insert into date(idDate, currentTime, endTime, facilityCode, id)
+	values(#{idDate}, #{currentTime}, #{endTime}, #{facilityCode}, #{id} )
+	</insert>
 
 </mapper>

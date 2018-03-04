@@ -297,4 +297,12 @@ public class LectureroomController {
 		return dateInfo.selectByIdDate(dateDto);
 	}
 	
+	//강의실 대여하기
+	@RequestMapping("rentClass")
+	public String rentClass(User user, DateDto dateDto,Model model)
+	{
+		dateInfo.selectByInsert(dateDto);
+		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
+		return "view/classroomInfo";
+	}
 }

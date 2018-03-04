@@ -6,6 +6,7 @@ public class DateDto
 	String idDate;
 	String currentTime; 
 	String endTime;
+	int id;
 	
 	public String getIdDate() {
 		return idDate;
@@ -30,6 +31,12 @@ public class DateDto
 	}
 	public void setFacilityCode(String facilityCode) {
 		this.facilityCode = facilityCode;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

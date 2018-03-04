@@ -281,18 +281,22 @@ $(document).ready(function(){
 </div>
 
 <div id="wapper">
+
 날짜선택 <br/>
-<!-- <form action="dateInfo" method=post> -->
-<input type="text" id="datepicker" placeholder="날짜 선택">
+<form action="rentClass" method=post>
+<input type="text" name="idDate" id="datepicker" placeholder="날짜 선택">
 <input type="text" name="currentTime" id="onselectExample1" placeholder="시간 선택">
 to
-<input type="text" id="onselectExample2" placeholder="시간 선택"><br/>
+<input type="text" name="endTime" id="onselectExample2" placeholder="시간 선택"><br/>
 강의실 선택<br/>
-<input type="text" id="selectByclassroom" placeholder="강의실 선택"><br/>
+<input type="text" name="facilityCode" id="selectByclassroom" placeholder="강의실 선택"><br/>
+<input type="hidden" name="id" value="${user.id}">
+<input type="hidden" name="loginId" value="${user.loginId}">
 <button type="button" id="check" class="btn btn-primary">조회하기</button>
 <button type="submit" id="zzz" class="btn btn-primary">신청하기</button>
-<!-- </form> -->
+</form>
 
+</div>
 <!--  일단 날짜 선택이 데이터 보낸거 확인 후 작업 하기
 <!-- 대여사유<br/> -->
 <!-- <textarea name="textarea" rows="5" cols="10" ></textarea><br/> -->
@@ -300,8 +304,6 @@ to
 <!-- <textarea name="textarea" rows="2" cols="10" ></textarea> -->
 <!-- 신청자전화번호 -->
 <!-- <input type="text"> -->
-
-</div>
 <%@ include file="/WEB-INF/views/view/footer.jsp"%>
 
 </body>
