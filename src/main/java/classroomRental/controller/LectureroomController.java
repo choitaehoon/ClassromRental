@@ -103,6 +103,7 @@ public class LectureroomController {
 	public String membership(User user,Model model)
 	{
 		String message = userService.validateBeforeInsert(user);
+		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
 		if(message == null)
 			userInfo.insert(user);
 		else 
@@ -131,6 +132,7 @@ public class LectureroomController {
 		String message = userService.validateBeforeUpdate(user);
 		if (message == null) {
 			userInfo.update(user);
+			model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
 			return "view/signUpAfter";
 		} 
 		else

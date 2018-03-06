@@ -19,6 +19,7 @@ label {
 	<div class="container">
 		<h1>사용자 정보 수정</h1>
 		<hr />
+		
 		<form method="post" action="membershipModification">
 			<label>로그인ID</label>
 			<input type="text" name="loginId" value="${user.loginId}" />
@@ -44,8 +45,8 @@ label {
 			</select>
 			<hr />
 			<div>
-				<input type="submit" class="btn btn-primary" value="저장" /> <a
-					href="signUpAfter" class="btn">초기 화면으로 나가기 </a>
+				<input type="submit" class="btn btn-primary" value="저장" name="loginId" /> <a
+					href="signUpAfter" class="btn btn-primary" name="loginId">초기 화면으로 나가기 </a>
 			</div>
 		</form>
 		<c:if test="${ not empty error }">
