@@ -166,7 +166,7 @@ $(document).ready(function(){
 		<tr>
 			<td>4.열람관</td>
 			<td><a href="yeollamgwan?loginId=${user.loginId}">선택</a></td>
-		</tr>
+		</tr><!--없음 -->
 		<tr>
 			<td>6.이천환관</td>
 			<td><a href="icheoneunuch?loginId=${user.loginId}">선택</a></td>
@@ -215,7 +215,7 @@ $(document).ready(function(){
 		</c:forEach>
 		<c:forEach items="${ilmangwan}" var="ilmang">
 			<tr>
-				<td>${ilmang.facilityCode2}</td>
+				<td>${ilmang.facilityCode}</td>
 				<td>${ilmang.facilityName2}</td>
 				<td>${ilmang.person2}</td>
 				<td>${ilmang.way2}</td>
@@ -224,7 +224,7 @@ $(document).ready(function(){
 		</c:forEach>
 		<c:forEach items="${woldang}" var="woldang">
 			<tr>
-				<td>${woldang.facilityCode3}</td>
+				<td>${woldang.facilityCode}</td>
 				<td>${woldang.facilityName3}</td>
 				<td>${woldang.person3}</td>
 				<td>${woldang.way3}</td>
@@ -238,7 +238,7 @@ $(document).ready(function(){
 		</c:forEach>
 		<c:forEach items="${icheon}" var="in">
 			<tr>
-				<td>${in.facilityCode4}</td>
+				<td>${in.facilityCode}</td>
 				<td>${in.facilityName4}</td>
 				<td>${in.person4}</td>
 				<td>${in.way4}</td>
@@ -247,7 +247,7 @@ $(document).ready(function(){
 		</c:forEach>
 		<c:forEach items="${mill}" var="mil">
 			<tr>
-				<td>${mil.facilityCode5}</td>
+				<td>${mil.facilityCode}</td>
 				<td>${mil.facilityName5}</td>
 				<td>${mil.person5}</td>
 				<td>${mil.way5}</td>
@@ -256,7 +256,7 @@ $(document).ready(function(){
 		</c:forEach>
 		<c:forEach items="${saint}" var="sain">
 			<tr>
-				<td>${sain.facilityCode6}</td>
+				<td>${sain.facilityCode}</td>
 				<td>${sain.facilityName6}</td>
 				<td>${sain.person6}</td>
 				<td>${sain.way6}</td>
@@ -265,7 +265,7 @@ $(document).ready(function(){
 		</c:forEach>
 		<c:forEach items="${migael}" var="mig">
 			<tr>
-				<td>${mig.facilityCode7}</td>
+				<td>${mig.facilityCode}</td>
 				<td>${mig.facilityName7}</td>
 				<td>${mig.person7}</td>
 				<td>${mig.way7}</td>

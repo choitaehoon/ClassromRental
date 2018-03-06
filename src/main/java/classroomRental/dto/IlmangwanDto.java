@@ -7,11 +7,11 @@ public class IlmangwanDto
 	int person2; //인원
 	String way2; //방식
 	
-	public String getFacilityCode2() {
+	public String getFacilityCode() {
 		return facilityCode;
 	}
-	public void setFacilityCode2(String facilityCode2) {
-		this.facilityCode = facilityCode2;
+	public void setFacilityCode(String facilityCode) {
+		this.facilityCode = facilityCode;
 	}
 	public String getFacilityName2() {
 		return facilityName2;

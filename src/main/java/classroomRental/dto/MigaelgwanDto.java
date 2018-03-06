@@ -2,16 +2,16 @@ package classroomRental.dto;
 
 public class MigaelgwanDto 
 {
-	String facilityCode7; //시설코드
+	String facilityCode; //시설코드
 	String facilityName7; //시설명
 	int person7; //인원
 	String way7; //방식
 	
-	public String getFacilityCode7() {
-		return facilityCode7;
+	public String getFacilityCode() {
+		return facilityCode;
 	}
-	public void setFacilityCode7(String facilityCode7) {
-		this.facilityCode7 = facilityCode7;
+	public void setFacilityCode(String facilityCode) {
+		this.facilityCode = facilityCode;
 	}
 	public String getFacilityName7() {
 		return facilityName7;

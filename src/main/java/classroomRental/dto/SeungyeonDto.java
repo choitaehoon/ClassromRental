@@ -2,16 +2,16 @@ package classroomRental.dto;
 
 public class SeungyeonDto
 {
-	int facilityCode; //시설코드
+	String facilityCode; //시설코드
 	String facilityName; //시설명
 	int person; //인원
 	String way; //방식
 	int dataInfo; //primary key
 	
-	public int getFacilityCode() {
+	public String getFacilityCode() {
 		return facilityCode;
 	}
-	public void setFacilityCode(int facilityCode) {
+	public void setFacilityCode(String facilityCode) {
 		this.facilityCode = facilityCode;
 	}
 	public String getFacilityName() {

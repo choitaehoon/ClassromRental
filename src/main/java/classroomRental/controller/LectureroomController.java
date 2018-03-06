@@ -154,7 +154,7 @@ public class LectureroomController {
 	public String test2(Model model) {
 		return "view/signUpAfter";
 	}
-
+	
 	//자유게시판 보이게 하기
 	//페이지네이션 일단 keep
 	@RequestMapping(value = "list", method = RequestMethod.GET)
@@ -305,4 +305,5 @@ public class LectureroomController {
 		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
 		return "view/classroomInfo";
 	}
+	
 }

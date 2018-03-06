@@ -2,16 +2,16 @@ package classroomRental.dto;
 
 public class MillenniumcenterDto
 {
-	int facilityCode5; //시설코드
+	int facilityCode; //시설코드
 	String facilityName5; //시설명
 	int person5; //인원
 	String way5; //방식
 	
-	public int getFacilityCode5() {
-		return facilityCode5;
+	public int getFacilityCode() {
+		return facilityCode;
 	}
-	public void setFacilityCode5(int facilityCode5) {
-		this.facilityCode5 = facilityCode5;
+	public void setFacilityCode(int facilityCode) {
+		this.facilityCode = facilityCode;
 	}
 	public String getFacilityName5() {
 		return facilityName5;

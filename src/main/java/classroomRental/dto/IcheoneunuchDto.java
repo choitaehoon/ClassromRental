@@ -2,16 +2,16 @@ package classroomRental.dto;
 
 public class IcheoneunuchDto 
 {
-	int facilityCode4; //시설코드
+	String facilityCode; //시설코드
 	String facilityName4; //시설명
 	int person4; //인원
 	String way4; //방식
 	
-	public int getFacilityCode4() {
-		return facilityCode4;
+	public String getFacilityCode() {
+		return facilityCode;
 	}
-	public void setFacilityCode4(int facilityCode4) {
-		this.facilityCode4 = facilityCode4;
+	public void setFacilityCode(String facilityCode) {
+		this.facilityCode = facilityCode;
 	}
 	public String getFacilityName4() {
 		return facilityName4;
