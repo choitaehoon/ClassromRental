@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="classroomRental.mapper.BoardInfo">
+	<select id="selectAll" resultType="classroomRental.dto.BoardDto">
+		select * from board order by number desc
+	</select>
+	
+	<select id="select" resultType="classroomRental.dto.BoardDto">
+		select * from board where id = #{id};
+	</select>
+	
+	<select id="selectPage" resultType="classroomRental.dto.BoardDto">
+	select count(*) from board limit 1,6
+<!-- 	<![CDATA[ select * from board where number > (#{currentPage}-1)*#{pageSize} -->
+<!-- 	and number <= #{currentPage}*#{pageSize} order by number]]> -->
+	</select>
+	
+	<select id="selectCount" resultType="int">
+	select count(*) from board
+	</select>
+	
+	<insert id="insert" useGeneratedKeys="true" keyProperty="number">
+		insert into board (number,id, context)
+		values (null, #{id}, #{context})
+	</insert>
+	
+	<delete id="delete">
+		delete from board where id = #{id}
+	</delete>
+	
+	<update id="update">
+	 update board set  context = #{context} where id = #{id}                
+	</update>
+</mapper>

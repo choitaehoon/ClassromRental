@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="classroomRental.mapper.SeungyeonInfo">
+	
+	<select id="selectAll" resultType="classroomRental.dto.SeungyeonDto">
+	SELECT * FROM  SEUNGYEON
+	</select>
+	
+	<select id="selectByFacilityCode" resultType="classroomRental.dto.SeungyeonDto">
+	select * from SEUNGYEON where facilityCode = #{facilityCode}
+	</select>
+	
+</mapper>

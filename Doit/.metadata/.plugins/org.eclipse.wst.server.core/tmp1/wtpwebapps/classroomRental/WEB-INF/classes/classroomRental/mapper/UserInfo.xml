@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="classroomRental.mapper.UserInfo">
+	<select id="selectById" resultType="classroomRental.dto.User"> 
+	SELECT * FROM User WHERE id = #{id}
+	 </select>
+	 
+	<select id="selectByLoginId" resultType="classroomRental.dto.User"> 
+	SELECT * FROM User WHERE loginId = #{loginId} 
+	</select>
+		
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id"> 
+	INSERT User (loginId, password, name, email, userType, departmentId) 
+	VALUES (#{loginId}, #{password}, #{name}, #{email}, #{userType},#{departmentId}) 
+	</insert>
+	
+	
+	<update id="update"> UPDATE User SET loginId = #{loginId},
+	 name =#{name}, email = #{email}, userType = #{userType}, 
+	 departmentId = #{departmentId} 
+	 WHERE id = #{id} 
+	 </update>
+	 
+	<delete id="delete">
+	 DELETE FROM [User] WHERE id = #{id}
+	</delete>
+	
+</mapper>
