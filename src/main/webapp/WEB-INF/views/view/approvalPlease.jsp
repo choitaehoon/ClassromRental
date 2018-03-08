@@ -28,7 +28,17 @@
 		<td>${date.idDate}</td>
 		<td>${date.currentTime}</td>
 		<td>${date.endTime}</td>
-		<td></td>
+		<c:choose>
+			<c:when test="${user.grade eq 0}">
+			<td>불가</td>
+			</c:when>
+			<c:when test="${user.grade eq 1}">
+			<td>대기</td>
+			</c:when>
+			<c:otherwise>
+			<td>승인</td>
+			</c:otherwise>
+		</c:choose>
 	</tr>
 </table>
 

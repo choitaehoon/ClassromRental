@@ -45,7 +45,7 @@ $(document).ready(function(){
 	<h1>회원가입</h1>
 	<div>
 		<form action="signUpAfter" method=post>
-			<label>아이디 : </label> <input type="text" name="loginId" id="ggg">
+			<label>아이디 : </label> <input type="text" name="loginId" id="ggg" value="${user.loginId}" >
 			<button type="button"  id="checkbtn">ID 중복 체크</button>
 			<br />
 			
