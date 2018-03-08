@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -126,6 +127,12 @@ form {
 	onclick="location.href='http://localhost:8080/controller/view/login'">
 	<input type="button" class="btn btn-primary" value="수정하기"
 	onclick="location.href='http://localhost:8080/controller/view/membershipModification?loginId=${user.loginId}'">
+	<c:if test="${user.userType eq '관리자'}">
+	   <input type="button" class="btn btn-success" value="승인요청목록"
+         onclick="location.href='http://localhost:8080/controller/view/showStaff?loginId=${user.loginId}'">
+    </c:if>
+   <input type="button" class="btn btn-success" value="승인요청"
+         onclick="location.href='http://localhost:8080/controller/view/approvalPlease?loginId=${user.loginId}&id=${user.id}'">
 </div>
 <form method="post">
 	<div id="dva">
@@ -141,7 +148,7 @@ form {
 					href="classroomInfo?loginId=${user.loginId}">강의실 대여 하기</a>
 									<li>|</li>
 				<li class="topMenuLi"><a class="menuLink"
-					href="">강의실 교환 해요</a></li>
+					href="rent?loginId=${user.loginId}">강의실 빌려주기</a></li>
 				<li>|</li>
 				<li class="topMenuLi"><a class="menuLink"
 					href="list?loginId=${user.loginId}">자유 게시판</a></li>

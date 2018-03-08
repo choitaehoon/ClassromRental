@@ -73,7 +73,7 @@ public class LectureroomController {
 	
 	//로그인하고 들어오기
 	@RequestMapping(value="loginAfter", method=RequestMethod.POST)
-	public String loginAfter(User user,Model model)
+	public String loginAfter(DateDto date,User user,Model model)
 	{
 		String message = userService.loginBefore(user);
 		if(message != null)
@@ -81,7 +81,7 @@ public class LectureroomController {
 			model.addAttribute("error",message);
 			return "view/login";
 		}
-		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));	
+		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
 		return "view/signUpAfter";	
 	}
 	
@@ -308,4 +308,25 @@ public class LectureroomController {
 		return "view/classroomInfo";
 	}
 	
+	@RequestMapping("rent")
+	public String rent(User user, Model model)
+	{
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
+		return "view/test";
+	}
+	
+	@RequestMapping("showStaff")
+	public String showBoard()
+	{
+		return "view/showStaff";
+	}
+	
+	@RequestMapping("approvalPlease")
+	public String approvalPlease(User user,Model model)
+	{
+		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
+		System.out.println(dateInfo.selectByAll(user.getId()));
+		model.addAttribute("date", dateInfo.selectByAll(user.getId()));
+		return "view/approvalPlease";
+	}
 }

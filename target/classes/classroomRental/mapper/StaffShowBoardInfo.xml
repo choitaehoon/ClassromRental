@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="classroomRental.mapper.StaffShowBoardInfo">
+   <select id="selectAll2" resultType="classroomRental.dto.StaffShowBoardDto">
+      select s.*, u.id from StaffShowboard s right join user u on s.id = u.id order by bronumber desc
+   </select>
+   
+   <select id="select2" resultType="classroomRental.dto.StaffShowBoardDto">
+      select * from StaffShowboard where id = #{id};
+   </select>
+   
+   <select id="selectCount2" resultType="int">
+   select count(*) from StaffShowboard
+   </select>
+   
+   <insert id="insert2" useGeneratedKeys="true" keyProperty="bronumber">
+      insert into StaffShowboard ( id, name,grade,approval)
+      values ( #{id}, #{name},#{grade}, null)
+   </insert>
+   
+   <delete id="delete2">
+      delete from StaffShowboard where id = #{id}
+   </delete>
+   
+   <update id="update2">
+    update StaffShowboard set 
+    approval = #{approval}, 
+    grade = #{grade} 
+    where id = #{id}                
+   </update>
+</mapper>

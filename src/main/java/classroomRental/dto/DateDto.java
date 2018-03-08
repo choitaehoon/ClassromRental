@@ -39,4 +39,11 @@ public class DateDto
 		this.id = id;
 	}
 	
+//	@Override
+//	public String toString()
+//	{
+//		return facilityCode+" "+idDate+" "+currentTime
+//				+" "+endTime;
+//	}
+	
 }

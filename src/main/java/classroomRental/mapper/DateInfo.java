@@ -9,4 +9,5 @@ public interface DateInfo
 	int selectByCurrentTime(DateDto dateDto);
 	List<String> selectByIdDate(DateDto dateDto);
 	void selectByInsert(DateDto dateDto);
+	DateDto selectByAll(int id);
 }
