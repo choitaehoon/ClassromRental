@@ -21,25 +21,29 @@
 		<td>종료 시간</td>
 		<td>승인 현황</td>
 	</tr>
+	<c:forEach items="${date}" var="dat">
 	<tr>
 		<td>${user.loginId}</td>
 		<td>${user.name}</td>
-		<td>${date.facilityCode}</td>
-		<td>${date.idDate}</td>
-		<td>${date.currentTime}</td>
-		<td>${date.endTime}</td>
+		<td>${dat.facilityCode}</td>
+		<td>${dat.idDate}</td>
+		<td>${dat.currentTime}</td>
+		<td>${dat.endTime}</td>
 		<c:choose>
 			<c:when test="${user.grade eq 0}">
 			<td>불가</td>
 			</c:when>
+			
 			<c:when test="${user.grade eq 1}">
 			<td>대기</td>
 			</c:when>
+			
 			<c:otherwise>
 			<td>승인</td>
 			</c:otherwise>
 		</c:choose>
 	</tr>
+</c:forEach>
 </table>
 
 <!-- <table width="500" cellpadding="0" cellspacing="0" border="1"> -->

@@ -131,16 +131,19 @@ form {
 	   <input type="button" class="btn btn-success" value="승인요청목록"
          onclick="location.href='http://localhost:8080/controller/view/showStaff?loginId=${user.loginId}'">
     </c:if>
+    <c:if test="${user.userType != '관리자'}">
    <input type="button" class="btn btn-success" value="승인요청"
          onclick="location.href='http://localhost:8080/controller/view/approvalPlease?loginId=${user.loginId}&id=${user.id}'">
+         </c:if>
 </div>
 <form method="post">
 	<div id="dva">
 		<nav id="topMenu">
 			<ul>
+			  <c:if test="${user.userType != '관리자'}">
 				<li class="topMenuLi"><a class="menuLink"
 					href="grade?loginId=${user.loginId}">내 등급 확인</a>
-									<li>|</li>
+									<li>|</li></c:if>
 				<li class="topMenuLi"><a class="menuLink"
 					href="questionnaireInfo?loginId=${user.loginId}">설문지 작성하기</a></li>
 				<li>|</li>

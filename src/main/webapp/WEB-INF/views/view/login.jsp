@@ -24,10 +24,12 @@ div {
 	<div>
 		<h1>로그인</h1>
 		<form action="loginAfter" method="post">
-			<label>아이디</label> <input type="text" name="loginId"><br /> <label>비밀번호</label>
-			<input type="password" name="password"> <input type="submit"
-				class="btn btn-primary" value="로그인"><br /> <input
-				type="button" class="btn btn-primary" value="회원가입"
+			<label>아이디</label>
+			<input type="text" name="loginId"><br /> 
+			<label>비밀번호</label>
+			<input type="password" name="password"> 
+			<input type="submit" class="btn btn-primary" value="로그인"><br /> 
+			<input type="button" class="btn btn-primary" value="회원가입"
 				onclick="location.href='http://localhost:8080/controller/view/signUpBefore'">
 		</form>
 

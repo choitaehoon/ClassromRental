@@ -10,7 +10,12 @@
 	 </select>
 	 
 	<select id="selectByLoginId" resultType="classroomRental.dto.User"> 
-	SELECT * FROM User WHERE loginId = #{loginId} 
+	SELECT * FROM User WHERE loginId = #{loginId}
+	</select>
+	
+	<!-- 아이디와 비번 체크 -->
+	<select id="selectByPassword" resultType="classroomRental.dto.User"> 
+	SELECT * FROM User WHERE loginId = #{loginId}  and password = #{password} 
 	</select>
 	
 	<!-- 로그인 중복 체크 -->

@@ -111,7 +111,7 @@ public class LectureroomController {
 			model.addAttribute("error",message);
 			return "redirect:signUpBefore";
 		}
-		return "view/signUpAfter";
+		return "view/login";
 	}
 
 	@RequestMapping(value = "edit", method = RequestMethod.GET)
@@ -316,8 +316,9 @@ public class LectureroomController {
 	}
 	
 	@RequestMapping("showStaff")
-	public String showBoard()
+	public String showBoard(User user, Model model)
 	{
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		return "view/showStaff";
 	}
 	
@@ -325,7 +326,6 @@ public class LectureroomController {
 	public String approvalPlease(User user,Model model)
 	{
 		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
-		System.out.println(dateInfo.selectByAll(user.getId()));
 		model.addAttribute("date", dateInfo.selectByAll(user.getId()));
 		return "view/approvalPlease";
 	}

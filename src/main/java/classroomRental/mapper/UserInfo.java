@@ -9,4 +9,5 @@ public interface UserInfo {
 	void update(User user);
 	void delete(int id);
 	int selectByLoginIdCheck(String loginId);
+	User selectByPassword(User user);
 }

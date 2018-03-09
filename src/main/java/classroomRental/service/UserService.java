@@ -60,6 +60,8 @@ public class UserService {
 			return "아이디를 입력하세요";
 		if(StringUtils.isBlank(user.getPassword()))
 			return "비밀번호를 입력하세요";
+		if(userInfo.selectByPassword(user) == null)
+			return "등록되지 않은 아이디이거나, 아이디 혹은 비밀번호를 잘못입력하셨습니다";
 		return null;
 	}
 	

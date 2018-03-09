@@ -22,7 +22,6 @@
 		<input type="hidden" name="pg" value="2" />
 		<table class="table table-bordered">
 			<tr>
-				<td>번호</td>
 				<td>작성자</td>
 				<td>학번</td>
 				<td>등급</td>
@@ -39,9 +38,7 @@
 					</tr>
 				</c:forEach>
 		</table>
-
-		<input type="button" class="btn btn-success" value="새로고침">
-
+	</form>
 		<%@ include file="/WEB-INF/views/view/footer.jsp"%>
 </body>
 </html>

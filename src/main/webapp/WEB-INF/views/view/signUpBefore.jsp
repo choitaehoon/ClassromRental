@@ -58,6 +58,7 @@ $(document).ready(function(){
 				<option value="교수">교수</option>
 				<option value="학생">학생</option>
 			</select> <br /> <label>학과</label> <select name="departmentId">
+				<option value="0">없음</option>
 				<option value="1">소프트웨어공학과</option>
 				<option value="2">컴퓨터공학과</option>
 				<option value="3">정보통신공학과</option>
