@@ -6,18 +6,19 @@
 	<select id="selectByAll" resultType="classroomRental.dto.DateDto">
 	select d.facilityCode, d.idDate, d.currentTime, d.endTime  from date d
 	inner join user u on d.id = u.id where u.id= #{id} 
-
-<!-- 	select d.idDate, d.currentTime, d.endTime, di.facilityCode from  -->
-<!-- 		date d inner join dateinsert di -->
-<!-- 	on d.facilityCode = di.facilityCode -->
-<!-- 	date d inner join user u on d.id = u.id  -->
-<!-- 	where u.id= #{id}  -->
 	</select>
 
 	<!-- 그날짜에 대한 시간에 빌렸는지 수 세기 0이라면 없고 1이라면 빌려있는것이다 -->
 	<select id="selectByCurrentTime" resultType="int">
 	select count(*) from date where idDate = #{idDate} and currentTime &gt;= #{currentTime} and endTime &lt;= #{endTime} and
 	facilityCode = #{facilityCode}
+	</select>
+	
+	<select id="selectAllRoom" resultType="classroomRental.dto.DateDto">
+	select d.idDate, d.currentTime,
+ 		d.endTime, d.facilityCode, d.approval, u.grade
+		from user u inner join date d  
+	on u.id = d.id 
 	</select>
 	
 	<!-- 날짜에 대한 정보를 추출  -->
@@ -31,5 +32,6 @@
 	insert into date(idDate, currentTime, endTime, facilityCode, id, approval)
 	values(#{idDate}, #{currentTime}, #{endTime}, #{facilityCode}, #{id}, 1 )
 	</insert>
+	
 
 </mapper>

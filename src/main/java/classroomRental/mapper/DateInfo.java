@@ -10,4 +10,5 @@ public interface DateInfo
 	List<String> selectByIdDate(DateDto dateDto);
 	void selectByInsert(DateDto dateDto);
 	List<DateDto> selectByAll(int id);
+	List<DateDto> selectAllRoom();
 }

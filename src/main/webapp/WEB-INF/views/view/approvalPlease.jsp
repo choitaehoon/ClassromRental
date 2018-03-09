@@ -21,14 +21,14 @@
 		<td>종료 시간</td>
 		<td>승인 현황</td>
 	</tr>
-	<c:forEach items="${date}" var="dat">
+	<c:forEach items="${date}" var="date">
 	<tr>
 		<td>${user.loginId}</td>
 		<td>${user.name}</td>
-		<td>${dat.facilityCode}</td>
-		<td>${dat.idDate}</td>
-		<td>${dat.currentTime}</td>
-		<td>${dat.endTime}</td>
+		<td>${date.facilityCode}</td>
+		<td>${date.idDate}</td>
+		<td>${date.currentTime}</td>
+		<td>${date.endTime}</td>
 		<c:choose>
 			<c:when test="${user.grade eq 0}">
 			<td>불가</td>

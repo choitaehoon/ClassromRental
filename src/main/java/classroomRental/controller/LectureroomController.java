@@ -314,11 +314,12 @@ public class LectureroomController {
 		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		return "view/test";
 	}
-	
+
 	@RequestMapping("showStaff")
 	public String showBoard(User user, Model model)
 	{
 		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
+		model.addAttribute("date", dateInfo.selectAllRoom());
 		return "view/showStaff";
 	}
 	

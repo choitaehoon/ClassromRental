@@ -17,26 +17,29 @@
 </head>
 
 <body>
+<hr>
 	<h1>승인 요청 목록</h1>
 	<form method="get">
-		<input type="hidden" name="pg" value="2" />
 		<table class="table table-bordered">
 			<tr>
 				<td>작성자</td>
-				<td>학번</td>
-				<td>등급</td>
-				<td>승인요청</td>
+				<td>빌린 날짜</td>
+				<td>시작 시간</td>
+				<td>종료 시간</td>
+				<td>강의실</td>
+				<td>요청</td>
+				<td>거부</td>
+			</tr>
+			<c:forEach items="${date}" var="date">
 			<tr>
-				<c:forEach items="${staffshowboard}" var="staff">
-					<tr data-url="approval.do?id=${staff.bronumber} }">
-						<td>${staff.bronumber}</td>
-						<td>${staff.id}</td>
-						<td>${staff.name}</td>
-						<td>${staff.grade}</td>
-						<td><a href="update?grade=${staff.grade}">3</a></td>
-						<td><a href="update?approval=${staff.approval}">불허</a></td>
-					</tr>
-				</c:forEach>
+				<td>${user.name}</td>
+				<td>${date.idDate}</td>
+				<td>${date.currentTime}</td>
+				<td>${date.endTime}</td>
+				<td>${date.facilityCode}</td>
+<%-- 				<td>${date.approval}</td> --%>
+			</tr>
+			</c:forEach>
 		</table>
 	</form>
 		<%@ include file="/WEB-INF/views/view/footer.jsp"%>
