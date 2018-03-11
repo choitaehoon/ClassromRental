@@ -56,7 +56,7 @@
 </form>
 
 	<p>
-		<a href="writeForm">글작성</a>
+		<a href="writeForm?loginId=${user.loginId}">글작성</a>
 	</p>
 <%@ include file="/WEB-INF/views/view/footer.jsp"%>
 </body>

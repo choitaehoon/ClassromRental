@@ -159,6 +159,6 @@ form {
 		</nav>
 	</div>
 </form>
-<%@ include file="/WEB-INF/views/view/footer.jsp"%>
+<%-- <%@ include file="/WEB-INF/views/view/footer.jsp"%> --%>
 </body>
 </html>

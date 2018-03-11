@@ -27,8 +27,8 @@
 				<td>시작 시간</td>
 				<td>종료 시간</td>
 				<td>강의실</td>
-				<td>요청</td>
-				<td>거부</td>
+				<td>승인 하기</td>
+				<td>거부 하기</td>
 			</tr>
 			<c:forEach items="${date}" var="date">
 			<tr>
@@ -37,11 +37,13 @@
 				<td>${date.currentTime}</td>
 				<td>${date.endTime}</td>
 				<td>${date.facilityCode}</td>
+				<td><input type="button" class="btn btn-success" value="승인 하기"></td>
+				<td><input type="button" class="btn btn-danger" value="거부 하기"></td>
 <%-- 				<td>${date.approval}</td> --%>
 			</tr>
 			</c:forEach>
 		</table>
 	</form>
-		<%@ include file="/WEB-INF/views/view/footer.jsp"%>
+<%-- 		<%@ include file="/WEB-INF/views/view/footer.jsp"%> --%>
 </body>
 </html>

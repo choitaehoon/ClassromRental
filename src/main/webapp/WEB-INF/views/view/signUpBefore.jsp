@@ -63,7 +63,7 @@ $(document).ready(function(){
 				<option value="2">컴퓨터공학과</option>
 				<option value="3">정보통신공학과</option>
 				<option value="4">글로컬IT학과</option>
-			</select> <br /> <input type="submit" class="btn btn-primary" value="전송">
+			</select> <br /> <input type="submit" class="btn btn-primary" value="가입하기">
 		</form>
 
 		<c:if test="${ not empty error }">

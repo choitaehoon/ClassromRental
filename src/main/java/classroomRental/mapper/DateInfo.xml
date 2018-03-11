@@ -15,7 +15,7 @@
 	</select>
 	
 	<select id="selectAllRoom" resultType="classroomRental.dto.DateDto">
-	select d.idDate, d.currentTime,
+	select u.name, d.idDate, d.currentTime,
  		d.endTime, d.facilityCode, d.approval, u.grade
 		from user u inner join date d  
 	on u.id = d.id 

@@ -3,7 +3,7 @@ package classroomRental.dto;
 public class BoardDto 
 {
 	private int number;//번호
-	private String id; //작성자 학번
+	private String id; //작성자
 	private String context; //내용 
 	
 	public int getNumber() {

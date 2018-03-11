@@ -1,5 +1,7 @@
 package classroomRental.dto;
 
+import java.util.List;
+
 public class DateDto 
 {
 	String facilityCode;
@@ -7,6 +9,7 @@ public class DateDto
 	String currentTime; 
 	String endTime;
 	int id;
+	List<User> students;
 	
 	public String getIdDate() {
 		return idDate;
@@ -38,12 +41,12 @@ public class DateDto
 	public void setId(int id) {
 		this.id = id;
 	}
+	public List<User> getStudents() {
+		return students;
+	}
+	public void setStudents(List<User> students) {
+		this.students = students;
+	}
 	
-//	@Override
-//	public String toString()
-//	{
-//		return facilityCode+" "+idDate+" "+currentTime
-//				+" "+endTime;
-//	}
 	
 }

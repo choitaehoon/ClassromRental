@@ -2,13 +2,12 @@ package classroomRental.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import classroomRental.dto.BoardDto;
@@ -175,15 +174,18 @@ public class LectureroomController {
 	}
 
 	@RequestMapping("writeForm")
-	public String test4() {
+	public String test4(User user, Model model) 
+	{
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		return "view/writeForm";
 	}
 
 	@RequestMapping("write")
-	public String test5(BoardDto board) {
+	public String write(@RequestParam("loginId") String loginId,BoardDto board,Model model) {
 		// 쓰고 목록으로 넘어가기
 		boardInfo.insert(board);
-		return "redirect:list";
+		model.addAttribute("loginId",loginId);
+		return "redirect:list?loginId={loginId}";
 	}
 
 	@RequestMapping("update")
@@ -194,8 +196,9 @@ public class LectureroomController {
 	}
 
 	@RequestMapping("delete")
-	public String delete(HttpServletRequest request) {
-		boardInfo.delete(request.getParameter("id"));
+	public String delete(BoardDto board,Model model) 
+	{
+		boardInfo.delete(board.getId());
 		return "redirect:list";
 	}
 
