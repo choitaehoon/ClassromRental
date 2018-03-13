@@ -333,4 +333,13 @@ public class LectureroomController {
 		model.addAttribute("date", dateInfo.selectByAll(user.getId()));
 		return "view/approvalPlease";
 	}
+	
+	@RequestMapping("approvalSubmit")
+	public String approvalSubmit(DateDto date,User user, Model model)
+	{
+		dateInfo.updateApprovalSubmit(date);
+		model.addAttribute("date", dateInfo.selectByAll(user.getId()));
+		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
+		return "view/approvalPlease";
+	}
 }

@@ -19,8 +19,16 @@
 <script>
 	function sub()
 	{
-		var idDate =$("#a").val();
-		alert(idDate);
+		var idDate = $('#a').html();
+		var currentTime = $('#b').html();
+		var endTime = $('#c').html();
+		var facilityCode = $('#d').html();
+		
+		document.approvalSubmit.idDate.value=idDate;
+		document.approvalSubmit.currentTime.value=currentTime;
+		document.approvalSubmit.endTime.value=endTime;
+		document.approvalSubmit.facilityCode.value=facilityCode;
+		approvalSubmit.submit();
 	}
 </script>
 </head>
@@ -46,12 +54,19 @@
 				<td id="b">${date.currentTime}</td>
 				<td id="c">${date.endTime}</td>
 				<td id="d">${date.facilityCode}</td>
-				<td><input type="button" class="btn btn-success" value="승인 하기" onClick="sub()"></td>
+				<td><input type="button" class="btn btn-success" value="승인 하기" onclick="sub();"></td>
 				<td><input type="button" class="btn btn-danger" value="거부 하기"></td>
 <%-- 				<td>${date.approval}</td> --%>
 			</tr>
 			</c:forEach>
 		</table>
+	</form>
+	<form action="approvalSubmit" id="approvalSubmit" name="approvalSubmit">
+		<input type="hidden" name="idDate" value="">
+		<input type="hidden" name="currentTime" value="">
+		<input type="hidden" name="endTime" value="">
+		<input type="hidden" name="facilityCode" value="">
+		<input type="hidden" name="loginId" value="${user.loginId}">
 	</form>
 <%-- 		<%@ include file="/WEB-INF/views/view/footer.jsp"%> --%>
 </body>

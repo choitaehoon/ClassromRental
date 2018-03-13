@@ -33,4 +33,11 @@
 	values(#{idDate}, #{currentTime}, #{endTime}, #{facilityCode}, #{id}, 1 )
 	</insert>
 
+	<update id="updateApprovalSubmit">
+		update date set approval = 2
+		where idDate = #{idDate} and
+		currentTime = #{currentTime} and
+		endTime = #{endTime}
+		facilityCode = #{facilityCode}
+	</update>
 </mapper>
