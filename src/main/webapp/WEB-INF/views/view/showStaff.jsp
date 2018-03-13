@@ -6,6 +6,7 @@
 
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <link
    href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css"
    rel="stylesheet">
@@ -14,6 +15,14 @@
    color: black;
 }
 </style>
+
+<script>
+	function sub()
+	{
+		var idDate =$("#a").val();
+		alert(idDate);
+	}
+</script>
 </head>
 
 <body>
@@ -33,11 +42,11 @@
 			<c:forEach items="${date}" var="date">
 			<tr>
 				<td>${user.name}</td>
-				<td>${date.idDate}</td>
-				<td>${date.currentTime}</td>
-				<td>${date.endTime}</td>
-				<td>${date.facilityCode}</td>
-				<td><input type="button" class="btn btn-success" value="승인 하기"></td>
+				<td id="a">${date.idDate}</td>
+				<td id="b">${date.currentTime}</td>
+				<td id="c">${date.endTime}</td>
+				<td id="d">${date.facilityCode}</td>
+				<td><input type="button" class="btn btn-success" value="승인 하기" onClick="sub()"></td>
 				<td><input type="button" class="btn btn-danger" value="거부 하기"></td>
 <%-- 				<td>${date.approval}</td> --%>
 			</tr>

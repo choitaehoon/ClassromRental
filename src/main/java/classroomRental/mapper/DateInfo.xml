@@ -18,7 +18,7 @@
 	select u.name, d.idDate, d.currentTime,
  		d.endTime, d.facilityCode, d.approval, u.grade
 		from user u inner join date d  
-	on u.id = d.id 
+	on u.id = d.id where d.approval = 1;
 	</select>
 	
 	<!-- 날짜에 대한 정보를 추출  -->
@@ -32,6 +32,5 @@
 	insert into date(idDate, currentTime, endTime, facilityCode, id, approval)
 	values(#{idDate}, #{currentTime}, #{endTime}, #{facilityCode}, #{id}, 1 )
 	</insert>
-	
 
 </mapper>
