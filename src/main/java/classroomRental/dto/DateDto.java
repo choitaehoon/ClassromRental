@@ -9,6 +9,7 @@ public class DateDto
 	String currentTime; 
 	String endTime;
 	int id;
+	int approval;
 	List<User> students;
 	
 	public String getIdDate() {
@@ -46,6 +47,12 @@ public class DateDto
 	}
 	public void setStudents(List<User> students) {
 		this.students = students;
+	}
+	public int getApproval() {
+		return approval;
+	}
+	public void setApproval(int approval) {
+		this.approval = approval;
 	}
 	
 	

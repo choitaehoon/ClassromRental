@@ -298,7 +298,7 @@ to
 </textarea><br/>
 <input type="hidden" name="id" value="${user.id}">
 <input type="hidden" name="loginId" value="${user.loginId}">
-<input type="hidden" name="approval">
+<input type="hidden" name="approval" value="1">
 <button type="button" id="check" class="btn btn-primary">조회하기</button>
 <button type="submit" id="zzz" class="btn btn-primary">승인요청하기</button>
 </form>

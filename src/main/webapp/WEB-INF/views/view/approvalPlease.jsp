@@ -34,7 +34,7 @@
 			<td>불가</td>
 			</c:when>
 			
-			<c:when test="${user.grade eq 1}">
+			<c:when test="${user.grade eq 1 && date.approval eq 1}">
 			<td>대기</td>
 			</c:when>
 			

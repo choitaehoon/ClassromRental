@@ -311,6 +311,7 @@ public class LectureroomController {
 		return "view/classroomInfo";
 	}
 	
+	//강의실 빌려주기
 	@RequestMapping("rent")
 	public String rent(User user, Model model)
 	{
@@ -335,11 +336,12 @@ public class LectureroomController {
 	}
 	
 	@RequestMapping("approvalSubmit")
-	public String approvalSubmit(DateDto date,User user, Model model)
+	public String approvalSubmit(@RequestParam("loginId") String loginId,DateDto date,User user, Model model)
 	{
 		dateInfo.updateApprovalSubmit(date);
 		model.addAttribute("date", dateInfo.selectByAll(user.getId()));
 		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
-		return "view/approvalPlease";
+		model.addAttribute("loginId", loginId);
+		return "redirect:showStaff?loginId={loginId}";
 	}
 }
