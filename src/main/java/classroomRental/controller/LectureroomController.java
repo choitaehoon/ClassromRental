@@ -354,4 +354,12 @@ public class LectureroomController {
 		model.addAttribute("loginId", loginId);
 		return "redirect:showStaff?loginId={loginId}";
 	}
+	
+	//강의실 나누기 -> 그사람이 수업이라면 그 수업시간 틈을타 강의실 대여 해주기
+	@RequestMapping("writeClassroom")
+	public String writeClassroom(User user,Model model)
+	{
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
+		return "view/writeClassroom";
+	}
 }

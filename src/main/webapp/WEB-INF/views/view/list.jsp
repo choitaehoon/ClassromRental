@@ -46,13 +46,13 @@
 			</c:forEach>
 	</table>
 
-	<div class="pagination pagination-small pagination-centered">
-		<ul>
-			<c:forEach var="page" items="${ pagination.pageList }">
-				<li class='${ page.cssClass }'><a data-page="${ page.number }">${ page.label }</a></li>
-			</c:forEach>
-		</ul>
-	</div>
+<!-- 	<div class="pagination pagination-small pagination-centered"> -->
+<!-- 		<ul> -->
+<%-- 			<c:forEach var="page" items="${ pagination.pageList }"> --%>
+<%-- 				<li class='${ page.cssClass }'><a data-page="${ page.number }">${ page.label }</a></li> --%>
+<%-- 			</c:forEach> --%>
+<!-- 		</ul> -->
+<!-- 	</div> -->
 </form>
 
 	<p>

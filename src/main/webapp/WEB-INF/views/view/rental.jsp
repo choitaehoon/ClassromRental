@@ -19,5 +19,10 @@
 			
 		</tr>
 	</table>
+	
+	<p>
+		<input type="button" class="btn btn-primary" value="글작성"
+		onclick="location.href='http://localhost:8080/controller/view/writeClassroom?loginId=${user.loginId}'">
+	</p>
 </body>
 </html>
