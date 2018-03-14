@@ -8,7 +8,16 @@
 
 </head>
 <body>
-	
-
+	<h1>강의실 나눔</h1>
+	<table class="table table-bordered">
+		<tr>
+			<td>작성자</td>
+			<td>내용</td>
+			<td>신청</td>
+		</tr>
+		<tr>
+			
+		</tr>
+	</table>
 </body>
 </html>

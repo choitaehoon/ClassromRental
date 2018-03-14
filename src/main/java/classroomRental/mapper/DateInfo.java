@@ -12,4 +12,5 @@ public interface DateInfo
 	List<DateDto> selectByAll(int id);
 	List<DateDto> selectAllRoom();
 	void updateApprovalSubmit(DateDto dateDto);
+	void updateApprovalReject(DateDto dateDto);
 }

@@ -40,4 +40,11 @@
 		endTime = #{endTime}
 	</update>
 	
+	<update id="updateApprovalReject">
+		update date set approval = 0
+		where idDate = #{idDate} and
+		currentTime = #{currentTime} and
+		endTime = #{endTime}
+	</update>
+	
 </mapper>

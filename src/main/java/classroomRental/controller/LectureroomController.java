@@ -316,7 +316,7 @@ public class LectureroomController {
 	public String rent(User user, Model model)
 	{
 		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
-		return "view/test";
+		return "view/rental";
 	}
 
 	@RequestMapping("showStaff")
@@ -335,10 +335,20 @@ public class LectureroomController {
 		return "view/approvalPlease";
 	}
 	
-	@RequestMapping("approvalSubmit")
+	@RequestMapping("approvalSubmit") //관리자가 승인할때 이 메소드 호출
 	public String approvalSubmit(@RequestParam("loginId") String loginId,DateDto date,User user, Model model)
 	{
 		dateInfo.updateApprovalSubmit(date);
+		model.addAttribute("date", dateInfo.selectByAll(user.getId()));
+		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
+		model.addAttribute("loginId", loginId);
+		return "redirect:showStaff?loginId={loginId}";
+	}
+	
+	@RequestMapping("approvalReject")
+	public String approvalReject(@RequestParam("loginId") String loginId,DateDto date,User user, Model model)
+	{
+		dateInfo.updateApprovalReject(date);
 		model.addAttribute("date", dateInfo.selectByAll(user.getId()));
 		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
 		model.addAttribute("loginId", loginId);
