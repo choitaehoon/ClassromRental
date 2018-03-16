@@ -8,4 +8,5 @@ public interface SwapWriteInfo
 {
 	void insertSwapWrite(SwapWriteDto swapDto);
 	List<SwapWriteDto> selectByAll();
+	SwapWriteDto selectByNumber(int number);
 }

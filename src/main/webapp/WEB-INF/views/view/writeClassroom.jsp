@@ -116,7 +116,8 @@
 			<br/>
 			강의실 &nbsp;&nbsp;<input type="text" id="facilityCode" placeholder="강의실">
 			<input type="submit" id="submitId" class="btn btn-primary" value="저장" onclick="test();">
-			<input type="button" id="list" class="btn btn-default" value="목록으로 가기">
+			<input type="button" id="list" class="btn btn-default" value="목록으로 가기"
+			onclick="location.href='http://localhost:8081/controller/view/rent?loginId=${user.loginId}'">
 	</div>
 	
 	<form action="writeSubmit" name="classroomRental">

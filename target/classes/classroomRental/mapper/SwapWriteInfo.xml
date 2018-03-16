@@ -10,9 +10,14 @@
 	</insert>
 	
 	<select id="selectByAll" resultType="classroomRental.dto.SwapWriteDto">
-	 select s.number,s.loginId, s.title, s.textarea, s.request
+	 select s.number,s.loginId, s.title, s.textarea, s.request,
+	 		s.idDate, s.currentTime, s.endTime
 	 from user u inner join swapwrite s
 	 on u.id = s.id
+	</select>
+	
+	<select id="selectByNumber" resultType="classroomRental.dto.SwapWriteDto">
+	select * from swapwrite where number = #{number}
 	</select>
 	
 	

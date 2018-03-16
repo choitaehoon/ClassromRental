@@ -5,7 +5,15 @@
 <!DOCTYPE html >
 <html>
 <head>
-
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+		function subscribe(number)
+		{
+			var num = number;
+			document.application.number.value=num;
+			application.submit();
+		}
+	</script>
 </head>
 <body>
 	<h1>강의실 나눔</h1>
@@ -23,10 +31,13 @@
 			<td>${swap.loginId}</td>
 			<td>${swap.title}</td>
 			<td>${swap.textarea}</td>
+			
 			<c:choose>
 				<c:when test="${swap.request eq 1}">
-					<td><a href="http://localhost:8081/controller/view/
-					application?loginId=${user.loginId}">신청 하기</a>
+					<td>
+<%-- 					<a href="http://localhost:8081/controller/view/ --%>
+<%-- 					application?loginId=${user.loginId}">신청 하기</a> --%>
+						<a href="javascript:subscribe(${swap.number});">신청하기</a>
 					</td>
 				</c:when>
 				
@@ -37,6 +48,11 @@
 		</tr>
 		</c:forEach>
 	</table>
+	
+	<form action="application" name="application">
+		<input type="hidden" name="number" value="">
+		<input type="hidden" name="loginId" value="${user.loginId}">
+	</form>
 	
 	<p>
 		<input type="button" class="btn btn-primary" value="글작성"

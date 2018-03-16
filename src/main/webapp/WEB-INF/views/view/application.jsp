@@ -5,11 +5,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css"
+	rel="stylesheet">
+	<style>
+	#b
+ 	{
+ 		position: absolute;
+/*  		margin:120px; */
+ 		right:800px; 
+ 		top: 17%;
+ 	}
+ 	#submitId
+ 	{
+ 		position: absolute;
+ 		right:200px;
+ 		top: 100%;
+ 	}
+ 	#list
+ 	{
+ 		position: absolute;
+ 		right:60px;
+ 		top: 100%;
+ 	}
+	</style>
 </head>
 <body>
 	<hr>
+	<div id="b">
 	
+	<h1>신청하기</h1><br/>
+	날짜 <input class="form-control" type="text" placeholder="${swap.idDate}" readonly><br/><br/>
+	시작시간 <input class="form-control" type="text" placeholder="${swap.currentTime}" readonly><br/><br/>
+	종료시간 <input class="form-control" type="text" placeholder="${swap.endTime}" readonly><br/><br/>
+	신청하시겠습니까?<br/><br/>
+	<input type="submit" class="btn btn-primary" id="submitId" value="전송">
+	<input type="button" class="btn btn-default" id="list" value="목록으로 나가기" 
+	onclick="location.href='http://localhost:8081/controller/view/rent?loginId=${user.loginId}'"
+	>
+	</div>	
 	
 </body>
 </html>
