@@ -11,6 +11,7 @@ public class SwapWriteDto
 	String idDate;
 	String currentTime;
 	String endTime;
+	String borrower;
 	
 	public int getId() {
 		return id;
@@ -65,6 +66,12 @@ public class SwapWriteDto
 	}
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
+	}
+	public String getBorrower() {
+		return borrower;
+	}
+	public void setBorrower(String borrower) {
+		this.borrower = borrower;
 	}
 	
 	

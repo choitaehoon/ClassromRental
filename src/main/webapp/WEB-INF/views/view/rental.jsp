@@ -35,8 +35,6 @@
 			<c:choose>
 				<c:when test="${swap.request eq 1}">
 					<td>
-<%-- 					<a href="http://localhost:8081/controller/view/ --%>
-<%-- 					application?loginId=${user.loginId}">신청 하기</a> --%>
 						<a href="javascript:subscribe(${swap.number});">신청하기</a>
 					</td>
 				</c:when>

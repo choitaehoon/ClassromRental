@@ -386,4 +386,13 @@ public class LectureroomController {
 		model.addAttribute("swap", swapWriteInfo.selectByNumber(swapWriteDto.getNumber()));
 		return "view/application";
 	}
+	
+	//강의실 
+	@RequestMapping("borrow")
+	public String borrow(@RequestParam("loginId") String loginId,SwapWriteDto swapDto,Model model)
+	{
+		swapWriteInfo.updateSwapWrite(swapDto);
+		model.addAttribute("loginId",loginId);
+		return "redirect:rent?loginId={loginId}";
+	}
 }

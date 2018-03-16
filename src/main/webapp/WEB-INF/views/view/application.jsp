@@ -38,7 +38,15 @@
 	시작시간 <input class="form-control" type="text" placeholder="${swap.currentTime}" readonly><br/><br/>
 	종료시간 <input class="form-control" type="text" placeholder="${swap.endTime}" readonly><br/><br/>
 	신청하시겠습니까?<br/><br/>
+	
+	<form action="borrow">
+	<input type="hidden" name="number" value="${swap.number}">
+	<input type="hidden" name="request" value="0">
+	<input type="hidden" name="borrower" value="${user.loginId}">
+	<input type="hidden" name="loginId" value="${user.loginId}">
 	<input type="submit" class="btn btn-primary" id="submitId" value="전송">
+	</form>
+	
 	<input type="button" class="btn btn-default" id="list" value="목록으로 나가기" 
 	onclick="location.href='http://localhost:8081/controller/view/rent?loginId=${user.loginId}'"
 	>

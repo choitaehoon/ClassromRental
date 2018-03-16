@@ -20,5 +20,10 @@
 	select * from swapwrite where number = #{number}
 	</select>
 	
+	<update id="updateSwapWrite">
+	update swapwrite set request = 0 , borrower = #{borrower}
+	where number = #{number}
+	</update>
+	
 	
 </mapper>
