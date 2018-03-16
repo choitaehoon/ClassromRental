@@ -4,13 +4,13 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
 <mapper namespace="classroomRental.mapper.SwapWriteInfo">
-	<insert id="insertSwapWrite">
-	insert swapwrite (id, title, textarea,loginId)
-	values(#{id}, #{title}, #{textarea}, #{loginId})
+	<insert id="insertSwapWrite" useGeneratedKeys="true" keyProperty="number">
+	insert swapwrite (id, title, textarea,loginId, request,idDate, currentTime, endTime)
+	values(#{id}, #{title}, #{textarea}, #{loginId}, 1, #{idDate}, #{currentTime}, #{endTime})
 	</insert>
 	
 	<select id="selectByAll" resultType="classroomRental.dto.SwapWriteDto">
-	 select s.loginId, s.title, s.textarea
+	 select s.number,s.loginId, s.title, s.textarea, s.request
 	 from user u inner join swapwrite s
 	 on u.id = s.id
 	</select>

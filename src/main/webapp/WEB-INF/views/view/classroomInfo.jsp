@@ -40,11 +40,9 @@
 		$('#onselectExample2').timepicker({'timeFormat':'H:i:s'});
 		
 		$('#onselectExample1').on('changeTime', function() {
-// 		    $('#onselectTarget1').text($(this).val());
 		});
 		
 		$('#onselectExample2').on('changeTime', function() {
-// 		    $('#onselectTarget1').text($(this).val());
 		});
 		
 	});

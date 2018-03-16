@@ -11,6 +11,7 @@
 	<h1>강의실 나눔</h1>
 	<table class="table table-bordered">
 		<tr>
+			<td>번호</td>
 			<td>작성자</td>
 			<td>제목</td>
 			<td>내용</td>
@@ -18,10 +19,21 @@
 		</tr>
 		<c:forEach items="${swap}" var="swap">
 		<tr>
+			<td>${swap.number}</td>
 			<td>${swap.loginId}</td>
 			<td>${swap.title}</td>
 			<td>${swap.textarea}</td>
-			<td></td>
+			<c:choose>
+				<c:when test="${swap.request eq 1}">
+					<td><a href="http://localhost:8081/controller/view/
+					application?loginId=${user.loginId}">신청 하기</a>
+					</td>
+				</c:when>
+				
+				<c:when test="${swap.request eq 0}">
+					<td>마감</td>
+				</c:when>
+			</c:choose>
 		</tr>
 		</c:forEach>
 	</table>

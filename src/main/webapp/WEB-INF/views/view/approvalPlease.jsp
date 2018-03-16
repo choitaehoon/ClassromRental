@@ -41,6 +41,7 @@
 			<c:otherwise>
 			<td>승인</td>
 			</c:otherwise>
+			
 		</c:choose>
 	</tr>
 </c:forEach>

@@ -374,8 +374,15 @@ public class LectureroomController {
 	{
 		swapWriteInfo.insertSwapWrite(swapWriteDto);
 		model.addAttribute("loginId",loginId);
-		model.addAttribute("swap",swapWriteInfo.selectByAll());
 		model.addAttribute("user", userInfo.selectById(user.getId()));
 		return "redirect:rent?loginId={loginId}";
+	}
+	
+	//어떤사람이 강의실 빌리고 수업시간이 있을경우 수업시간에 빌릴 수 있게 다른사람이 신청하기
+	@RequestMapping("application")
+	public String application(User user,Model model)
+	{
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
+		return "view/application";
 	}
 }
