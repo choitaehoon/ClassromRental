@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="classroomRental.mapper.SwapWriteInfo">
+	<insert id="insertSwapWrite">
+	insert swapwrite (id, title, textarea,loginId)
+	values(#{id}, #{title}, #{textarea}, #{loginId})
+	</insert>
+	
+	<select id="selectByAll" resultType="classroomRental.dto.SwapWriteDto">
+	 select s.loginId, s.title, s.textarea
+	 from user u inner join swapwrite s
+	 on u.id = s.id
+	</select>
+	
+	
+</mapper>

@@ -12,12 +12,18 @@
 	<table class="table table-bordered">
 		<tr>
 			<td>작성자</td>
+			<td>제목</td>
 			<td>내용</td>
-			<td>신청</td>
+			<td>신청하기</td>
 		</tr>
+		<c:forEach items="${swap}" var="swap">
 		<tr>
-			
+			<td>${swap.loginId}</td>
+			<td>${swap.title}</td>
+			<td>${swap.textarea}</td>
+			<td></td>
 		</tr>
+		</c:forEach>
 	</table>
 	
 	<p>

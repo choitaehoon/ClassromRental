@@ -14,7 +14,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.1/jquery.timepicker.min.js"></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.1/jquery.timepicker.min.css"></script> -->
 
-
 <script>
 	$(function(){
 		$("#datepicker").datepicker({

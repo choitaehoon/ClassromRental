@@ -75,6 +75,7 @@
 			</c:forEach>
 		</table>
 	</form>
+	
 	<form action="approvalSubmit" id="approvalSubmit" name="approvalSubmit">
 		<input type="hidden" name="idDate" value="">
 		<input type="hidden" name="currentTime" value="">

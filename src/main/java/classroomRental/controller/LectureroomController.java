@@ -15,6 +15,7 @@ import classroomRental.dto.DateDto;
 import classroomRental.dto.Pagination;
 import classroomRental.dto.SeungyeonDto;
 import classroomRental.dto.SurveyDto;
+import classroomRental.dto.SwapWriteDto;
 import classroomRental.dto.User;
 import classroomRental.mapper.BoardInfo;
 import classroomRental.mapper.DateInfo;
@@ -26,6 +27,7 @@ import classroomRental.mapper.MillenniumcenterInfo;
 import classroomRental.mapper.SaintMichaelInfo;
 import classroomRental.mapper.SeungyeonInfo;
 import classroomRental.mapper.SurveyInfo;
+import classroomRental.mapper.SwapWriteInfo;
 import classroomRental.mapper.UserInfo;
 import classroomRental.mapper.WoldanggwanInfo;
 import classroomRental.service.SeungyeonInfoService;
@@ -63,6 +65,8 @@ public class LectureroomController {
 	private	UserService userService;
 	@Autowired
 	private DateInfo dateInfo;
+	@Autowired
+	private SwapWriteInfo swapWriteInfo;
 	
 	@RequestMapping("login")
 	public String login()
@@ -316,6 +320,7 @@ public class LectureroomController {
 	public String rent(User user, Model model)
 	{
 		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
+		model.addAttribute("swap",swapWriteInfo.selectByAll());
 		return "view/rental";
 	}
 
@@ -361,5 +366,16 @@ public class LectureroomController {
 	{
 		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		return "view/writeClassroom";
+	}
+	
+	//강의실 게시물글 올리기
+	@RequestMapping("writeSubmit")
+	public String writeForm(@RequestParam("loginId") String loginId,SwapWriteDto swapWriteDto ,User user, Model model)
+	{
+		swapWriteInfo.insertSwapWrite(swapWriteDto);
+		model.addAttribute("loginId",loginId);
+		model.addAttribute("swap",swapWriteInfo.selectByAll());
+		model.addAttribute("user", userInfo.selectById(user.getId()));
+		return "redirect:rent?loginId={loginId}";
 	}
 }
