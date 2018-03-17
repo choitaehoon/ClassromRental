@@ -58,20 +58,45 @@
 				<td>시작 시간</td>
 				<td>종료 시간</td>
 				<td>강의실</td>
+				
+				<td>등급</td>
 				<td>승인 하기</td>
 				<td>거부 하기</td>
 			</tr>
-			<c:forEach items="${date}" var="date">
+			
+			<c:forEach items="${dates}" var="date">
+			<c:forEach items="${date.students}" var="user">
 			<tr>
-				<td>${user.name}</td>
+				<td>${date.rent}</td>
 				<td id="a">${date.idDate}</td>
 				<td id="b">${date.currentTime}</td>
 				<td id="c">${date.endTime}</td>
 				<td id="d">${date.facilityCode}</td>
+				<c:choose>
+					<c:when test="${user.grade == 0}">
+						<td>정상</td>
+					</c:when>
+					
+					<c:when test="${user.grade == 1}">
+						<td>경고</td>
+					</c:when>
+					
+					<c:when test="${user.grade == 2}">
+						<td>위험</td>
+					</c:when>
+					
+					<c:when test="${user.grade == 3}">
+						<td>강등</td>
+					</c:when>
+					
+				</c:choose>
+				
+				
 				<td><input type="button" class="btn btn-success" value="승인 하기" onclick="sub();"></td>
 				<td><input type="button" class="btn btn-danger" value="거부 하기" onclick="reject();"></td>
 <%-- 				<td>${date.approval}</td> --%>
 			</tr>
+			</c:forEach>
 			</c:forEach>
 		</table>
 	</form>

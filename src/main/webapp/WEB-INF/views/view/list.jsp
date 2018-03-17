@@ -21,13 +21,15 @@
 #color1 {
 	color: black;
 }
+
+tr:hover { background-color: #ffffdd; }
 </style>
 </head>
 
 <body>
 	<h1>목록 보기</h1>
 	<form method="get"> <input type="hidden" name="pg" value="1" />
-	<table class="table table-striped">
+	<table class="table table-bordered">
 		<tr>
 			<td id="color1">번호</td>
 			<td id="color1">작성자</td>

@@ -15,8 +15,8 @@
 	</select>
 	
 	<select id="selectAllRoom" resultType="classroomRental.dto.DateDto">
-	select u.name, d.idDate, d.currentTime,
- 		d.endTime, d.facilityCode, d.approval, u.grade
+	select d.rent, d.idDate, d.currentTime,
+ 		d.endTime, d.facilityCode, d.approval, u.grade, d.id
 		from user u inner join date d  
 	on u.id = d.id where d.approval = 1;
 	</select>
@@ -29,8 +29,8 @@
 	</select>
 
 	<insert id="selectByInsert">
-	insert into date(idDate, currentTime, endTime, facilityCode, id, approval)
-	values(#{idDate}, #{currentTime}, #{endTime}, #{facilityCode}, #{id}, 1 )
+	insert into date(idDate, currentTime, endTime, facilityCode, id, approval, rent)
+	values(#{idDate}, #{currentTime}, #{endTime}, #{facilityCode}, #{id}, 1, #{loginId} )
 	</insert>
 
 	<update id="updateApprovalSubmit">

@@ -5,6 +5,9 @@
 <!DOCTYPE html >
 <html>
 <head>
+<style>
+	tr:hover { background-color: #ffffdd; }
+</style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script>
 		function subscribe(number)
@@ -23,6 +26,7 @@
 			<td>작성자</td>
 			<td>제목</td>
 			<td>내용</td>
+			<td>신청자</td>
 			<td>신청하기</td>
 		</tr>
 		<c:forEach items="${swap}" var="swap">
@@ -31,6 +35,15 @@
 			<td>${swap.loginId}</td>
 			<td>${swap.title}</td>
 			<td>${swap.textarea}</td>
+			<c:choose>
+				<c:when test="${swap.borrower eq null}">
+					<td></td>
+				</c:when>
+				
+				<c:when test="${swap.borrower != null}">
+					<td>${swap.borrower}</td>
+				</c:when>
+			</c:choose>
 			
 			<c:choose>
 				<c:when test="${swap.request eq 1}">

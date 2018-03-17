@@ -1,5 +1,7 @@
 package classroomRental.mapper;
 
+import java.util.List;
+
 import classroomRental.dto.User;
 
 public interface UserInfo {
@@ -10,4 +12,5 @@ public interface UserInfo {
 	void delete(int id);
 	int selectByLoginIdCheck(String loginId);
 	User selectByPassword(User user);
+	List<User> findByDateId(int id);
 }

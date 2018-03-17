@@ -10,6 +10,7 @@ public class DateDto
 	String endTime;
 	int id;
 	int approval;
+	String rent;
 	List<User> students;
 	
 	public String getIdDate() {
@@ -42,6 +43,13 @@ public class DateDto
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	public String getRent() {
+		return rent;
+	}
+	public void setRent(String rent) {
+		this.rent = rent;
+	}
 	public List<User> getStudents() {
 		return students;
 	}
@@ -54,6 +62,5 @@ public class DateDto
 	public void setApproval(int approval) {
 		this.approval = approval;
 	}
-	
 	
 }

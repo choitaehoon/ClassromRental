@@ -53,7 +53,7 @@
 	</c:if>
 	
 	<c:if test="${user.grade == 3}">
-	<input class="form-control" type="text" placeholder="불가" readonly>
+	<input class="form-control" type="text" placeholder="강등" readonly>
 	</c:if>
 	
 </div>

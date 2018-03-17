@@ -13,6 +13,9 @@
 	SELECT * FROM User WHERE loginId = #{loginId}
 	</select>
 	
+	<select id="findByDateId" resultType="classroomRental.dto.User">
+	select * from User where id = #{id}
+	</select>
 	
 	<!-- 아이디와 비번 체크 -->
 	<select id="selectByPassword" resultType="classroomRental.dto.User"> 

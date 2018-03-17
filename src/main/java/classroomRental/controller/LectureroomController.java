@@ -327,8 +327,14 @@ public class LectureroomController {
 	@RequestMapping("showStaff")
 	public String showBoard(User user, Model model)
 	{
+		List<DateDto> dates = dateInfo.selectAllRoom();
+		for(DateDto date : dates)
+		{
+			List<User> users = userInfo.findByDateId(date.getId());
+			date.setStudents(users);
+		}
+		model.addAttribute("dates", dates);
 		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
-		model.addAttribute("date", dateInfo.selectAllRoom());
 		return "view/showStaff";
 	}
 	
