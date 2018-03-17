@@ -6,7 +6,7 @@
 <html>
 <head>
 <link
-	href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css"
+	href="http://nethna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css"
 	rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script>
@@ -28,24 +28,28 @@
 
 <body>
 	<h1>목록 보기</h1>
-	<form method="get"> <input type="hidden" name="pg" value="1" />
-	<table class="table">
+	<form method="get"> 
+	<table class="table table-hover">
+	<thead>
 		<tr>
-			<td id="color1">번호</td>
-			<td id="color1">작성자</td>
-			<td id="color1">내용</td>
-			<td id="color1">삭제</td>
-			<td id="color1">수정</td>
+			<th id="color1">번호</th>
+			<th id="color1">작성자</th>
+			<th id="color1">내용</th>
+			<th id="color1">삭제</th>
+			<th id="color1">수정</th>
+		</tr>
 		<tr>
 			<c:forEach items="${board}" var="dto">
 				<tr>
-					<td>${dto.number}</td>
-					<td>${dto.id}</td>
-					<td>${dto.context}</td>
-					<td><a href="delete?id=${dto.id}">X</a></td>
-					<td><a href="update?id=${dto.id}">누르기</a></td>
+					<th>${dto.number}</th>
+					<th>${dto.id}</th>
+					<th>${dto.context}</th>
+					<th><a href="delete?id=${dto.id}">X</a></th>
+					<th><a href="update?id=${dto.id}">누르기</a></th>
 				<tr>
 			</c:forEach>
+		</tr>
+	</thead>
 	</table>
 
 <!-- 	<div class="pagination pagination-small pagination-centered"> -->

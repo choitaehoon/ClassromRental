@@ -51,9 +51,6 @@
 </script>
 
 <style>
- tr:nth-child(1) { 
- 	color: black; 
- } 
 #center {
 	position: absolute;
 	top: 37.9%;

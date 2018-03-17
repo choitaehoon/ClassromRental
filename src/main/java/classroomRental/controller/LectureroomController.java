@@ -405,6 +405,7 @@ public class LectureroomController {
 	@RequestMapping("questionnaireInfo1")
 	public String questionnaireInfo1(User user, Model model)
 	{
+		model.addAttribute("swap", swapWriteInfo.ListAll(user.getLoginId()));
 		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		return "view/questionnaireInfo1";
 	}

@@ -16,6 +16,14 @@
 	 on u.id = s.id
 	</select>
 	
+	<select id="ListAll" resultType="classroomRental.dto.SwapWriteDto">
+	select s.borrower, s.idDate, s.currentTime, s.endTime
+	from swapwrite s inner join user u 
+	on s.id = u.id where borrower is not null and s.loginId = #{loginId}
+<!-- 	select borrower, idDate, currentTime, endTime -->
+<!-- 	from swapwrite where borrower is not null -->
+	</select>
+	
 	<select id="selectByNumber" resultType="classroomRental.dto.SwapWriteDto">
 	select * from swapwrite where number = #{number}
 	</select>

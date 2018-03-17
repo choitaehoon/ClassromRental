@@ -6,10 +6,6 @@
 <html>
 <head>
 <style>
-	tr:nth-child(1)
-	{
-		color: black;
-	}
 	tr:hover { background-color: #ffffdd; }
 </style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -23,45 +19,48 @@
 	</script>
 </head>
 <body>
+	<hr/>
 	<h1>강의실 나눔</h1>
-	<table class="table table-bordered">
+	<table class="table table-hover">
+	<thead>
 		<tr>
-			<td>번호</td>
-			<td>작성자</td>
-			<td>제목</td>
-			<td>내용</td>
-			<td>신청자</td>
-			<td>신청하기</td>
+			<th>번호</th>
+			<th>작성자</th>
+			<th>제목</th>
+			<th>내용</th>
+			<th>신청자</th>
+			<th>신청하기</th>
 		</tr>
 		<c:forEach items="${swap}" var="swap">
 		<tr>
-			<td>${swap.number}</td>
-			<td>${swap.loginId}</td>
-			<td>${swap.title}</td>
-			<td>${swap.textarea}</td>
+			<th>${swap.number}</th>
+			<th>${swap.loginId}</th>
+			<th>${swap.title}</th>
+			<th>${swap.textarea}</th>
 			<c:choose>
 				<c:when test="${swap.borrower eq null}">
-					<td></td>
+					<th></th>
 				</c:when>
 				
 				<c:when test="${swap.borrower != null}">
-					<td>${swap.borrower}</td>
+					<th>${swap.borrower}</th>
 				</c:when>
 			</c:choose>
 			
 			<c:choose>
 				<c:when test="${swap.request eq 1}">
-					<td>
+					<th>
 						<a href="javascript:subscribe(${swap.number});">신청하기</a>
-					</td>
+					</th>
 				</c:when>
 				
 				<c:when test="${swap.request eq 0}">
-					<td>마감</td>
+					<th>마감</th>
 				</c:when>
 			</c:choose>
 		</tr>
 		</c:forEach>
+		</thead>
 	</table>
 	
 	<form action="application" name="application">

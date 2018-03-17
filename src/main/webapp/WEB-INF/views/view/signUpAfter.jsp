@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
 <style>
  td { 
@@ -12,7 +13,7 @@
 
 tr:nth-child(1) {
 /*  	background-color: #aaaaaa;  */
-	color: white;
+	color: black;
 	font-weight: bold;
 }
 
