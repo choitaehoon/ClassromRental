@@ -6,6 +6,10 @@
 <html>
 <head>
 <style>
+	tr:nth-child(1)
+	{
+		color: black;
+	}
 	tr:hover { background-color: #ffffdd; }
 </style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

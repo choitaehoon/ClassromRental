@@ -401,4 +401,11 @@ public class LectureroomController {
 		model.addAttribute("loginId",loginId);
 		return "redirect:rent?loginId={loginId}";
 	}
+	
+	@RequestMapping("questionnaireInfo1")
+	public String questionnaireInfo1(User user, Model model)
+	{
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
+		return "view/questionnaireInfo1";
+	}
 }

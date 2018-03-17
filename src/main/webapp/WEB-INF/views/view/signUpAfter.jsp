@@ -6,12 +6,12 @@
 <head>
 <link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
 <style>
-td {
-	border: 1px solid gray;
-}
+ td { 
+ 	border: 1px solid black;
+ } 
 
 tr:nth-child(1) {
-	background-color: #aaaaaa;
+/*  	background-color: #aaaaaa;  */
 	color: white;
 	font-weight: bold;
 }
@@ -145,7 +145,7 @@ form {
 					href="grade?loginId=${user.loginId}">내 등급 확인</a>
 									<li>|</li></c:if>
 				<li class="topMenuLi"><a class="menuLink"
-					href="questionnaireInfo?loginId=${user.loginId}">설문지 작성하기</a></li>
+					href="questionnaireInfo1?loginId=${user.loginId}">설문지 작성하기</a></li>
 				<li>|</li>
 				<li class="topMenuLi"><a class="menuLink" 
 					href="classroomInfo?loginId=${user.loginId}">강의실 대여 하기</a>

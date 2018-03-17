@@ -51,6 +51,9 @@
 </script>
 
 <style>
+ tr:nth-child(1) { 
+ 	color: black; 
+ } 
 #center {
 	position: absolute;
 	top: 37.9%;
@@ -150,7 +153,7 @@ $(document).ready(function(){
 			<td></td>
 		</tr>
 		<tr>
-			<td>1.승연관</td>
+			<td >1.승연관</td>
 			<td><a href="seungyeon?loginId=${user.loginId}">선택</a></td>
 		</tr>
 		<tr>
@@ -194,11 +197,11 @@ $(document).ready(function(){
 	<!-- 객체가 넘어온걸 확인하면 코드를 줄일 수  있을거같은데 그건 다 구현하고 생각하기 -->
 	<table>
 		<tr>
-			<td>시설코드</td>
-			<td>시설명</td>
-			<td>인원</td>
-			<td>방식</td>
-			<td></td>
+			<td id="color1">시설코드</td>
+			<td id="color1">시설명</td>
+			<td id="color1">인원</td>
+			<td id="color1">방식</td>
+			<td id="color1"></td>
 		</tr>
 		<c:forEach items="${seungyeon}" var="seung">
 			<tr>
