@@ -30,7 +30,7 @@
 
 	<insert id="selectByInsert">
 	insert into date(idDate, currentTime, endTime, facilityCode, id, approval, rent)
-	values(#{idDate}, #{currentTime}, #{endTime}, #{facilityCode}, #{id}, 1, #{loginId} )
+	values(#{idDate}, #{currentTime}, #{endTime}, #{facilityCode}, #{id}, 1, #{rent})
 	</insert>
 
 	<update id="updateApprovalSubmit">

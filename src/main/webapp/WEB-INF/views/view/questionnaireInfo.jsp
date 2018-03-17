@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/view/signUpAfter.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +17,7 @@ form
 <body>
 	<!--설문지 정보.jsp -->
 	<!--1. onClick을 자바스크립트로 변경하기 -->
+	<hr/>
 	<form action="transmit" method="post">
 		<strong>설문지 조사</strong><br /> 
 		1.파손된 물건이 있습니까? &nbsp; 예
@@ -46,6 +48,6 @@ form
 			<input type="text" name="question5" style="width: 500px; height: 20px;"><br />
 		<br /> <input type="submit" class="btn btn-primary" value="전송">
 	</form>
-<%@ include file="/WEB-INF/views/view/footer.jsp"%>
+<%-- <%@ include file="/WEB-INF/views/view/footer.jsp"%> --%>
 </body>
 </html>

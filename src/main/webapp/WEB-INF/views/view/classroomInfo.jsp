@@ -288,11 +288,11 @@ to
 <input type="text" name="endTime" id="onselectExample2" placeholder="시간 선택"><br/>
 강의실 선택<br/>
 <input type="text" name="facilityCode" id="selectByclassroom" placeholder="강의실 선택"><br/>
-사유
+<!-- 사유 -->
 <br/>
-<textarea rows="4" cols="50">
+<!-- <!-- <textarea rows="4" cols="50"> --> 
 
-</textarea><br/>
+<!-- <!-- </textarea><br/> --> 
 <input type="hidden" name="id" value="${user.id}">
 <input type="hidden" name="loginId" value="${user.loginId}">
 <input type="hidden" name="rent" value="${user.loginId}">

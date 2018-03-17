@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/WEB-INF/views/view/signUpAfter.jsp"%>
 <!DOCTYPE html >
 <html>
 <head>
@@ -15,6 +16,7 @@
 </head>
 <body>
 <div>
+	<hr/>
 	<h1>내정보</h1>
 	<label>이름</label>
 	<input class="form-control" type="text" placeholder="${user.name}" readonly>
@@ -59,5 +61,5 @@
 </div>
 	
 </body>
-<%@ include file="/WEB-INF/views/view/footer.jsp"%>
+<%-- <%@ include file="/WEB-INF/views/view/footer.jsp"%> --%>
 </html>
