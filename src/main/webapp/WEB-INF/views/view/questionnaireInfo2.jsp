@@ -41,6 +41,7 @@ form
 </div>
 <div id="eee">
 	<form action="transmit" method="post">
+	
 	<h1>평가</h1><br/>
 	<input type="hidden" name="loginId" value="${user.loginId}">
 	<input type="hidden" name="facilityCode" value="${swap.facilityCode}">
@@ -70,7 +71,8 @@ form
 		4.의자,책상 등 잘 정리하고 갔습니까? &nbsp; 예
 			<input type="radio" name="q4" onClick="question4.disabled=true"> 
 			아니오<input type="radio" name="q4" onClick="question4.disabled=false"><br /> 
-				<input type="text" name="question4" style="width: 500px; height: 20px;"><br />		
+				<input type="text" name="question4" style="width: 500px; height: 20px;"><br />
+		<br/>		
 		5.온,냉방시설을 제대로 끄고 갔습니까? &nbsp; 예
 		<input type="radio" name="q5" onClick="question5.disabled=true"> 
 			아니오<input type="radio" name="q5" onClick="question5.disabled=false"><br /> 

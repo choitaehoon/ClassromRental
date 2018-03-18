@@ -21,12 +21,14 @@
 	from swapwrite 
 	where borrower = #{borrower} and idDate = #{idDate} 
 	and currentTime = #{currentTime} and endTime = #{endTime}
+	and facilityCode = #{facilityCode}
 	</select>
 	
 	<select id="ListAll" resultType="classroomRental.dto.SwapWriteDto">
 	select s.borrower, s.idDate, s.currentTime, s.endTime, s.facilityCode
 	from swapwrite s inner join user u 
-	on s.id = u.id where borrower is not null and s.loginId = #{loginId}
+	on s.id = u.id
+	where s.borrower is not null and s.loginId = #{loginId} and s.request = 0
 <!-- 	select borrower, idDate, currentTime, endTime -->
 <!-- 	from swapwrite where borrower is not null -->
 	</select>

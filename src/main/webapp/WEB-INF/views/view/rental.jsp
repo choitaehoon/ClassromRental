@@ -29,7 +29,9 @@
 			<th>제목</th>
 			<th>내용</th>
 			<th>신청자</th>
+			  <c:if test="${user.userType != '관리자'}">
 			<th>신청하기</th>
+			</c:if>
 		</tr>
 		<c:forEach items="${swap}" var="swap">
 		<tr>
@@ -46,7 +48,7 @@
 					<th>${swap.borrower}</th>
 				</c:when>
 			</c:choose>
-			
+			<c:if test="${user.userType != '관리자'}">
 			<c:choose>
 				<c:when test="${swap.request eq 1}">
 					<th>
@@ -58,6 +60,7 @@
 					<th>마감</th>
 				</c:when>
 			</c:choose>
+			</c:if>
 		</tr>
 		</c:forEach>
 		</thead>
