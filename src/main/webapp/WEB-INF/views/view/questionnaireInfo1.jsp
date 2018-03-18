@@ -13,7 +13,12 @@
 			var date = idDate;
 			var current = currentTime;
 			var end = endTime;
-			alert(borrow+" "+date+" "+current+" "+end);
+			
+			document.questionnaireInfo2.borrower.value = borrow;
+			document.questionnaireInfo2.idDate.value = date;
+			document.questionnaireInfo2.currentTime.value = current;
+			document.questionnaireInfo2.endTime.value = end;
+			questionnaireInfo2.submit();
 		}
 	</script>
 </head>
@@ -29,6 +34,7 @@
 					<tr>
 						<th>빌린 사람</th>
 						<th>날짜</th>
+						<th>강의실</th>
 						<th>시작 시간</th>
 						<th>종료 시간</th>
 					</tr>
@@ -37,6 +43,7 @@
 					<tr>
 						<th>${swa.borrower}</th>
 						<th>${swa.idDate}</th>
+						<th>${swa.facilityCode}</th>
 						<th>${swa.currentTime}</th>
 						<th>${swa.endTime}</th>
 						<th><input type="button" value="설문지 조사" 
@@ -48,6 +55,15 @@
 				</c:forEach>
 			</table>
 		</div>
+		
+		<form action="questionnaireInfo2" name="questionnaireInfo2"> 
+			<input type="hidden" name="borrower" value="">
+			<input type="hidden" name="idDate" value="">
+			<input type="hidden" name="currentTime" value="">
+			<input type="hidden" name="endTime" value="">
+			<input type="hidden" name="loginId" value="${user.loginId}">
+		</form>
+		
 <!-- 	</div> -->
 <!-- </div> -->
 </body>

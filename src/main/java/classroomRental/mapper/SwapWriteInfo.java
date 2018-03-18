@@ -11,4 +11,5 @@ public interface SwapWriteInfo
 	SwapWriteDto selectByNumber(int number);
 	void updateSwapWrite(SwapWriteDto swapDto);
 	List<SwapWriteDto> ListAll(String loginId);
+	SwapWriteDto selectByBorrower(SwapWriteDto swapDto);
 }

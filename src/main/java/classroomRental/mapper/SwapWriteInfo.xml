@@ -5,8 +5,8 @@
  
 <mapper namespace="classroomRental.mapper.SwapWriteInfo">
 	<insert id="insertSwapWrite" useGeneratedKeys="true" keyProperty="number">
-	insert swapwrite (id, title, textarea,loginId, request,idDate, currentTime, endTime)
-	values(#{id}, #{title}, #{textarea}, #{loginId}, 1, #{idDate}, #{currentTime}, #{endTime})
+	insert swapwrite (id, title, textarea, loginId, request,idDate, currentTime, endTime,facilityCode)
+	values(#{id}, #{title}, #{textarea}, #{loginId}, 1, #{idDate}, #{currentTime}, #{endTime}, #{facilityCode})
 	</insert>
 	
 	<select id="selectByAll" resultType="classroomRental.dto.SwapWriteDto">
@@ -16,8 +16,15 @@
 	 on u.id = s.id
 	</select>
 	
+	<select id="selectByBorrower" resultType="classroomRental.dto.SwapWriteDto">
+	select *
+	from swapwrite 
+	where borrower = #{borrower} and idDate = #{idDate} 
+	and currentTime = #{currentTime} and endTime = #{endTime}
+	</select>
+	
 	<select id="ListAll" resultType="classroomRental.dto.SwapWriteDto">
-	select s.borrower, s.idDate, s.currentTime, s.endTime
+	select s.borrower, s.idDate, s.currentTime, s.endTime, s.facilityCode
 	from swapwrite s inner join user u 
 	on s.id = u.id where borrower is not null and s.loginId = #{loginId}
 <!-- 	select borrower, idDate, currentTime, endTime -->

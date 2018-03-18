@@ -409,4 +409,13 @@ public class LectureroomController {
 		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		return "view/questionnaireInfo1";
 	}
+	
+	//설문지 작성하기
+	@RequestMapping("questionnaireInfo2")
+	public String questionnaireInfo2(SwapWriteDto swapDto,User user,Model model)
+	{
+		model.addAttribute("swap", swapWriteInfo.selectByBorrower(swapDto));
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
+		return "view/questionnaireInfo2";
+	}
 }

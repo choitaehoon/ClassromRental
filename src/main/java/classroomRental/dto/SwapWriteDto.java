@@ -12,6 +12,7 @@ public class SwapWriteDto
 	String currentTime;
 	String endTime;
 	String borrower;
+	String facilityCode;
 	
 	public int getId() {
 		return id;
@@ -72,6 +73,12 @@ public class SwapWriteDto
 	}
 	public void setBorrower(String borrower) {
 		this.borrower = borrower;
+	}
+	public String getFacilityCode() {
+		return facilityCode;
+	}
+	public void setFacilityCode(String facilityCode) {
+		this.facilityCode = facilityCode;
 	}
 	
 	
