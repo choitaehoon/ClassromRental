@@ -156,7 +156,8 @@ public class LectureroomController {
 	}
 
 	@RequestMapping(value="signUpAfter" , method=RequestMethod.GET)
-	public String test2(Model model) {
+	public String test2(User user, Model model) {
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		return "view/signUpAfter";
 	}
 	
@@ -207,10 +208,11 @@ public class LectureroomController {
 	}
 
 	@RequestMapping("transmit")
-	public String test6(SurveyDto survey) {
+	public String test6(@RequestParam("loginId") String loginId,SurveyDto survey, Model model) {
 		// 설문지작성하고 맨 처음화면으로 가기
 		surveyInfo.insert(survey);
-		return "redirect:signUpAfter";
+		model.addAttribute("loginId",loginId);
+		return "redirect:signUpAfter?loginId={loginId}";
 	}
 
 	@RequestMapping(value = { "seungyeon", "seung" }, method = RequestMethod.GET)

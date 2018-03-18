@@ -7,6 +7,13 @@ public class SurveyDto
 	private String question3; //답변3
 	private String question4; //답변4
 	private String question5; //답변5
+	private String loginId; //작성자 아이디
+	private String facilityCode;
+	private String idDate;
+	private String currentTime;
+	private int confirm;
+	private String borrower;
+	private String endTime;
 	
 	public String getQuestion1() {
 		return question1;
@@ -37,6 +44,48 @@ public class SurveyDto
 	}
 	public void setQuestion5(String question5) {
 		this.question5 = question5;
+	}
+	public String getLoginId() {
+		return loginId;
+	}
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
+	public String getFacilityCode() {
+		return facilityCode;
+	}
+	public void setFacilityCode(String facilityCode) {
+		this.facilityCode = facilityCode;
+	}
+	public String getIdDate() {
+		return idDate;
+	}
+	public void setIdDate(String idDate) {
+		this.idDate = idDate;
+	}
+	public String getCurrentTime() {
+		return currentTime;
+	}
+	public void setCurrentTime(String currentTime) {
+		this.currentTime = currentTime;
+	}
+	public int getConfirm() {
+		return confirm;
+	}
+	public void setConfirm(int confirm) {
+		this.confirm = confirm;
+	}
+	public String getBorrower() {
+		return borrower;
+	}
+	public void setBorrower(String borrower) {
+		this.borrower = borrower;
+	}
+	public String getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 	
 }

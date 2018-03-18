@@ -5,8 +5,8 @@
  
 <mapper namespace="classroomRental.mapper.SurveyInfo">
 	<insert id="insert">
-		INSERT INTO SURVEY(QUESTION1,QUESTION2,QUESTION3,QUESTION4,QUESTION5)
-		VALUES(#{question1},#{question2},#{question3},#{question4},#{question5})
+		INSERT INTO SURVEY(QUESTION1,QUESTION2,QUESTION3,QUESTION4,QUESTION5,loginId,facilityCode,idDate,currentTime,endTime, confirm, borrower )
+		VALUES(#{question1},#{question2},#{question3},#{question4},#{question5},#{loginId},#{facilityCode},#{idDate}, #{currentTime}, #{endTime}, 1, #{borrower})
 	</insert>
 	 
 </mapper> 
