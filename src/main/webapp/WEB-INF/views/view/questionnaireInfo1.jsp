@@ -5,14 +5,24 @@
 <html>
 
 <head>
-
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+		function sub(borrower,idDate,currentTime,endTime)
+		{
+			var borrow = borrower;
+			var date = idDate;
+			var current = currentTime;
+			var end = endTime;
+			alert(borrow+" "+date+" "+current+" "+end);
+		}
+	</script>
 </head>
 
 <body>
 	<hr/>
 	<div class="container">
-		 <div class="row justify-content-md-center">
-			<div class="col-md-auto">
+<!-- 		 <div class="row justify-content-md-center"> -->
+<!-- 			<div class="col-md-auto"> -->
 				<h1>빌려준 목록</h1><br/>
 				<table class="table table-hover">
 	 			 <thead>
@@ -23,21 +33,23 @@
 						<th>종료 시간</th>
 					</tr>
 				</thead>
-				<thead>
-				<c:forEach items="${swap}" var="swap">
+				<c:forEach items="${swap}" var="swa">
 					<tr>
-						<th>${swap.borrower}</th>
-						<th>${swap.idDate}</th>
-						<th>${swap.currentTime}</th>
-						<th>${swap.endTime}</th>
-						<th>설문지 작성하기</th>
+						<th>${swa.borrower}</th>
+						<th>${swa.idDate}</th>
+						<th>${swa.currentTime}</th>
+						<th>${swa.endTime}</th>
+						<th><input type="button" value="설문지 조사" 
+						class="btn btn-link btn-sm"
+						onclick="sub('${swa.borrower}','${swa.idDate}','${swa.currentTime}',
+						'${swa.endTime}');">
+						</th>
 					</tr>
 				</c:forEach>
-				</thead>
 			</table>
 		</div>
-	</div>
-</div>
+<!-- 	</div> -->
+<!-- </div> -->
 </body>
 
 </html>
