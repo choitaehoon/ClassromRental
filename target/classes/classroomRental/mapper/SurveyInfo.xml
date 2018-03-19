@@ -14,11 +14,14 @@
 
 	<select id="selectByConfirm" resultType="classroomRental.dto.SurveyDto">
 		select * from survey where confirm = 0
-		and question1 is not null
-		or question2 is not null
-		or question3 is not null
-		or question4 is not null
-		or question5 is not null;
 	</select>
+	
+	<update id="updateNice">
+	update survey set confirm = 1
+	where borrower = #{borrower} and
+	facilityCode = #{facilityCode} and
+	currentTime = #{currentTime} and
+	endTime = #{endTime}
+	</update>
 
 </mapper> 

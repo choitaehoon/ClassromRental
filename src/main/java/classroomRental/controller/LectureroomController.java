@@ -424,8 +424,16 @@ public class LectureroomController {
 	@RequestMapping("surveyList")
 	public String surveyList(User user, Model model)
 	{
-		model.addAttribute("survey", surveyInfo.selectByConfirm());
 		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
+		model.addAttribute("survey", surveyInfo.selectByConfirm());
 		return "view/surveyList";
+	}
+	
+	@RequestMapping("nice")
+	public String updateNice(@RequestParam("loginId") String loginId,SurveyDto surveyDto ,Model model)
+	{
+		surveyInfo.updateNice(surveyDto);
+		model.addAttribute("loginId", loginId);
+		return "redirect:surveyList?loginId={loginId}";
 	}
 }
