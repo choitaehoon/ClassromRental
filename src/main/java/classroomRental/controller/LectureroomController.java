@@ -420,4 +420,12 @@ public class LectureroomController {
 		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
 		return "view/questionnaireInfo2";
 	}
+	
+	@RequestMapping("surveyList")
+	public String surveyList(User user, Model model)
+	{
+		model.addAttribute("survey", surveyInfo.selectByConfirm());
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
+		return "view/surveyList";
+	}
 }

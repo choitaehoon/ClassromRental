@@ -2,11 +2,23 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- 
+
 <mapper namespace="classroomRental.mapper.SurveyInfo">
 	<insert id="insert">
-		INSERT INTO SURVEY(QUESTION1,QUESTION2,QUESTION3,QUESTION4,QUESTION5,loginId,facilityCode,idDate,currentTime,endTime, confirm, borrower )
-		VALUES(#{question1},#{question2},#{question3},#{question4},#{question5},#{loginId},#{facilityCode},#{idDate}, #{currentTime}, #{endTime}, 1, #{borrower})
+		INSERT INTO
+		SURVEY(QUESTION1,QUESTION2,QUESTION3,QUESTION4,QUESTION5,loginId,facilityCode,idDate,currentTime,endTime,
+		confirm, borrower )
+		VALUES(#{question1},#{question2},#{question3},#{question4},#{question5},#{loginId},#{facilityCode},#{idDate},
+		#{currentTime}, #{endTime}, 0, #{borrower})
 	</insert>
-	 
+
+	<select id="selectByConfirm" resultType="classroomRental.dto.SurveyDto">
+		select * from survey where confirm = 0
+		and question1 is not null
+		or question2 is not null
+		or question3 is not null
+		or question4 is not null
+		or question5 is not null;
+	</select>
+
 </mapper> 

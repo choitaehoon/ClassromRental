@@ -144,14 +144,25 @@ form {
 			  <c:if test="${user.userType != '관리자'}">
 				<li class="topMenuLi"><a class="menuLink"
 					href="grade?loginId=${user.loginId}">내 등급 확인</a>
-									<li>|</li></c:if>
+									<li>|</li>
+			</c:if>
+			<c:if test="${user.userType != '관리자'}">
 				<li class="topMenuLi"><a class="menuLink"
 					href="questionnaireInfo1?loginId=${user.loginId}">설문지 작성하기</a></li>
 				<li>|</li>
+			</c:if>
+			<c:if test="${user.userType != '관리자'}">
 				<li class="topMenuLi"><a class="menuLink" 
 					href="classroomInfo?loginId=${user.loginId}">강의실 대여 하기</a>
 									<li>|</li>
-				<li class="topMenuLi"><a class="menuLink"
+			</c:if>
+			<c:if test="${user.userType == '관리자'}">
+			<li class="topMenuLi"><a class="menuLink"
+					href="surveyList?loginId=${user.loginId}">설문지 조사 확인</a>
+					<li>|</li>
+			</c:if>		
+				<li class="topMenuLi">
+				<a class="menuLink"
 					href="rent?loginId=${user.loginId}">강의실 빌려주기</a></li>
 				<li>|</li>
 				<li class="topMenuLi"><a class="menuLink"
@@ -159,6 +170,7 @@ form {
 			</ul>
 		</nav>
 	</div>
+
 </form>
 <%-- <%@ include file="/WEB-INF/views/view/footer.jsp"%> --%>
 </body>

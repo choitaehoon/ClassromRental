@@ -6,7 +6,7 @@
 <html>
 <head>
 <style>
-	tr:hover { background-color: #ffffdd; }
+/* 	tr:hover { background-color: #ffffdd; } */
 </style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script>
@@ -19,6 +19,7 @@
 	</script>
 </head>
 <body>
+	<div class="container">
 	<hr/>
 	<h1>강의실 나눔</h1>
 	<table class="table table-hover">
@@ -33,6 +34,7 @@
 			<th>신청하기</th>
 			</c:if>
 		</tr>
+	</thead>
 		<c:forEach items="${swap}" var="swap">
 		<tr>
 			<th>${swap.number}</th>
@@ -48,6 +50,7 @@
 					<th>${swap.borrower}</th>
 				</c:when>
 			</c:choose>
+			
 			<c:if test="${user.userType != '관리자'}">
 			<c:choose>
 				<c:when test="${swap.request eq 1}">
@@ -61,9 +64,9 @@
 				</c:when>
 			</c:choose>
 			</c:if>
+			
 		</tr>
 		</c:forEach>
-		</thead>
 	</table>
 	
 	<form action="application" name="application">
@@ -72,8 +75,12 @@
 	</form>
 	
 	<p>
+		<c:if test="${user.userType != '관리자'}">
 		<input type="button" class="btn btn-primary" value="글작성"
 		onclick="location.href='http://localhost:8080/controller/view/writeClassroom?loginId=${user.loginId}'">
+		</c:if>
 	</p>
+	</div>
 </body>
+
 </html>
