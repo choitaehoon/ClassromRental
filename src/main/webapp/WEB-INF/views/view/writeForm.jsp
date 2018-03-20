@@ -8,23 +8,25 @@
 
 </head>
 <body>
+<div class="container">
 	<h1>작성하기</h1>
-<table width="500" cellpadding="0" cellspacing="0" border="1">
-		<form action="write" method="post">
+	<form action="write">
 			<tr>
 				<td > 작성자 </td>
 				<td> <input type="text" name="id" size = "50"> </td>
 			</tr>
+			
 			<tr>
 				<td> 내용 </td>
 				<td> <input type="text" name="context" size = "150" value="${board.context}" > </td>
 			</tr>
-			<tr >
+			
+			<tr>
 				<td><input type="hidden" name="loginId" value="${user.loginId}"></td>
 				<td colspan="2"> <input type="submit" value="입력"> &nbsp;&nbsp; <a href="list">목록보기</a></td>
 			</tr>
-		</form>
-</table>
-<%@ include file="/WEB-INF/views/view/footer.jsp"%>
+	</form>
+</div>
 </body>
+
 </html>

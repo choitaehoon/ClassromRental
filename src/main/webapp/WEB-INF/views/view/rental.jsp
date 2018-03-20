@@ -53,13 +53,13 @@
 			
 			<c:if test="${user.userType != '관리자'}">
 			<c:choose>
-				<c:when test="${swap.request eq 1}">
+				<c:when test="${swap.request eq 1 && swap.borrower == null}">
 					<th>
 						<a href="javascript:subscribe(${swap.number});">신청하기</a>
 					</th>
 				</c:when>
 				
-				<c:when test="${swap.request eq 0}">
+				<c:when test="${swap.request eq 0 || (swap.borrower != null && swap.request == 1 )}">
 					<th>마감</th>
 				</c:when>
 			</c:choose>

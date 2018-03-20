@@ -8,48 +8,47 @@
 <link
 	href="http://nethna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css"
 	rel="stylesheet">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script>
-	$(function() {
-		$("div.pagination a").click(function() {
-			$("input[name=pg]").val($(this).attr("data-page"));
-			$("form").submit();
-		});
-	});
+
 </script>
 <style>
- #color1 { 
- 	color: black; 
- } 
 
- tr:hover { background-color: #ffffdd; } 
 </style>
 </head>
 
 <body>
+	<div class="container">
 	<h1>목록 보기</h1>
 	<form method="get"> 
 	<table class="table table-hover">
 	<thead>
 		<tr>
-			<th id="color1">번호</th>
-			<th id="color1">작성자</th>
-			<th id="color1">내용</th>
-			<th id="color1">삭제</th>
-			<th id="color1">수정</th>
+			<th>번호</th>
+			<th>작성자</th>
+			<th>내용</th>
+			<c:if test="${user.userType == '관리자'}">
+			<th>삭제</th>
+			</c:if>
+			<c:if test="${user.userType == '관리자'}">
+			<th>수정</th>
+			</c:if>
 		</tr>
+	</thead>
 		<tr>
 			<c:forEach items="${board}" var="dto">
 				<tr>
 					<th>${dto.number}</th>
-					<th>${dto.id}</th>
+					<th>${dto.loginId}</th>
 					<th>${dto.context}</th>
-					<th><a href="delete?id=${dto.id}">X</a></th>
+					<c:if test="${user.userType == '관리자'}">
+					<th><a href="delete?id=${dto.id}&loginId=${user.loginId}">X</a></th>
+					</c:if>
+					<c:if test="${user.userType == '관리자'}">
 					<th><a href="update?id=${dto.id}">누르기</a></th>
+					</c:if>
 				<tr>
 			</c:forEach>
 		</tr>
-	</thead>
 	</table>
 
 <!-- 	<div class="pagination pagination-small pagination-centered"> -->
@@ -65,6 +64,6 @@
 		<a href="writeForm?loginId=${user.loginId}">글작성</a>
 	</p>
 <%@ include file="/WEB-INF/views/view/footer.jsp"%>
+</div>
 </body>
-
 </html>

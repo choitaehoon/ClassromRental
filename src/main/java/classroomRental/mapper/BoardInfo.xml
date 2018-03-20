@@ -11,19 +11,10 @@
 		select * from board where id = #{id};
 	</select>
 	
-	<select id="selectPage" resultType="classroomRental.dto.BoardDto">
-	select count(*) from board limit 1,6
-<!-- 	<![CDATA[ select * from board where number > (#{currentPage}-1)*#{pageSize} -->
-<!-- 	and number <= #{currentPage}*#{pageSize} order by number]]> -->
-	</select>
-	
-	<select id="selectCount" resultType="int">
-	select count(*) from board
-	</select>
 	
 	<insert id="insert" useGeneratedKeys="true" keyProperty="number">
-		insert into board (number,id, context)
-		values (null, #{id}, #{context})
+		insert into board (number,id, context,loginId)
+		values (null, #{id}, #{context}, #{loginId})
 	</insert>
 	
 	<delete id="delete">

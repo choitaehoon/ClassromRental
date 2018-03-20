@@ -13,15 +13,32 @@
 	</insert>
 
 	<select id="selectByConfirm" resultType="classroomRental.dto.SurveyDto">
-		select * from survey where confirm = 0
+		select * from survey
+		where confirm = 0
 	</select>
-	
+
 	<update id="updateNice">
-	update survey set confirm = 1
-	where borrower = #{borrower} and
-	facilityCode = #{facilityCode} and
-	currentTime = #{currentTime} and
-	endTime = #{endTime}
+		update survey set confirm = 1
+		where borrower = #{borrower} and
+		facilityCode = #{facilityCode} and
+		currentTime = #{currentTime} and
+		endTime = #{endTime}
+	</update>
+
+	<update id="updateWarning">
+		update user u inner join survey s on u.loginId = s.borrower
+		set s.confirm = 1 , u.grade = 2
+		where idDate = #{idDate} and currentTime =#{currentTime} and endTime =
+		#{endTime}
+		and facilityCode = #{facilityCode};
+	</update>
+	
+	<update id="updateDemotion">
+		update user u inner join survey s on u.loginId = s.borrower
+		set s.confirm = 1 , u.grade = 3
+		where idDate = #{idDate} and currentTime =#{currentTime} and endTime =
+		#{endTime}
+		and facilityCode = #{facilityCode};
 	</update>
 
 </mapper> 

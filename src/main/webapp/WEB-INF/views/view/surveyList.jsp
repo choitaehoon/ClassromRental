@@ -7,46 +7,54 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script>
 	//양호
-		function nice(borrower, facilityCode, currentTime, endTime)
+		function nice(borrower, facilityCode, currentTime, endTime,idDate)
 		{
 			var borro = borrower;
 			var facility = facilityCode;
 			var current = currentTime;
 			var end = endTime;
+			var date = idDate;
 			
 			document.nice1.borrower.value = borro;
 			document.nice1.facilityCode.value = facility;
 			document.nice1.currentTime.value = current;
 			document.nice1.endTime.value = end;
+			document.nice1.idDate.value = date;
 			
 			nice1.submit();
 		}
 	//경고	
-		function warning(borrower, facilityCode, currentTime, endTime)
+		function warning(borrower1, facilityCode1, currentTime1, endTime1,idDate)
 		{
-			var borro = borrower;
-			var facility = facilityCode;
-			var currentTime = currentTime;
-			var end = endTime;
+			var borro = borrower1;
+			var facility = facilityCode1;
+			var current = currentTime1;
+			var end = endTime1;
+			var date = idDate;
 			
 			document.warning1.borrower.value = borro;
 			document.warning1.facilityCode.value = facility;
 			document.warning1.currentTime.value = current;
 			document.warning1.endTime.value = end;
+			document.warning1.idDate.value = date;
+			
 			warning1.submit();
 		}
 	//강등
-		function demotion(borrower, facilityCode, currentTime, endTime)
+		function demotion(borrower2, facilityCode2, currentTime2, endTime2,idDate)
 		{
-			var borro = borrower;
-			var facility = facilityCode;
-			var currentTime = currentTime;
-			var end = endTime;
+			var borro = borrower2;
+			var facility = facilityCode2;
+			var current = currentTime2;
+			var end = endTime2;
+			var date = idDate;
 			
 			document.demotion1.borrower.value = borro;
 			document.demotion1.facilityCode.value = facility;
 			document.demotion1.currentTime.value = current;
 			document.demotion1.endTime.value = end;
+			document.demotion1.idDate.value = date;
+			
 			demotion1.submit();
 		}
 	</script>
@@ -85,22 +93,26 @@
 				<th>${sur.question3}</th>
 				<th>${sur.question4}</th>
 				<th>${sur.question5}</th>
+				
 				<th>
 				<input type="button" value="양호" 
 				class="btn btn-link btn-sm"
 				onclick="nice('${sur.borrower}','${sur.facilityCode}',
-				'${sur.currentTime}','${sur.endTime}');">
+				'${sur.currentTime}','${sur.endTime}','${sur.idDate}');">
 				</th>
 				
-				<th><input type="button" value="경고" class="btn btn-link btn-sm"
+				<th>
+				<input type="button" value="경고" class="btn btn-link btn-sm"
 				onclick="warning('${sur.borrower}','${sur.facilityCode}',
-				'${sur.currentTime}','${sur.endTime}');"
-				></th>
+				'${sur.currentTime}','${sur.endTime}','${sur.idDate}');">
+				</th>
 				
-				<th><input type="button" value="강등" class="btn btn-link btn-sm"
+				<th>
+				<input type="button" value="강등" class="btn btn-link btn-sm"
 				onclick="demotion('${sur.borrower}','${sur.facilityCode}',
-				'${sur.currentTime}','${sur.endTime}');"
-				></th>
+				'${sur.currentTime}','${sur.endTime}','${sur.idDate}');">
+				</th>
+				
 			</tr>
 			</c:forEach>
 			
@@ -113,6 +125,7 @@
 		<input type="hidden" name="facilityCode" value="">
 		<input type="hidden" name="currentTime" value="">
 		<input type="hidden" name="endTime" value="">
+		<input type="hidden" name="idDate" value="">
 	</form>
 	
 	<form action="warning" name="warning1">
@@ -121,6 +134,7 @@
 		<input type="hidden" name="facilityCode" value="">
 		<input type="hidden" name="currentTime" value="">
 		<input type="hidden" name="endTime" value="">
+		<input type="hidden" name="idDate" value="">
 	</form>
 	
 	<form action="demotion" name="demotion1">
@@ -129,6 +143,7 @@
 		<input type="hidden" name="facilityCode" value="">
 		<input type="hidden" name="currentTime" value="">
 		<input type="hidden" name="endTime" value="">
+		<input type="hidden" name="idDate" value="">
 	</form>
 </body>
 

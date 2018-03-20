@@ -4,7 +4,8 @@ public class BoardDto
 {
 	private int number;//번호
 	private String id; //작성자
-	private String context; //내용 
+	private String context; //내용
+	private String loginId; //작성 아이디
 	
 	public int getNumber() {
 		return number;
@@ -24,6 +25,11 @@ public class BoardDto
 	public void setId(String id) {
 		this.id = id;
 	}
-	
+	public String getLoginId() {
+		return loginId;
+	}
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
 	
 }

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import classroomRental.dto.BoardDto;
 import classroomRental.dto.DateDto;
-import classroomRental.dto.Pagination;
 import classroomRental.dto.SeungyeonDto;
 import classroomRental.dto.SurveyDto;
 import classroomRental.dto.SwapWriteDto;
@@ -164,10 +163,8 @@ public class LectureroomController {
 	//자유게시판 보이게 하기
 	//페이지네이션 일단 keep
 	@RequestMapping(value = "list", method = RequestMethod.GET)
-	public String test3(User user,Model model, Pagination pagination) {
+	public String test3(User user,Model model) {
 		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
-		pagination.setRecordCount(boardInfo.selectCount());
-		model.addAttribute("list",boardInfo.selectPage(pagination));
 		model.addAttribute("board", boardInfo.selectAll());
 		return "view/list";
 	}
@@ -201,10 +198,11 @@ public class LectureroomController {
 	}
 
 	@RequestMapping("delete")
-	public String delete(BoardDto board,Model model) 
+	public String delete(@RequestParam("loginId")String loginId,BoardDto board,Model model) 
 	{
 		boardInfo.delete(board.getId());
-		return "redirect:list";
+		model.addAttribute("loginId", loginId);
+		return "redirect:list?loginId={loginId}";
 	}
 
 	@RequestMapping("transmit")
@@ -430,9 +428,26 @@ public class LectureroomController {
 	}
 	
 	@RequestMapping("nice")
-	public String updateNice(@RequestParam("loginId") String loginId,SurveyDto surveyDto ,Model model)
+	public String updateNice(@RequestParam("loginId") String loginId, SurveyDto surveyDto ,Model model)
 	{
 		surveyInfo.updateNice(surveyDto);
+		model.addAttribute("loginId", loginId);
+		return "redirect:surveyList?loginId={loginId}";
+	}
+	
+	@RequestMapping("warning")
+	public String updateWaining(@RequestParam("loginId") String loginId, SurveyDto surveyDto , Model model)
+	{
+		surveyInfo.updateWarning(surveyDto);
+		model.addAttribute("loginId", loginId);
+		return "redirect:surveyList?loginId={loginId}";
+	}
+	
+	@RequestMapping("demotion")
+	public String updateDemotion(@RequestParam("loginId") String loginId, SurveyDto surveyDto , Model model)
+	{
+		System.out.println(surveyDto);
+		surveyInfo.updateDemotion(surveyDto);
 		model.addAttribute("loginId", loginId);
 		return "redirect:surveyList?loginId={loginId}";
 	}
