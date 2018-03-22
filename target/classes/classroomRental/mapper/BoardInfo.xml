@@ -26,8 +26,9 @@
 	</update>
 	
 	<select id="selectPage" resultType="classroomRental.dto.BoardDto">
-	select * from board limit #{limit} ,
-	#{limit2}
+	<bind name="start" value="(currentPage-1)*pageSize"/>
+	<bind name="end" value="currentPage*pageSize"/>
+	select * from board limit ${start} , ${end}
 	</select>
 	
 	<select id="selectCount" resultType="int">

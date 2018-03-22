@@ -13,6 +13,7 @@
 	$(function() {
 		$("div.pagination a").click(function() {
 			$("input[name=pg]").val($(this).attr("data-page"));
+			$('#loginId').val();
 			$("form").submit();
 		});
 	});
@@ -27,6 +28,7 @@
 		<h1>목록 보기</h1>
 		<form method="get">
 			<input type="hidden" name="pg" value="1" />
+			<input type="hidden" name="loginId" id="loginId" value="${user.loginId}">
 			<table class="table table-hover">
 				<thead>
 					<tr>
