@@ -2,28 +2,34 @@
     pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/view/signUpAfter.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
-
+	<script>
+		function sub()
+		{
+			var contex = document.getElementById('context1').value;
+			
+			document.writeSub.context.value = contex;
+			writeSub.submit();
+		}
+	</script>
 </head>
 <body>
+<hr>
 <div class="container">
 	<h1>작성하기</h1>
-	<form action="write">
+	<form action="write" name="writeSub">
 			<tr>
-				<td > 작성자 </td>
-				<td> <input type="text" name="id" size = "50"> </td>
+				<td> <input type="text" name="id" style="width:500px;" size = "50" placeholder="${user.loginId}"></td>
+				<br/>
 			</tr>
-			
-			<tr>
-				<td> 내용 </td>
-				<td> <input type="text" name="context" size = "150" value="${board.context}" > </td>
-			</tr>
-			
+				<textarea rows="10" style="width:45%;"  id="context1" placeholder="내용입력하세요"></textarea>
+				<input type="hidden" name="context" value="">
+			<br/>				
 			<tr>
 				<td><input type="hidden" name="loginId" value="${user.loginId}"></td>
-				<td colspan="2"> <input type="submit" value="입력"> &nbsp;&nbsp; <a href="list">목록보기</a></td>
+				<td colspan="2"> <input type="submit" class="btn btn-link btn-sm" onclick="sub();" value="입력"> &nbsp;&nbsp; <a href="list?loginId=${user.loginId}">목록보기</a></td>
 			</tr>
 	</form>
 </div>

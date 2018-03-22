@@ -24,4 +24,13 @@
 	<update id="update">
 	 update board set  context = #{context} where id = #{id}                
 	</update>
+	
+	<select id="selectPage" resultType="classroomRental.dto.BoardDto">
+	select * from board limit #{limit} ,
+	#{limit2}
+	</select>
+	
+	<select id="selectCount" resultType="int">
+	select count(*) from board;
+	</select>
 </mapper>

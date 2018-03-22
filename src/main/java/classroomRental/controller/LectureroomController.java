@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import classroomRental.dto.BoardDto;
 import classroomRental.dto.DateDto;
+import classroomRental.dto.Pagination;
 import classroomRental.dto.SeungyeonDto;
 import classroomRental.dto.SurveyDto;
 import classroomRental.dto.SwapWriteDto;
@@ -163,9 +164,11 @@ public class LectureroomController {
 	//자유게시판 보이게 하기
 	//페이지네이션 일단 keep
 	@RequestMapping(value = "list", method = RequestMethod.GET)
-	public String test3(User user,Model model) {
+	public String test3(Pagination pagination,User user,Model model) {
+		pagination.setRecordCount(boardInfo.selectCount());
+		model.addAttribute("list", boardInfo.selectPage(pagination));
 		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
-		model.addAttribute("board", boardInfo.selectAll());
+//		model.addAttribute("board", boardInfo.selectAll());
 		return "view/list";
 	}
 

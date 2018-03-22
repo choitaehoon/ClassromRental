@@ -5,8 +5,10 @@ import java.util.List;
 
 public class Pagination {
 	int currentPage = 1;
-	int pageSize = 3;
+	int pageSize = 15;
 	int recordCount;
+	int limit = (currentPage-1)*pageSize;
+	int limit2 = currentPage * pageSize;
 	
 	public int getCurrentPage() {
 		return currentPage;
@@ -27,6 +29,20 @@ public class Pagination {
 		this.recordCount = recordCount;
 	}
 	
+	
+	public int getLimit2() {
+		return limit2;
+	}
+	public void setLimit2(int limit2) {
+		this.limit2 = limit2;
+	}
+	
+	public int getLimit() {
+		return limit;
+	}
+	public void setLimit(int limit) {
+		this.limit = limit;
+	}
 	/* query string과 같은 이름의 메소드들 구현 */
     public int getPg() {
         return currentPage;
@@ -48,7 +64,7 @@ public class Pagination {
     public String getQueryString() {
         return String.format("pg=%d&sz=%d", currentPage, pageSize);
     }
-//
+
     /* 화면 하단에 페이지 번호 링크들을 출력하기 위한 메소드와 클래스 */
     public List<Page> getPageList() {
         ArrayList<Page> list = new ArrayList<Page>();
