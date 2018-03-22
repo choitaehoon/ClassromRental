@@ -161,16 +161,6 @@ public class LectureroomController {
 		return "view/signUpAfter";
 	}
 	
-	//자유게시판 보이게 하기
-	//페이지네이션 일단 keep
-	@RequestMapping(value = "list", method = RequestMethod.GET)
-	public String test3(Pagination pagination,User user,Model model) {
-		pagination.setRecordCount(boardInfo.selectCount());
-		model.addAttribute("list", boardInfo.selectPage(pagination));
-		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
-//		model.addAttribute("board", boardInfo.selectAll());
-		return "view/list";
-	}
 
 	@RequestMapping(value = "list", method = RequestMethod.POST)
 	public String test3(BoardDto board, Model model) {
@@ -318,12 +308,22 @@ public class LectureroomController {
 		return "view/classroomInfo";
 	}
 	
-	//강의실 빌려주기
+	//자유게시판 보이게 하기
+	@RequestMapping(value = "list", method = RequestMethod.GET)
+	public String test3(Pagination pagination,User user,Model model) {
+		pagination.setRecordCount(boardInfo.selectCount());
+		model.addAttribute("list", boardInfo.selectPage(pagination));
+		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
+		return "view/list";
+	}
+	
+	//강의실 빌려주기 
 	@RequestMapping("rent")
-	public String rent(User user, Model model)
+	public String rent(User user,Pagination pagination,Model model)
 	{
+		pagination.setRecordCount(swapWriteInfo.selectCount());
 		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
-		model.addAttribute("swap",swapWriteInfo.selectByAll());
+		model.addAttribute("swap",swapWriteInfo.selectPage(pagination));
 		return "view/rental";
 	}
 

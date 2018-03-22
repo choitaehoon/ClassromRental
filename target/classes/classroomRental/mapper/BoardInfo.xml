@@ -27,11 +27,11 @@
 	
 	<select id="selectPage" resultType="classroomRental.dto.BoardDto">
 	<bind name="start" value="(currentPage-1)*pageSize"/>
-	<bind name="end" value="currentPage*pageSize"/>
+	<bind name="end" value="pageSize"/>
 	select * from board limit ${start} , ${end}
 	</select>
 	
 	<select id="selectCount" resultType="int">
-	select count(*) from board;
+	select count(*) from board
 	</select>
 </mapper>

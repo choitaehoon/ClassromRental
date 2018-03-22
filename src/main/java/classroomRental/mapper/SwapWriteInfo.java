@@ -2,6 +2,7 @@ package classroomRental.mapper;
 
 import java.util.List;
 
+import classroomRental.dto.Pagination;
 import classroomRental.dto.SwapWriteDto;
 
 public interface SwapWriteInfo 
@@ -12,4 +13,6 @@ public interface SwapWriteInfo
 	void updateSwapWrite(SwapWriteDto swapDto);
 	List<SwapWriteDto> ListAll(String loginId);
 	SwapWriteDto selectByBorrower(SwapWriteDto swapDto);
+	List<SwapWriteDto> selectPage(Pagination pagination);
+	int selectCount();
 }

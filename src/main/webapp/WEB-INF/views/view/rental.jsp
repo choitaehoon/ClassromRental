@@ -16,12 +16,22 @@
 			document.application.number.value=num;
 			application.submit();
 		}
+		
+		$(function() {
+			$("div.pagination a").click(function() {
+				$("input[name=pg]").val($(this).attr("data-page"));
+				$("#subs").submit();
+			});
+		});
 	</script>
 </head>
 <body>
 	<div class="container">
 	<hr/>
 	<h1>강의실 나눔</h1>
+	<form id="subs">
+	<input type="hidden" name="pg" value="1" />
+	<input type="hidden" name="loginId" value="${user.loginId}">
 	<table class="table table-hover">
 	<thead>
 		<tr>
@@ -68,6 +78,15 @@
 		</tr>
 		</c:forEach>
 	</table>
+	</form>
+			<div class="pagination pagination-small pagination-centered">
+				<ul>
+					<c:forEach var="page" items="${ pagination.pageList }">
+						<li class='${ page.cssClass }'><a
+							data-page="${ page.number }">${ page.label }</a></li>
+					</c:forEach>
+				</ul>
+			</div>
 	
 	<form action="application" name="application">
 		<input type="hidden" name="number" value="">

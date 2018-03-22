@@ -9,6 +9,20 @@
 	values(#{id}, #{title}, #{textarea}, #{loginId}, 1, #{idDate}, #{currentTime}, #{endTime}, #{facilityCode})
 	</insert>
 	
+	<select id="selectPage" resultType="classroomRental.dto.SwapWriteDto">
+	<bind name="start" value="(currentPage-1)*pageSize"/>
+	<bind name="end" value="pageSize"/>
+	select s.number,s.loginId, s.title, s.textarea, s.request,
+	 s.idDate, s.currentTime, s.endTime, s.borrower
+	 from user u inner join swapwrite s
+	 on u.id = s.id
+	 limit ${start} , ${end}
+	</select>
+	
+	<select id="selectCount" resultType="int">
+	select count(*) from swapWrite
+	</select>
+	
 	<select id="selectByAll" resultType="classroomRental.dto.SwapWriteDto">
 	 select s.number,s.loginId, s.title, s.textarea, s.request,
 	 		s.idDate, s.currentTime, s.endTime, s.borrower

@@ -30,7 +30,7 @@ div {
 			<input type="password" name="password"> 
 			<input type="submit" class="btn btn-primary" value="로그인"><br /> 
 			<input type="button" class="btn btn-primary" value="회원가입"
-				onclick="location.href='http://localhost:8080/controller/view/signUpBefore'">
+				onclick="location.href='http://localhost:8081/controller/view/signUpBefore'">
 		</form>
 
 		<c:if test="${ not empty error }">
@@ -46,6 +46,6 @@ div {
 		<img
 			src="https://cdn.pixabay.com/photo/2018/02/08/10/22/paper-3139127_1280.jpg">
 	</div>
-<%@ include file="/WEB-INF/views/view/footer.jsp"%>
+<%-- <%@ include file="/WEB-INF/views/view/footer.jsp"%> --%>
 </body>
 </html>

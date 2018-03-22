@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Pagination {
 	int currentPage = 1;
-	int pageSize = 15;
+	int pageSize = 5;
 	int recordCount;
 	
 	public int getCurrentPage() {

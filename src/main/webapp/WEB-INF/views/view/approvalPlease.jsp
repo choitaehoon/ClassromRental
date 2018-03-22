@@ -35,7 +35,7 @@
 		<th>${date.currentTime}</th>
 		<th>${date.endTime}</th>
 		<c:choose>
-			<c:when test="${user.grade eq 0 || date.approval eq 0}">
+			<c:when test="${user.grade eq 3 || date.approval eq 0}">
 			<th>불가</th>
 			</c:when>
 			
