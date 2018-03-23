@@ -308,15 +308,6 @@ public class LectureroomController {
 		return "view/classroomInfo";
 	}
 	
-	//자유게시판 보이게 하기
-	@RequestMapping(value = "list", method = RequestMethod.GET)
-	public String test3(Pagination pagination,User user,Model model) {
-		pagination.setRecordCount(boardInfo.selectCount());
-		model.addAttribute("list", boardInfo.selectPage(pagination));
-		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
-		return "view/list";
-	}
-	
 	//강의실 빌려주기 
 	@RequestMapping("rent")
 	public String rent(User user,Pagination pagination,Model model)
@@ -341,8 +332,17 @@ public class LectureroomController {
 		return "view/showStaff";
 	}
 	
+	//자유게시판 보이게 하기
+	@RequestMapping(value = "list", method = RequestMethod.GET)
+	public String test3(Pagination pagination,User user,Model model) {
+		pagination.setRecordCount(boardInfo.selectCount());
+		model.addAttribute("list", boardInfo.selectPage(pagination));
+		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
+		return "view/list";
+	}
+	
 	@RequestMapping("approvalPlease")
-	public String approvalPlease(User user,Model model)
+	public String approvalPlease(Pagination pagination,User user,Model model)
 	{
 		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
 		model.addAttribute("date", dateInfo.selectByAll(user.getId()));

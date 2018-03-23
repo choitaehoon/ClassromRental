@@ -5,9 +5,9 @@
 
 	<select id="selectByAll" resultType="classroomRental.dto.DateDto">
 	select d.facilityCode, d.idDate, d.currentTime, d.endTime, d.approval from date d
-	inner join user u on d.id = u.id where u.id= #{id} 
+	inner join user u on d.id = u.id where u.id= #{id}
 	</select>
-
+	
 	<!-- 그날짜에 대한 시간에 빌렸는지 수 세기 0이라면 없고 1이라면 빌려있는것이다 -->
 	<select id="selectByCurrentTime" resultType="int">
 	select count(*) from date where idDate = #{idDate} and currentTime &gt;= #{currentTime} and endTime &lt;= #{endTime} and

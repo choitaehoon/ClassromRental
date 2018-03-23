@@ -46,7 +46,7 @@ label {
 			<hr />
 			<div>
 				<input type="submit" class="btn btn-primary" value="저장" name="loginId" /> <a
-					href="signUpAfter" class="btn btn-primary" name="loginId">초기 화면으로 나가기 </a>
+					href="signUpAfter?loginId=${user.loginId}" class="btn btn-primary" name="loginId">초기 화면으로 나가기 </a>
 			</div>
 		</form>
 		<c:if test="${ not empty error }">

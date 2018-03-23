@@ -2,19 +2,26 @@
     pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/view/signUpAfter.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//Dth HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dth">
+<!DOCTYPE html >
 <html>
 <head>
 
 <style>
-	tr:hover { background-color: #ffffdd; }
+/* 	tr:hover { background-color: #ffffdd; } */
 </style>
 <link
    href="http://nethna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css"
    rel="stylesheet">
+   
+
 </head>
+
 <body>
+<hr/>
+<div class="container">
 <h1>승인해주세요</h1>
+
+
 <table class="table table-hover">
 <thead>
 	<tr>
@@ -26,6 +33,7 @@
 		<th>종료 시간</th>
 		<th>승인 현황</th>
 	</tr>
+</thead>
 	<c:forEach items="${date}" var="date">
 	<tr>
 		<th>${user.loginId}</th>
@@ -50,9 +58,8 @@
 		</c:choose>
 	</tr>
 </c:forEach>
-</thead>
 </table>
-
+</div>
 <!-- <table width="500" cellpadding="0" cellspacing="0" border="1"> -->
 <!--       <form action="showstaff" method="post"> -->
 <!--          <tr> -->
@@ -69,9 +76,7 @@
 <!--       </form> -->
 <!-- </table> -->
 
-<%@ include file="/WEB-INF/views/view/footer.jsp"%>
+<%-- <%@ include file="/WEB-INF/views/view/footer.jsp"%> --%>
 </body>
-
-
 
 </html>

@@ -3,7 +3,7 @@ package classroomRental.dto;
 import java.util.List;
 
 public class DateDto 
-{
+{	
 	String facilityCode;
 	String idDate;
 	String currentTime; 
@@ -12,6 +12,7 @@ public class DateDto
 	int approval;
 	String rent;
 	List<User> students;
+	
 	
 	public String getIdDate() {
 		return idDate;

@@ -125,16 +125,16 @@ form {
 <body>
 <div id="abcd">${user.loginId}님환영합니다.
 	<input type="button" class="btn btn-primary" value="로그아웃"
-	onclick="location.href='http://localhost:8080/controller/view/login'">
+	onclick="location.href='http://localhost:8081/controller/view/login'">
 	<input type="button" class="btn btn-primary" value="수정하기"
-	onclick="location.href='http://localhost:8080/controller/view/membershipModification?loginId=${user.loginId}'">
+	onclick="location.href='http://localhost:8081/controller/view/membershipModification?loginId=${user.loginId}'">
 	<c:if test="${user.userType eq '관리자'}">
 	   <input type="button" class="btn btn-success" value="승인요청목록"
-         onclick="location.href='http://localhost:8080/controller/view/showStaff?loginId=${user.loginId}'">
+         onclick="location.href='http://localhost:8081/controller/view/showStaff?loginId=${user.loginId}'">
     </c:if>
     <c:if test="${user.userType != '관리자'}">
    <input type="button" class="btn btn-success" value="승인요청"
-         onclick="location.href='http://localhost:8080/controller/view/approvalPlease?loginId=${user.loginId}&id=${user.id}'">
+         onclick="location.href='http://localhost:8081/controller/view/approvalPlease?loginId=${user.loginId}&id=${user.id}'">
          </c:if>
 </div>
 <form method="post">

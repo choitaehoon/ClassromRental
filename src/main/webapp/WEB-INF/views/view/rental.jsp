@@ -96,7 +96,7 @@
 	<p>
 		<c:if test="${user.userType != '관리자'}">
 		<input type="button" class="btn btn-primary" value="글작성"
-		onclick="location.href='http://localhost:8080/controller/view/writeClassroom?loginId=${user.loginId}'">
+		onclick="location.href='http://localhost:8081/controller/view/writeClassroom?loginId=${user.loginId}'">
 		</c:if>
 	</p>
 	</div>

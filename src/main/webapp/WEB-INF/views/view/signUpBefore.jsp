@@ -64,6 +64,8 @@ $(document).ready(function(){
 				<option value="3">정보통신공학과</option>
 				<option value="4">글로컬IT학과</option>
 			</select> <br /> <br /> <br /> <input type="submit" class="btn btn-primary" value="가입하기">
+			<input type="button" class="btn btn-default" value="목록으로 나가기"
+			onclick="location.href='http://localhost:8081/controller/view/login'" >
 		</form>
 
 		<c:if test="${ not empty error }">

@@ -7,6 +7,7 @@ public class Pagination {
 	int currentPage = 1;
 	int pageSize = 5;
 	int recordCount;
+	int id;
 	
 	public int getCurrentPage() {
 		return currentPage;
@@ -27,6 +28,14 @@ public class Pagination {
 		this.recordCount = recordCount;
 	}
 	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	/* query string과 같은 이름의 메소드들 구현 */
     public int getPg() {
         return currentPage;
@@ -39,8 +48,9 @@ public class Pagination {
     public int getSz() {
         return pageSize;
     }
-
-    public void setSz(int pageSize) {
+    
+	
+	public void setSz(int pageSize) {
         this.pageSize = pageSize;
     }
 
