@@ -41,17 +41,6 @@
 				}); //end datepicker
 	}); //end
 
-	// 	$(function(){
-	// 		$('#onselectExample1').timepicker({'timeFormat':'H:i:s'});
-	// 		$('#onselectExample2').timepicker({'timeFormat':'H:i:s'});
-
-	// 		$('#onselectExample1').on('changeTime', function() {
-	// 		});
-
-	// 		$('#onselectExample2').on('changeTime', function() {
-	// 		});
-
-	// 	});
 </script>
 
 <style>
@@ -64,7 +53,6 @@
 /* 	margin-top: -150px; */
 /* 	margin-left: -100px; */
 /* } */
-
 #wapper {
 	position: absolute;
 	top: 180px;
@@ -81,8 +69,8 @@
 #b {
 	position: absolute;
 	/*  		margin:120px; */
-	right: 160px;
-	top: 17%;
+	right: 750px;
+	top: 32%;
 }
 
 #c {
@@ -135,173 +123,108 @@
 			}); //end then
 		}); //end on
 	}); //end ready
+
+	$(function() {
+		$("#tabs").tabs();
+	});
 </script>
 </head>
 <body>
-	<!-- subMenu 
-			<ul class="submenu">
-				<li><a
-				
-					href="http://unikys.tistory.com/category/Programming%20Lecture/%EC%86%8D%EA%B9%8A%EC%9D%80%20%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20%EA%B0%95%EC%A2%8C"
-					class="submenuLink longLink">안녕하세요</a></li>
-				<li><a
-					href="http://unikys.tistory.com/category/Programming%20Lecture/%EB%B0%91%EB%B0%94%EB%8B%A5%EB%B6%80%ED%84%B0%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%A7%8C%EB%93%A4%EA%B8%B0"
-					class="submenuLink longLink">소통해요</a></li>
-				<li><a
-					href="http://unikys.tistory.com/category/Programming%20Lecture/Android%28%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%29%20%EC%95%B1%20%EA%B0%9C%EB%B0%9C"
-					class="submenuLink longLink">안드로이드 앱 개발</a></li>
-					
-			</ul></li>-->
-	<!--  subMenu
-			<ul class="submenu">
-				<li><a
-					href="http://unikys.tistory.com/tag/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8"
-					class="submenuLink">자바스크립트</a></li>
-				<li><a href="http://unikys.tistory.com/tag/%EA%B0%95%EC%A2%8C"
-					class="submenuLink">강좌</a></li>
-				<li><a href="http://unikys.tistory.com/tag/K100D"
-					class="submenuLink">K100D</a></li>
-			</ul></li>
-			 -->
+
 
 	<div id="a" class="container">
-	<hr/>
+		<hr />
 		<!-- 강의실 정보.jsp -->
 		<h1>강의실 대여</h1>
-		<table>
-			<tr>
-				<td>건물</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>1.승연관</td>
-				<td><a href="seungyeon?loginId=${user.loginId}">선택</a></td>
-			</tr>
-			<tr>
-				<td>2.일만관</td>
-				<td><a href="ilmangwan?loginId=${user.loginId}">선택</a></td>
-			</tr>
-			<tr>
-				<td>3.월당관</td>
-				<td><a href="woldanggwan?loginId=${user.loginId}">선택</a></td>
-			</tr>
-			<tr>
-				<td>4.열람관</td>
-				<td><a href="yeollamgwan?loginId=${user.loginId}">선택</a></td>
-			</tr>
-			<!--없음 -->
-			<tr>
-				<td>6.이천환관</td>
-				<td><a href="icheoneunuch?loginId=${user.loginId}">선택</a></td>
-			</tr>
-			<tr>
-				<td>7.새천년관</td>
-				<td><a href="millenniumcenter?loginId=${user.loginId}">선택</a></td>
-			</tr>
-			<tr>
-				<td>9.성미가엘성당</td>
-				<td><a href="saintMichael?loginId=${user.loginId}">선택</a></td>
-			</tr>
-			<tr>
-				<td>11.미가엘관</td>
-				<td><a href="Migaelgwan?loginId=${user.loginId}">선택</a></td>
-			</tr>
-			<tr>
-				<td>20.운동장</td>
-				<td><a href="schoolyard?loginId=${user.loginId}">선택</a></td>
-			</tr>
-		</table>
+		<br />
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">1.승연관</a></li>
+				<li><a href="#tabs-2">2.일만관</a></li>
+				<li><a href="#tabs-3">3.월당관</a></li>
+				<li><a href="#tabs-4">4.열람관</a></li>
+				<li><a href="#tabs-6">6.이천환관</a></li>
+				<li><a href="#tabs-7">7.새천년관</a></li>
+				<li><a href="#tabs-9">9.성미가엘관</a></li>
+				<li><a href="#tabs-11">11.미가엘관</a></li>
+				<li><a href="#tabs-20">20.운동장</a></li>
+			</ul>
+
+			<div id="tabs-1">
+			강의실:1406 &nbsp;&nbsp;&nbsp;시설명:세미나실&nbsp;&nbsp;&nbsp;인원:15 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			강의실:1407 &nbsp;&nbsp;&nbsp;시설명:세미나실&nbsp;&nbsp;&nbsp;인원:15 <br/>
+			강의실:1501 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:25 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			강의실:1502 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:30<br/> 
+			강의실:1503 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:40 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			강의실:1504 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:38<br/>
+			강의실:1505 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:40 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			강의실:1506 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:38<br/>
+			강의실:1507 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			강의실:1508 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:25<br/> 
+			</div>
+
+			<div id="tabs-2">
+			강의실:B103 &nbsp;&nbsp;&nbsp;시설명:휴게실&nbsp;&nbsp;&nbsp;인원:0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			강의실:B104 &nbsp;&nbsp;&nbsp;시설명:소회의실&nbsp;&nbsp;&nbsp;인원:0 <br/>
+			강의실:B105 &nbsp;&nbsp;&nbsp;시설명:학관까페&nbsp;&nbsp;&nbsp;인원:0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			강의실:B2101 &nbsp;&nbsp;&nbsp;시설명:세미나2&nbsp;&nbsp;&nbsp;인원:0<br/> 
+			강의실:B2102 &nbsp;&nbsp;&nbsp;시설명:세미나1&nbsp;&nbsp;&nbsp;인원:0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			강의실:2401 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:100<br/>
+			강의실:2402 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:100 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</div>
+
+			<div id="tabs-3">
+			강의실:3301&nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:70<br/>
+			강의실:6500&nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:80<br/>
+			</div>
+
+			<div id="tabs-4">
+			정보가 없습니다.
+			</div>
+
+			<div id="tabs-6">
+			강의실:6110&nbsp;&nbsp;&nbsp;시설명:시청각실&nbsp;&nbsp;&nbsp;인원:143<br/>
+			강의실:6500&nbsp;&nbsp;&nbsp;시설명:대강당&nbsp;&nbsp;&nbsp;인원:500<br/>
+			</div>
+			
+			<div id="tabs-7">
+			강의실:7104 &nbsp;&nbsp;&nbsp;시설명:컴실습실&nbsp;&nbsp;&nbsp;인원:40 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			강의실:7201 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:25 <br/>
+			강의실:7202 &nbsp;&nbsp;&nbsp;시설명:어학실습실&nbsp;&nbsp;&nbsp;인원:40 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			강의실:7204 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:40<br/> 
+			강의실:7205 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:40 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			강의실:7206 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:45<br/>
+			강의실:7207 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:100 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			강의실:7208 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:75<br/>
+			강의실:7301 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			강의실:7302 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:30<br/> 
+			</div>
+			
+			<div id="tabs-9">
+			강의실:9101&nbsp;&nbsp;&nbsp;시설명:피츠버그홀&nbsp;&nbsp;&nbsp;인원:250
+			</div>
+			
+			<div id="tabs-11">
+			강의실:M201 &nbsp;&nbsp;&nbsp;시설명:대학원강의실&nbsp;&nbsp;&nbsp;인원:14 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			강의실:M202 &nbsp;&nbsp;&nbsp;시설명:대학원강의실&nbsp;&nbsp;&nbsp;인원:14 <br/>
+			강의실:M203 &nbsp;&nbsp;&nbsp;시설명:대학원강의실&nbsp;&nbsp;&nbsp;인원:14 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			강의실:M204 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:14<br/> 
+			강의실:M205 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:110 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			강의실:M301 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:120<br/>
+			강의실:M401 &nbsp;&nbsp;&nbsp;시설명:컴퓨터강의실(B.E.S.T. 시범강의실)&nbsp;&nbsp;&nbsp;인원:40 <br/>
+			강의실:M402 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:50<br/>
+			강의실:M403 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			강의실:M404 &nbsp;&nbsp;&nbsp;시설명:일반강의실&nbsp;&nbsp;&nbsp;인원:38<br/> 
+			</div>
+			
+			<div id="tabs-20">
+			현재 공사중이라서 사용할 수 없습니다
+			</div>
+
+		</div>
+
 	</div>
 
-
-	<div id="b">
-		<!-- 강의실 정보.jsp -->
-		<!-- 객체가 넘어온걸 확인하면 코드를 줄일 수  있을거같은데 그건 다 구현하고 생각하기 -->
-		<table>
-			<tr>
-				<td id="color1">시설코드</td>
-				<td id="color1">시설명</td>
-				<td id="color1">인원</td>
-				<td id="color1">방식</td>
-				<td id="color1"></td>
-			</tr>
-			<c:forEach items="${seungyeon}" var="seung">
-				<tr>
-					<td>${seung.facilityCode}</td>
-					<td>${seung.facilityName}</td>
-					<td>${seung.person}</td>
-					<td>${seung.way}</td>
-					<!-- 				<td><a -->
-					<%-- 					href="seung?facilityCode=${seung.facilityCode}&loginId=${user.loginId}">선택</a></td> --%>
-					<%-- 				<td><a href="seung?facilityCode=${seung.facilityCode}&loginId=${user.loginId}">선택</a></td>			 --%>
-				</tr>
-			</c:forEach>
-			<c:forEach items="${ilmangwan}" var="ilmang">
-				<tr>
-					<td>${ilmang.facilityCode}</td>
-					<td>${ilmang.facilityName2}</td>
-					<td>${ilmang.person2}</td>
-					<td>${ilmang.way2}</td>
-					<!-- 				<td><a href="">선택</a></td> -->
-				</tr>
-			</c:forEach>
-			<c:forEach items="${woldang}" var="woldang">
-				<tr>
-					<td>${woldang.facilityCode}</td>
-					<td>${woldang.facilityName3}</td>
-					<td>${woldang.person3}</td>
-					<td>${woldang.way3}</td>
-					<!-- 				<td><a href="">선택</a></td> -->
-				</tr>
-			</c:forEach>
-			<c:forEach items="${message}" var="mes">
-				<tr>
-					<td>${mes}</td>
-				</tr>
-			</c:forEach>
-			<c:forEach items="${icheon}" var="in">
-				<tr>
-					<td>${in.facilityCode}</td>
-					<td>${in.facilityName4}</td>
-					<td>${in.person4}</td>
-					<td>${in.way4}</td>
-					<!-- 				<td><a href="">선택</a></td> -->
-				</tr>
-			</c:forEach>
-			<c:forEach items="${mill}" var="mil">
-				<tr>
-					<td>${mil.facilityCode}</td>
-					<td>${mil.facilityName5}</td>
-					<td>${mil.person5}</td>
-					<td>${mil.way5}</td>
-					<!-- 				<td><a href="">선택</a></td> -->
-				</tr>
-			</c:forEach>
-			<c:forEach items="${saint}" var="sain">
-				<tr>
-					<td>${sain.facilityCode}</td>
-					<td>${sain.facilityName6}</td>
-					<td>${sain.person6}</td>
-					<td>${sain.way6}</td>
-					<!-- 				<td><a href="">선택</a></td> -->
-				</tr>
-			</c:forEach>
-			<c:forEach items="${migael}" var="mig">
-				<tr>
-					<td>${mig.facilityCode}</td>
-					<td>${mig.facilityName7}</td>
-					<td>${mig.person7}</td>
-					<td>${mig.way7}</td>
-					<!-- 				<td><a href="">선택</a></td> -->
-				</tr>
-			</c:forEach>
-			<c:forEach items="${mes}" var="mes">
-				<tr>
-					<td>${mes}</td>
-				</tr>
-			</c:forEach>
-		</table>
-	</div>
 
 	<div id="c">
 
@@ -341,8 +264,8 @@
 				<option value="20:00:00">20:00:00</option>
 				<option value="21:00:00">21:00:00</option>
 				<option value="22:00:00">22:00:00</option>
-			</select> <br /> <input type="text" name="facilityCode" id="selectByclassroom"
-				placeholder="강의실 선택"><br />
+			</select> <br /> <input type="text" name="facilityCode"
+				id="selectByclassroom" placeholder="강의실 선택"><br />
 			<!-- 사유 -->
 			<br />
 			<!-- <!-- <textarea rows="4" cols="50"> -->
