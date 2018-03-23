@@ -160,7 +160,14 @@ form {
 			<li class="topMenuLi"><a class="menuLink"
 					href="surveyList?loginId=${user.loginId}">설문지 조사 확인</a>
 					<li>|</li>
-			</c:if>		
+			</c:if>
+			
+			<c:if test="${user.userType == '관리자'}">
+			<li class="topMenuLi"><a class="menuLink" 
+					href="helpManager?loginId=${user.loginId}">등급 구제 목록</a>
+									<li>|</li>
+			</c:if>
+					
 				<li class="topMenuLi">
 				<a class="menuLink"
 					href="rent?loginId=${user.loginId}">강의실 빌려주기</a></li>

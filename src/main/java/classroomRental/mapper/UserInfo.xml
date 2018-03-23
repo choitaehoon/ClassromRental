@@ -38,6 +38,16 @@
 	 WHERE id = #{id} 
 	 </update>
 	 
+	 <update id="updateGrade">
+	 update user u inner join help h 
+	 set u.grade = 0 , h.num = 1 where u.loginId= #{loginId}
+	 </update>
+	 
+	 <update id="updateGrade2">
+	 update user u inner join help h 
+	 set  h.num = 1 where u.loginId= #{loginId}
+	 </update>
+	 
 	<delete id="delete">
 	 DELETE FROM [User] WHERE id = #{id}
 	</delete>

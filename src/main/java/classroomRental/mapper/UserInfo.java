@@ -13,4 +13,6 @@ public interface UserInfo {
 	int selectByLoginIdCheck(String loginId);
 	User selectByPassword(User user);
 	List<User> findByDateId(int id);
+	void updateGrade(String loginId);
+	void updateGrade2(String loginId);
 }

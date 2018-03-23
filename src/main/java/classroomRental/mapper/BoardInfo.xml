@@ -13,12 +13,12 @@
 	
 	
 	<insert id="insert" useGeneratedKeys="true" keyProperty="number">
-		insert into board (number,id, context,loginId)
-		values (null, #{id}, #{context}, #{loginId})
+		insert into board (number,id, context,loginId, time)
+		values (null, #{id}, #{context}, #{loginId} ,now())
 	</insert>
 	
 	<delete id="delete">
-		delete from board where id = #{id}
+		delete from board where number = #{number}
 	</delete>
 	
 	<update id="update">

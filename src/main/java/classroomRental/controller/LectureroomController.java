@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import classroomRental.dto.BoardDto;
 import classroomRental.dto.DateDto;
+import classroomRental.dto.Help;
 import classroomRental.dto.Pagination;
 import classroomRental.dto.SeungyeonDto;
 import classroomRental.dto.SurveyDto;
@@ -20,6 +21,7 @@ import classroomRental.dto.User;
 import classroomRental.mapper.BoardInfo;
 import classroomRental.mapper.DateInfo;
 import classroomRental.mapper.DepartmentInfo;
+import classroomRental.mapper.HelpInfo;
 import classroomRental.mapper.IcheoneunuchInfo;
 import classroomRental.mapper.IlmangwanInfo;
 import classroomRental.mapper.MigaelgwanInfo;
@@ -67,6 +69,8 @@ public class LectureroomController {
 	private DateInfo dateInfo;
 	@Autowired
 	private SwapWriteInfo swapWriteInfo;
+	@Autowired
+	private HelpInfo helpInfo;
 	
 	@RequestMapping("login")
 	public String login()
@@ -134,13 +138,16 @@ public class LectureroomController {
 	public String membershipModification1(User user, Model model) {
 		String message = userService.validateBeforeUpdate(user);
 		if (message == null) {
+			System.out.println(user);
 			userInfo.update(user);
 			model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
 			return "view/signUpAfter";
 		} 
 		else
+		{
 			model.addAttribute("error", message);
-		return "view/membershipModification";
+			return "view/membershipModification";
+		}
 	}
 
 	@RequestMapping(value="questionnaireInfo", method=RequestMethod.GET)
@@ -161,6 +168,29 @@ public class LectureroomController {
 		return "view/signUpAfter";
 	}
 	
+	@RequestMapping("okok")
+	public String okok(@RequestParam("loginId") String loginId,@RequestParam("loginId2") String loginId2,Model model)
+	{
+		userInfo.updateGrade(loginId);
+		model.addAttribute("loginId", loginId2);
+		return "redirect:helpManager?loginId={loginId}";
+	}
+	
+	@RequestMapping("nonono")
+	public String nonono(@RequestParam("loginId") String loginId,@RequestParam("loginId2") String loginId2,Model model)
+	{
+		userInfo.updateGrade2(loginId);
+		model.addAttribute("loginId", loginId2);
+		return "redirect:helpManager?loginId={loginId}";
+	}
+	
+	@RequestMapping("helpManager")
+	public String helpManager(User user,Model model)
+	{
+		model.addAttribute("help", helpInfo.selectAll());
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
+		return "view/helpManager";
+	}
 
 	@RequestMapping(value = "list", method = RequestMethod.POST)
 	public String test3(BoardDto board, Model model) {
@@ -175,6 +205,14 @@ public class LectureroomController {
 		return "view/writeForm";
 	}
 
+	@RequestMapping("gradeHelp")
+	public String help(Help help,Model model)
+	{
+		helpInfo.insert(help);
+		model.addAttribute("loginId", help.getLoginId());
+		return "redirect:grade?loginId={loginId}";
+	}
+	
 	@RequestMapping("write")
 	public String write(@RequestParam("loginId") String loginId,BoardDto board,Model model) {
 		// 쓰고 목록으로 넘어가기
@@ -193,7 +231,7 @@ public class LectureroomController {
 	@RequestMapping("delete")
 	public String delete(@RequestParam("loginId")String loginId,BoardDto board,Model model) 
 	{
-		boardInfo.delete(board.getId());
+		boardInfo.delete(board.getNumber());
 		model.addAttribute("loginId", loginId);
 		return "redirect:list?loginId={loginId}";
 	}

@@ -35,11 +35,9 @@
 						<th>번호</th>
 						<th>작성자</th>
 						<th>내용</th>
+						<th>작성시간</th>
 						<c:if test="${user.userType == '관리자'}">
 							<th>삭제</th>
-						</c:if>
-						<c:if test="${user.userType == '관리자'}">
-							<th>수정</th>
 						</c:if>
 					</tr>
 				</thead>
@@ -48,11 +46,9 @@
 						<th>${dto.number}</th>
 						<th>${dto.loginId}</th>
 						<th>${dto.context}</th>
+						<th>${dto.time}</th>
 						<c:if test="${user.userType == '관리자'}">
-							<th><a href="delete?id=${dto.id}&loginId=${user.loginId}">X</a></th>
-						</c:if>
-						<c:if test="${user.userType == '관리자'}">
-							<th><a href="update?id=${dto.id}">누르기</a></th>
+							<th><a href="delete?number=${dto.number}&loginId=${user.loginId}">X</a></th>
 						</c:if>
 					</tr>
 				</c:forEach>

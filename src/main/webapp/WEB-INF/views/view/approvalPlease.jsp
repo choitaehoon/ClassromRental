@@ -44,15 +44,15 @@
 		<th>${date.endTime}</th>
 		<c:choose>
 			<c:when test="${user.grade eq 3 || date.approval eq 0}">
-			<th>불가</th>
+			<th style="color:red">불가</th>
 			</c:when>
 			
-			<c:when test="${user.grade eq 1 && date.approval eq 1}">
+			<c:when test="${ date.approval eq 1}">
 			<th>대기</th>
 			</c:when>
 			
 			<c:otherwise>
-			<th>승인</th>
+			<th style="color:blue">승인</th>
 			</c:otherwise>
 			
 		</c:choose>

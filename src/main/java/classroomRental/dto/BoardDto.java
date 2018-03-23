@@ -6,6 +6,7 @@ public class BoardDto
 	private String id; //작성자
 	private String context; //내용
 	private String loginId; //작성 아이디
+	private String time;//작성시간
 	
 	public int getNumber() {
 		return number;
@@ -30,6 +31,12 @@ public class BoardDto
 	}
 	public void setLoginId(String loginId) {
 		this.loginId = loginId;
+	}
+	public String getTime() {
+		return time;
+	}
+	public void setTime(String time) {
+		this.time = time;
 	}
 	
 }

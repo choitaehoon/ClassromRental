@@ -10,7 +10,7 @@ public interface BoardInfo {
 	List<BoardDto> selectAll();
 	List<BoardDto> selectPage(Pagination pagination);
 	int selectCount();
-	public void delete(String number);
+	public void delete(int number);
 	public void update(BoardDto boardDto);
 	BoardDto select(BoardDto boardDto);
 }

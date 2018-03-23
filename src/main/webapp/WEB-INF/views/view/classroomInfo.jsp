@@ -276,7 +276,9 @@
 				type="hidden" name="rent" value="${user.loginId}"> <input
 				type="hidden" name="approval" value="1">
 			<button type="button" id="check" class="btn btn-primary">조회하기</button>
+			<c:if test="${user.grade != 3}">
 			<button type="submit" id="zzz" class="btn btn-primary">승인요청하기</button>
+			</c:if>
 		</form>
 
 	</div>
