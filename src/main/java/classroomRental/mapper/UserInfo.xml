@@ -29,7 +29,7 @@
 		
 	<insert id="insert" useGeneratedKeys="true" keyProperty="id"> 
 	INSERT User (loginId, password, name, email, userType, departmentId, grade) 
-	VALUES (#{loginId}, #{password}, #{name}, #{email}, #{userType},#{departmentId}, 1) 
+	VALUES (#{loginId}, #{password}, #{name}, #{email}, #{userType},#{departmentId}, 0) 
 	</insert>
 	
 	<update id="update"> UPDATE User SET loginId = #{loginId},

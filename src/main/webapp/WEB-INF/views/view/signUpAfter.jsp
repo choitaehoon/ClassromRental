@@ -10,28 +10,23 @@
  td { 
  	border: 1px solid black;
  } 
-
 tr:nth-child(1) {
 /*  	background-color: #aaaaaa;  */
 	color: black;
 	font-weight: bold;
 }
-
 form {
 	text-align: center;
 }
-
 #topMemu {
 	height: 300px;
 	width: 850px;
 }
-
 #topMenu ul {
 	list-style-type: none;
 	margin: 0px;
 	padding: 0px;
 }
-
 #topMenu ul li {
 	color: white;
 	background-color: #2d2d2d;
@@ -42,7 +37,6 @@ form {
 	position: relative;
 	left: 17%
 }
-
 .menuLink, .submenuLink {
 	text-decoration: none;
 	display: block;
@@ -51,27 +45,22 @@ form {
 	font-weight: bold;
 	font-family: "Trebuchet MS", Dotum;
 }
-
 .menuLink {
 	color: white;
 }
-
 .topMenuLi:hover .menuLink {
 	color: red;
 	background-color: #4d4d4d;
 }
-
 .longLink {
 	width: 190px;
 }
-
 .submenuLink {
 	color: #2d2d2d;
 	background-color: white;
 	border: solid 1px black;
 	margin-right: -1px;
 }
-
 .submenu {
 	position: absolute;
 	height: 0px;
@@ -82,20 +71,16 @@ form {
 	-o-transition: height .2s;
 	width: 574px;
 }
-
 .submenu li {
 	display: inline-block;
 }
-
 .topMenuLi:hover .submenu {
 	height: 32px;
 }
-
 .submenuLink:hover {
 	color: red;
 	background-color: #dddddd;
 }
-
 #dvd {
 	float: left;
 	margin-right: 5px;
@@ -105,7 +90,6 @@ form {
 	padding-top: 70px;
 	position: absolute;
 }
-
 #dva {
 	margin-top: 5px;
 	margin-bottom: 5px;

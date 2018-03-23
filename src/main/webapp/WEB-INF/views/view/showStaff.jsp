@@ -49,6 +49,7 @@
 
 <body>
 <hr>
+	<div class="container">
 	<h1>승인 요청 목록</h1>
 	<form method="get">
 		<table class="table table-hover">
@@ -102,7 +103,7 @@
 			</tbody>
 		</table>
 	</form>
-	
+	</div>
 	<form action="approvalSubmit" id="approvalSubmit" name="approvalSubmit">
 		<input type="hidden" name="idDate" value="">
 		<input type="hidden" name="currentTime" value="">

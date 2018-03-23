@@ -89,7 +89,7 @@ public class LectureroomController {
 			return "view/login";
 		}
 		model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
-		return "view/signUpAfter";	
+		return "view/signUpAfter1";	
 	}
 	
 	@ResponseBody
@@ -138,10 +138,9 @@ public class LectureroomController {
 	public String membershipModification1(User user, Model model) {
 		String message = userService.validateBeforeUpdate(user);
 		if (message == null) {
-			System.out.println(user);
 			userInfo.update(user);
 			model.addAttribute("user",userInfo.selectByLoginId(user.getLoginId()));
-			return "view/signUpAfter";
+			return "view/signUpAfter1";
 		} 
 		else
 		{
@@ -241,9 +240,16 @@ public class LectureroomController {
 		// 설문지작성하고 맨 처음화면으로 가기
 		surveyInfo.insert(survey);
 		model.addAttribute("loginId",loginId);
-		return "redirect:signUpAfter?loginId={loginId}";
+		return "redirect:signUpAfter1?loginId={loginId}";
 	}
 
+	@RequestMapping("signUpAfter1")
+	public String ttttt(User user,Model model)
+	{
+		model.addAttribute("user", userInfo.selectByLoginId(user.getLoginId()));
+		return "view/signUpAfter1";
+	}
+	
 	@RequestMapping(value = { "seungyeon", "seung" }, method = RequestMethod.GET)
 	public String classroomSeungyeon(User user,SeungyeonDto seungyeonDto, Model model)
 	{

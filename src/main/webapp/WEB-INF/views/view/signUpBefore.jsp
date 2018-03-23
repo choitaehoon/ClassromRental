@@ -39,6 +39,7 @@ $(document).ready(function(){
 }); //end ready
 </script>
 
+
 </head>
 <body>
 	<!-- 회원가입하는 창 -->

@@ -1,21 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<!DOCTYPE html >
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link
-	href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css"
-	rel="stylesheet">
-<style>
-label {
-	margin-top: 20px;
-}
-</style>
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<html lang="en">
 
- 
+<head>
+   <title>SignUpAfter</title>
    <!-- Meta-tags -->
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -41,9 +37,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <!--//fonts-->
 
 </head>
-<body>
 
- <div class="header">
+<body>
+   <!--Slider-->
+<!--    <div class="slider"> -->
+<!--     <div class="banner-dott1"> -->
+      <!-- header -->
+      <div class="header">
          <div class="container">
             <div class="w3l_header_left">
                <ul>
@@ -55,7 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   <!-- <a class="facebook" href="#"><span class="fa fa-facebook"></span></a>
                   <a class="twitter" href="#"><span class="fa fa-twitter"></span></a>
                   <a class="pinterest" href="#"><span class="fa fa-pinterest-p"></span></a> -->
-                  <a class="linkedin" href="http://localhost:8080/controller/view/login"><span class="fa fa-linkedin"></span></a>
+                  <a class="linkedin" href="http://localhost:8081/controller/view/login"><span class="fa fa-linkedin"></span></a>
                </div>
             </div>
             <div class="clearfix"> </div>
@@ -92,7 +92,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="rent?loginId=${user.loginId}" data-hover="강의실 빌려주기">강의실 빌려주기</a></li>
                         </c:if>
                         <c:if test="${user.userType == '관리자'}">
-                        <li><a href="rent?loginId=${user.loginId}" data-hover="설문지 조사확인">설문지 조사확인</a></li>
+                        <li><a href="surveyList?loginId=${user.loginId}" data-hover="설문지 조사확인">설문지 조사확인</a></li>
+                      	<li><a href="helpManager?loginId=${user.loginId}" data-hover="등급 구제 확인">등급 구제 확인</a></li>
                         </c:if>
                         <li><a href="list?loginId=${user.loginId}" data-hover="자유게시판">자유 게시판</a></li>
                      </ul>
@@ -104,69 +105,126 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       </div>
       
 </form>
-<!-- ---------------------------------------------------------------- -->
-	<div class="container">
-		<h1>사용자 정보 수정</h1>
-		<hr />
-		
-		<form method="post" action="membershipModification">
-			<div></div><input type="hidden" name="id" value="${user.id}">
-			
-			<label>로그인ID</label>
-			<input type="text" name="loginId" value="${user.loginId}" />
-			
-			<br/>
-			<br/>
-			
-			<label>이름</label>
-			<input type="text" name="name" value="${user.name}" />
-			
-			<br/>
-			<br/>
-			
-			<label>이메일</label>
-			<input type="text" name="email" />
-			
-			<br/>
-			<br/>
-			
-			<label>사용자 유형</label>
-			<select name="userType">
-				<option value="관리자" label="관리자" />
-				<option value="교수" label="교수" />
-				<option value="학생" label="학생"  />
-			</select>
-			
-			<br/>
-			<br/>
-			
-			<label>학과</label>
-			<select name="departmentId">
-				<option value="0" label="없음" />
-				<option value="1" label="소프트웨어공학과" />
-				<option value="2" label="컴퓨터공학과" />
-				<option value="3" label="경영학과" />
-				<option value="4" label="정보통신공학과" />
-			</select>
-			
-			<br/>
-			<br/>
-			
-			<hr />
-			<div>
-				<input type="submit" class="btn btn-primary" value="저장"/> <a
-					href="signUpAfter1?loginId=${user.loginId}" class="btn btn-primary" name="loginId">초기 화면으로 나가기 </a>
-			</div>
-		</form>
-		
-		<c:if test="${ not empty error }">
-			<div class="alert alert-error">${ error }</div>
-		</c:if>
-		<c:if test="${ not empty success }">
-			<div class="alert alert-success">${ success }</div>
-		</c:if>
-	</div>
-<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------- -->
+   <div class="tax">
+      <div class="container">
+         <h3 class="title-txt">너와 나의 연결고리 설명서</h3>
+         <div class="col-md-6 col-sm-6 tax_left">
+         <p>우리학교의 문제점은 시험기간만 되면 강의실을 독점한다!독점은 그 사람이 필요하기에 어쩔수 없는 부분이지만 조금이나마 공간 수용을 늘리기 위해 선택한 결정!</p>
+         <p>
+<div>- 너와 나의 연결고리의 핵심 기술인 학생들 상호간의 강의실 대여</div>
+<div> </div>
+<div><br>   1.) 강의실을 먼저 대여한 학생1이 자신이 쓰지 않는 시간을 게시물에 등록</div>
+<div><br>   2.) 해당시간에 강의실을 빌리고 싶은 학생2가 해당 강의실과 해당 시간 확인 후 강의실 이용</div>
+<div><br>   3.) 학생1이 학생2에 대해서 강의실 이용 상태 여부에 관해서 평가 설문지 작성 </div>
+<div> </div></p>
+            <div class="clearfix"></div>
+         </div>
+         <div class="col-md-6 col-sm-6 tax_right">
+         
+         </div>
+         <div class="clearfix"> </div>
+      </div>
+   </div>
+      </div>
+   </div>
+<!-- //footer -->
+
+   <!-- js -->
+   <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+   <!-- stats -->
+   <script src="js/jquery.waypoints.min.js"></script>
+   <script src="js/jquery.countup.js"></script>
+      <script>
+         $('.counter').countUp();
+      </script>
+<!-- //stats -->
+
+   <!-- start-smoth-scrolling -->
+   <script type="text/javascript" src="js/move-top.js"></script>
+   <script type="text/javascript" src="js/easing.js"></script>
+   <script type="text/javascript">
+      jQuery(document).ready(function ($) {
+         $(".scroll").click(function (event) {
+            event.preventDefault();
+            $('html,body').animate({
+               scrollTop: $(this.hash).offset().top
+            }, 1000);
+         });
+      });
+   </script>
+   <!-- start-smoth-scrolling -->
+   <script src="js/responsiveslides.min.js"></script>
+   <script>
+      // You can also use "$(window).load(function() {"
+      $(function () {
+         // Slideshow 3
+         $("#slider3").responsiveSlides({
+            auto: true,
+            pager: false,
+            nav: true,
+            speed: 500,
+            namespace: "callbacks",
+            before: function () {
+               $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+               $('.events').append("<li>after event fired.</li>");
+            }
+         });
+
+      });
+   </script>
+   <!-- smooth scrolling -->
+   <script type="text/javascript">
+      $(document).ready(function () {
+         /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear' 
+            };
+         */
+         $().UItoTop({
+            easingType: 'easeOutQuart'
+         });
+      });
+   </script>
+   <a href="#home" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+   <!-- //smooth scrolling -->
+     <!-- Flexslider-js for-testimonials -->
+    <script src="js/jquery.flexisel.js"></script>
+    <script>
+        $(window).load(function () {
+            $("#flexiselDemo1").flexisel({
+                visibleItems: 1,
+                animationSpeed: 1000,
+                autoPlay: false,
+                autoPlaySpeed: 3000,
+                pauseOnHover: true,
+                enableResponsiveBreakpoints: true,
+                responsiveBreakpoints: {
+                    portrait: {
+                        changePoint: 480,
+                        visibleItems: 1
+                    },
+                    landscape: {
+                        changePoint: 640,
+                        visibleItems: 1
+                    },
+                    tablet: {
+                        changePoint: 768,
+                        visibleItems: 1
+                    }
+                }
+            });
+
+        });
+    </script>
+
+   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- ------------------------------------ -->
 <div class="agileinfo_copyright">
             <p>
             <div>152-716 서울시 구로구 연동로 320 / 지하철 1, 7호선 온수(성공회대입구)역 T.02-2610-4114</div>
